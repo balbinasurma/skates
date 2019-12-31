@@ -6,7 +6,7 @@ module.exports = {
 	entry: './src/index.tsx',
 	output: {
 		filename: 'bundle.js',
-		path: __dirname
+		path: path.resolve(__dirname, build)
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
