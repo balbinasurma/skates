@@ -4,11 +4,13 @@
 
 body {
 	margin: 0;
+	font-family: Roboto, sans-serif;
 }
 
 #root {
-	border: 5px solid green;
 	width: 100vw;
 	min-height: 100vh;
 	max-width: 100%;
+	display: flex;
+	justify-content: center;
 }

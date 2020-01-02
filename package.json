@@ -19,8 +19,14 @@
 		"url": "https://github.com/balbinasurma/balbinasurma.github.io/issues"
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.26",
+		"@fortawesome/free-brands-svg-icons": "^5.12.0",
+		"@fortawesome/free-solid-svg-icons": "^5.12.0",
+		"@fortawesome/react-fontawesome": "^0.1.8",
+		"@types/react-router-dom": "^5.1.3",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
+		"react-router-dom": "^5.1.2",
 		"styled-components": "^4.4.1",
 		"ts-loader": "^6.2.1",
 		"typescript": "^3.7.4",
@@ -32,6 +38,7 @@
 		"@types/react-dom": "^16.9.4",
 		"@types/styled-components": "^4.4.1",
 		"css-loader": "^3.4.0",
+		"file-loader": "^5.0.2",
 		"gh-pages": "^2.1.1",
 		"html-webpack-plugin": "^3.2.0",
 		"style-loader": "^1.1.2",
