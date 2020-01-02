@@ -22,6 +22,7 @@ const Header = () => {
 	const {color2} = useContext(themeContext)
 
 	return (
+		//@ts-ignore
 		<HeaderHeader color2={color2}>
 			<HeaderMenu />
 			<HeaderSocial />

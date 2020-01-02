@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+//@ts-ignore
 import heroImage from './heroImage.jpg'
 
 const HeroHeader = styled.header`
