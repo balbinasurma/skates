@@ -3,12 +3,19 @@ import styled from 'styled-components'
 import {styledMainType} from 'types/styledTypes'
 import Hero from './hero/Hero'
 
-const MainMain: styledMainType = styled.main`height: 100%;`
+const MainMain: styledMainType = styled.main`
+	height: 100%;
+
+	& > div {
+		height: 1500px;
+	}
+`
 
 const Main = () => {
 	return (
-		<MainMain>
+		<MainMain id='main'>
 			<Hero />
+			<div>aaa</div>
 		</MainMain>
 	)
 }
