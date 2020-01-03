@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styledMainType} from 'types/styledTypes'
+import {styledMainType} from '../../../types/styledTypes'
 import Hero from './hero/Hero'
 
 const MainMain: styledMainType = styled.main`

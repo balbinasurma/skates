@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styledLinkType} from 'types/styledTypes'
+import {styledLinkType} from '../../../types/styledTypes'
 import {Link} from 'react-router-dom'
 
 const HeaderMenuItemLink: styledLinkType = styled(Link)`

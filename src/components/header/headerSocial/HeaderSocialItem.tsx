@@ -7,7 +7,7 @@ import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
 
 const HeaderSocialItemButton: styledButtonType = styled.button`
 	width: 80px;
-	height: 100%;
+	height: 70px;
 	background: none;
 	border: none;
 	cursor: pointer;

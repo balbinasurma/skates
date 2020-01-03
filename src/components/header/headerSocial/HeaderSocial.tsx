@@ -5,7 +5,15 @@ import HeaderSocialItem from './HeaderSocialItem'
 import {faAt} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookSquare, faInstagram} from '@fortawesome/free-brands-svg-icons'
 
-const HeaderSocialSection: styledSectionType = styled.section`height: 100%;`
+const HeaderSocialSection: styledSectionType = styled.section`
+	display: flex;
+	border: 1px solid red;
+	min-height: 70px;
+
+	@media only screen and (max-width: 900px) {
+		flex-direction: column-reverse;
+	}
+`
 const HeaderSocial = () => {
 	let socialMedia = [faAt, faFacebookSquare, faInstagram]
 

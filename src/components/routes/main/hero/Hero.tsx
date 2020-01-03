@@ -62,7 +62,7 @@ const Hero = () => {
 	return (
 		// @ts-ignore
 		<HeroHeader ref={heroRef} heroScrollPercentage={heroScrollPercentage}>
-			<main>Balbina Surma</main>
+			{/* <main>Balbina Surma</main> */}
 		</HeroHeader>
 	)
 }

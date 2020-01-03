@@ -7,6 +7,9 @@ import Main from './routes/main/Main'
 import themeContext from '../context/themeContext'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
+import Osiagniecia from './routes/osiagniecia/Osiagniecia'
+import Instruktor from './routes/instruktor/Instruktor'
+import Zawody from './routes/zawody/Zawody'
 
 const bounce = keyframes`
 from,
@@ -81,26 +84,39 @@ const App = () => {
 	// 	})()
 	// }, [])
 
+	type pathType = string
+	type componentType = JSX.Element
+	type routesArrayType = {path: pathType; component: componentType}[]
+
+	let routesArray: routesArrayType = [
+		{
+			path: '/',
+			component: <Main />
+		},
+		{
+			path: '/osiagniecia',
+			component: <Osiagniecia />
+		},
+		{
+			path: '/instruktor',
+			component: <Instruktor />
+		},
+		{
+			path: '/zawody',
+			component: <Zawody />
+		}
+	]
+
 	return (
 		<AppMain id='app'>
 			<themeContext.Provider value={{color1: 'rgb(244, 247, 246)', color2: 'rgb(33, 33, 33)'}}>
 				<Header />
 				<Switch>
-					<Route exact path='/'>
-						<Main />
-					</Route>
-
-					<Route path='/osiagniecia'>
-						<div>osiagniecia</div>
-					</Route>
-
-					<Route path='/instruktor'>
-						<div>instruktor</div>
-					</Route>
-
-					<Route path='/zawody'>
-						<div id='map' />
-					</Route>
+					{routesArray.map(({path, component}, index) => (
+						<Route exact path={path} key={index}>
+							{component}
+						</Route>
+					))}
 				</Switch>
 				<aside>
 					<FontAwesomeIcon icon={faAngleDoubleDown} color='white' size='4x' />

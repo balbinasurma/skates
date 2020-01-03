@@ -4,10 +4,16 @@ import {styledNavType} from '../../../types/styledTypes'
 import HeaderMenuItem from './HeaderMenuItem'
 
 const HeaderMenuNav: styledNavType = styled.nav`
-	height: 100%;
+	min-height: 70px;
 	display: flex;
 	align-items: center;
 	position: relative;
+
+	border: 1px solid red;
+
+	@media only screen and (max-width: 900px) {
+		flex-direction: column;
+	}
 `
 
 interface linkItem {

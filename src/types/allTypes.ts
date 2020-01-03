@@ -1,0 +1,1 @@
+type componentType = JSX.Element
