@@ -1,16 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import styled from 'styled-components'
 import {styledHeaderType} from '../../types/styledTypes'
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'
+import {mobileMenuOpenStateType} from 'types/statesTypes'
+import themeContext from '../../context/themeContext'
 
 const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
 	background: none;
-	// box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 	justify-content: space-between;
 	position: absolute;
 	top: 0;
@@ -35,6 +36,10 @@ const HeaderHeader: styledHeaderType = styled.header`
 		& > *:first-child {
 			//@ts-ignore
 			display: ${({mobileMenuOpen}) => (mobileMenuOpen ? 'block' : 'none')};
+			position: absolute;
+			left: 0;
+			// @ts-ignore
+			top: ${({headerItemHeight}) => headerItemHeight};
 		}
 
 		& > span {
@@ -43,14 +48,15 @@ const HeaderHeader: styledHeaderType = styled.header`
 	}
 `
 const Header = () => {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState()
+	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(true),
+		{headerItemHeight} = useContext(themeContext)
 
 	return (
 		//@ts-ignore
-		<HeaderHeader mobileMenuOpen={mobileMenuOpen}>
+		<HeaderHeader mobileMenuOpen={mobileMenuOpen} headerItemHeight={headerItemHeight}>
 			<HeaderMenu />
 			<span>
-				<MobileMenuIcon />
+				<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 			</span>
 			<HeaderSocial />
 		</HeaderHeader>

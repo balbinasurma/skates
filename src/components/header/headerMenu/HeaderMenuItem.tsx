@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {styledLinkType} from '../../../types/styledTypes'
 import {Link} from 'react-router-dom'
+import {headerMenuPropsType} from 'types/propsTypes'
 
 const HeaderMenuItemLink: styledLinkType = styled(Link)`
 	height: 50%;
@@ -32,8 +33,8 @@ const HeaderMenuItemLink: styledLinkType = styled(Link)`
 
 `
 
-type propsType = {title: string; path: string}
-
-const HeaderMenuItem = ({title, path}: propsType) => <HeaderMenuItemLink to={path}>{title}</HeaderMenuItemLink>
+const HeaderMenuItem = ({title, path}: headerMenuPropsType) => (
+	<HeaderMenuItemLink to={path}>{title}</HeaderMenuItemLink>
+)
 
 export default HeaderMenuItem

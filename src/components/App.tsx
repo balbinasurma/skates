@@ -1,15 +1,16 @@
+import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
+import themeContext from '../context/themeContext'
 import {styledMainType} from '../types/styledTypes'
 import Header from './header/Header'
-import {Switch, Route} from 'react-router-dom'
-import Main from './routes/main/Main'
-import themeContext from '../context/themeContext'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
-import Osiagniecia from './routes/osiagniecia/Osiagniecia'
 import Instruktor from './routes/instruktor/Instruktor'
+import Main from './routes/main/Main'
+import Osiagniecia from './routes/osiagniecia/Osiagniecia'
 import Zawody from './routes/zawody/Zawody'
+import {routesArrayType} from 'types/allTypes'
 
 const bounce = keyframes`
 from,
@@ -84,10 +85,6 @@ const App = () => {
 	// 	})()
 	// }, [])
 
-	type pathType = string
-	type componentType = JSX.Element
-	type routesArrayType = {path: pathType; component: componentType}[]
-
 	let routesArray: routesArrayType = [
 		{
 			path: '/',
@@ -107,9 +104,11 @@ const App = () => {
 		}
 	]
 
+	let theme = {color1: 'rgb(244, 247, 246)', color2: 'rgb(33, 33, 33)', headerItemHeight: '70px'}
+
 	return (
 		<AppMain id='app'>
-			<themeContext.Provider value={{color1: 'rgb(244, 247, 246)', color2: 'rgb(33, 33, 33)'}}>
+			<themeContext.Provider value={theme}>
 				<Header />
 				<Switch>
 					{routesArray.map(({path, component}, index) => (
