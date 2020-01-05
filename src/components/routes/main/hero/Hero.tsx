@@ -20,6 +20,7 @@ const HeroHeader = styled.header`
 		background-image: url(${heroImage});
 		background-size: cover;
 		background-position: center top;
+		z-index: -1;
 		// @ts-ignore
 		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
 	}
@@ -28,19 +29,17 @@ const HeroHeader = styled.header`
 		margin-left: 50px;
 		margin-bottom: 30px;
 		width: 400px;
-		height: 300px;
-		border: 1px solid red;
+		height: 240px;
 		text-align: justify;
 		color: white;
+		line-height: 100%;
 		font-size: 120px;
 		z-index: 1;
 		// display: flex;
 		// justify-content: center;
 		// align-items: center;
 
-		// text-shadow: 1px 1px 1px red;
-
-		text-emphasis: 1px solid red;
+		text-shadow: 1px 1px 1px gray;
 	}
 `
 
@@ -62,7 +61,7 @@ const Hero = () => {
 	return (
 		// @ts-ignore
 		<HeroHeader ref={heroRef} heroScrollPercentage={heroScrollPercentage}>
-			{/* <main>Balbina Surma</main> */}
+			<main>Balbina Surma</main>
 		</HeroHeader>
 	)
 }

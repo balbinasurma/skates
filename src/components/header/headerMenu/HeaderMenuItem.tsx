@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
-import {styledLinkType} from '../../../types/styledTypes'
+import {styledLinkType} from 'types/styledTypes'
 import {Link} from 'react-router-dom'
-import {headerMenuPropsType} from 'types/propsTypes'
+import {headerMenuItemPropsType} from 'types/propsTypes'
+import themeContext from '../../../context/themeContext'
 
 const HeaderMenuItemLink: styledLinkType = styled(Link)`
 	height: 50%;
@@ -21,7 +22,7 @@ const HeaderMenuItemLink: styledLinkType = styled(Link)`
 	margin: 0 10px;
 	border-bottom: 3px solid transparent;
 	text-decoration: none;
-	transition: 0.8s;
+	transition: border 0.8s;
 
 	&:first-child {
 		border-bottom: 3px solid white;
@@ -31,10 +32,25 @@ const HeaderMenuItemLink: styledLinkType = styled(Link)`
 		border-color: white;
 	}
 
+	@media only screen and (max-width: 900px) {
+		// @ts-ignore
+		height: ${({headerItemHeight}) => headerItemHeight};
+		border-color: transparent !important;
+		align-items: center;
+	}
+
 `
 
-const HeaderMenuItem = ({title, path}: headerMenuPropsType) => (
-	<HeaderMenuItemLink to={path}>{title}</HeaderMenuItemLink>
-)
+const HeaderMenuItem = ({title, path}: headerMenuItemPropsType) => {
+	// @ts-ignore
+	const {headerItemHeight} = useContext(themeContext)
+
+	return (
+		// @ts-ignore
+		<HeaderMenuItemLink headerItemHeight={headerItemHeight} to={path}>
+			{title}
+		</HeaderMenuItemLink>
+	)
+}
 
 export default HeaderMenuItem

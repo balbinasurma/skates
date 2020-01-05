@@ -1,29 +1,32 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components'
-import {styledButtonType} from '../../../types/styledTypes'
+import {styledAType} from 'types/styledTypes'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
 import themeContext from '../../../context/themeContext'
+import {headerSocialItemPropsType} from 'types/propsTypes'
 
-const HeaderSocialItemButton: styledButtonType = styled.button`
+const HeaderSocialItemA: styledAType = styled.a`
 	width: 80px;
+	// @ts-ignore
 	height: ${({headerItemHeight}) => headerItemHeight};
 	background: none;
 	border: none;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `
 
-type propsType = {icon: IconDefinition}
-
-const HeaderSocialItem = ({icon}: propsType) => {
+const HeaderSocialItem = ({icon, link}: headerSocialItemPropsType) => {
+	// @ts-ignore
 	const {headerItemHeight} = useContext(themeContext)
 
 	return (
 		// @ts-ignore
-		<HeaderSocialItemButton headerItemHeight={headerItemHeight}>
+		<HeaderSocialItemA headerItemHeight={headerItemHeight} href={link} target='_blank'>
 			<FontAwesomeIcon icon={icon} color='white' size='3x' />
-		</HeaderSocialItemButton>
+		</HeaderSocialItemA>
 	)
 }
 

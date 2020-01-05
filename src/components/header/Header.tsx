@@ -1,11 +1,10 @@
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {styledHeaderType} from '../../types/styledTypes'
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'
-import {mobileMenuOpenStateType} from 'types/statesTypes'
-import themeContext from '../../context/themeContext'
+import {mobileMenuOpenStateType} from 'types/hooksTypes'
 
 const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
@@ -19,9 +18,6 @@ const HeaderHeader: styledHeaderType = styled.header`
 	width: 100%;
 	z-index: 2;
 
-	//
-	border: 1px solid red;
-
 	& > span {
 		display: none;
 	}
@@ -32,32 +28,15 @@ const HeaderHeader: styledHeaderType = styled.header`
 
 	@media only screen and (max-width: 900px) {
 		padding: 0;
-
-		& > *:first-child {
-			//@ts-ignore
-			display: ${({mobileMenuOpen}) => (mobileMenuOpen ? 'block' : 'none')};
-			position: absolute;
-			left: 0;
-			// @ts-ignore
-			top: ${({headerItemHeight}) => headerItemHeight};
-		}
-
-		& > span {
-			display: block;
-		}
 	}
 `
 const Header = () => {
-	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(true),
-		{headerItemHeight} = useContext(themeContext)
+	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
 
 	return (
-		//@ts-ignore
-		<HeaderHeader mobileMenuOpen={mobileMenuOpen} headerItemHeight={headerItemHeight}>
-			<HeaderMenu />
-			<span>
-				<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-			</span>
+		<HeaderHeader>
+			<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
+			<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 			<HeaderSocial />
 		</HeaderHeader>
 	)

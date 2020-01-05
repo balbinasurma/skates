@@ -4,6 +4,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import themeContext from '../context/themeContext'
+import theme from '../context/theme'
 import {styledMainType} from '../types/styledTypes'
 import Header from './header/Header'
 import Instruktor from './routes/instruktor/Instruktor'
@@ -103,8 +104,6 @@ const App = () => {
 			component: <Zawody />
 		}
 	]
-
-	let theme = {color1: 'rgb(244, 247, 246)', color2: 'rgb(33, 33, 33)', headerItemHeight: '70px'}
 
 	return (
 		<AppMain id='app'>
