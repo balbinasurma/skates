@@ -29,17 +29,28 @@ const HeroHeader = styled.header`
 		margin-left: 50px;
 		margin-bottom: 30px;
 		width: 400px;
-		height: 240px;
+		max-width: 100vw;
+		height: auto;
 		text-align: justify;
 		color: white;
 		line-height: 100%;
-		font-size: 120px;
+		font-size: 12vw;
 		z-index: 1;
-		// display: flex;
-		// justify-content: center;
-		// align-items: center;
-
 		text-shadow: 1px 1px 1px gray;
+	}
+
+	@media only screen and (max-width: 900px) {
+		& > main {
+			margin: 0 8vw 30px;
+			font-size: 14vw;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		& > main {
+			margin: 0 1vw 30px;
+			font-size: 24vw;
+		}
 	}
 `
 

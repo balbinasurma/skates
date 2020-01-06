@@ -1,15 +1,16 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import {styledHeaderType} from '../../types/styledTypes'
-import HeaderMenu from './headerMenu/HeaderMenu'
+// import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
-import MobileMenuIcon from './MobileMenuIcon'
+// import MobileMenuIcon from './MobileMenuIcon'
 import {mobileMenuOpenStateType} from 'types/hooksTypes'
 
 const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
+	flex-direction: row-reverse;
 	background: none;
 	justify-content: space-between;
 	position: absolute;
@@ -35,8 +36,8 @@ const Header = () => {
 
 	return (
 		<HeaderHeader>
-			<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
-			<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+			{/* <HeaderMenu mobileMenuOpen={mobileMenuOpen} /> */}
+			{/* <MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} /> */}
 			<HeaderSocial />
 		</HeaderHeader>
 	)

@@ -49,18 +49,14 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 	}
 `
 
-const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemPropsType) => {
-	console.log(picture)
-
-	return (
-		// @ts-ignore
-		<PucharPolskiItemArticle picture={picture}>
-			<h3>{title}</h3>
-			<h2>{date}</h2>
-			<h4>{comment}</h4>
-			<div />
-		</PucharPolskiItemArticle>
-	)
-}
+const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemPropsType) => (
+	// @ts-ignore
+	<PucharPolskiItemArticle picture={picture}>
+		<h3>{title}</h3>
+		<h2>{date}</h2>
+		<h4>{comment}</h4>
+		<div />
+	</PucharPolskiItemArticle>
+)
 
 export default PucharPolskiItem

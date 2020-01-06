@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {styledSectionType} from 'types/styledTypes'
 import HeaderSocialItem from './HeaderSocialItem'
 import {faAt} from '@fortawesome/free-solid-svg-icons'
-import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
+import {faFacebookSquare, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import themeContext from '../../../context/themeContext'
 import {socialMediaArrayType} from 'types/allTypes'
 
@@ -18,6 +18,7 @@ const HeaderSocial = () => {
 
 	let socialMedia: socialMediaArrayType = [
 		{icon: faAt, link: 'mailto:balbina.surma@gmail.gmail?subject=Kontakt ze strony internetowej'},
+		{icon: faLinkedin, link: 'https://pl.linkedin.com/in/balbina-surma-5a78a8171'},
 		{icon: faFacebookSquare, link: 'http://facebook.com/balbina.surma.1'}
 	]
 
