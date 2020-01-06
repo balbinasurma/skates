@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
+// {useState}
 import styled from 'styled-components'
 import {styledHeaderType} from '../../types/styledTypes'
 // import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 // import MobileMenuIcon from './MobileMenuIcon'
-import {mobileMenuOpenStateType} from 'types/hooksTypes'
+// import {mobileMenuOpenStateType} from 'types/hooksTypes'
 
 const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
