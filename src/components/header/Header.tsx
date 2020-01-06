@@ -32,7 +32,7 @@ const HeaderHeader: styledHeaderType = styled.header`
 	}
 `
 const Header = () => {
-	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
+	// const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
 
 	return (
 		<HeaderHeader>
