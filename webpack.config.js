@@ -1,8 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
-	mode: process.env.NODE_ENV,
+const config = {
 	entry: './src/index.tsx',
 	output: {
 		filename: 'bundle.js',
@@ -41,4 +40,9 @@ module.exports = {
 			}
 		]
 	}
+}
+
+module.exports = (env, argv) => {
+	config.mode = argv.mode
+	return config
 }
