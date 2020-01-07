@@ -9,7 +9,7 @@ const config = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Balbina Surma',
+			title: 'Balbina Surma - Strona Oficjalna',
 			template: 'public/index.html'
 		})
 	],

@@ -17,7 +17,6 @@ const PucharPolskiDivider = lazy(() => import('./PucharPolskiDivider')),
 	PucharPolskiItem = lazy(() => import('./PucharPolskiItem'))
 
 const PucharPolskiSection: styledSectionType = styled.section`
-	box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
 	display: flex;
 	flex-direction: column;
 	padding: 100px 10%;
