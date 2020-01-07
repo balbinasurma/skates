@@ -8,11 +8,10 @@ const HeroHeader =
 	styled.header <
 	HeroHeaderStyledType >
 	`
-	width: 100%;
 	height: calc(100vh - 5px);
-	display: flex;
-	align-items: flex-end;
 	position: relative;
+	flex-direction: column-reverse;
+
 
 	&::before {
 		content: "";
@@ -29,29 +28,25 @@ const HeroHeader =
 	}
 
 	& > main {
-		margin-left: 50px;
-		margin-bottom: 30px;
 		width: 400px;
 		max-width: 100vw;
 		height: auto;
 		text-align: justify;
 		color: white;
 		line-height: 100%;
-		font-size: 12vw;
+		font-size: 9vw;
 		z-index: 1;
 		text-shadow: 1px 1px 1px gray;
 	}
 
 	@media only screen and (max-width: 900px) {
 		& > main {
-			margin: 0 8vw 30px;
 			font-size: 14vw;
 		}
 	}
 
 	@media only screen and (max-width: 600px) {
 		& > main {
-			margin: 0 1vw 30px;
 			font-size: 24vw;
 		}
 	}

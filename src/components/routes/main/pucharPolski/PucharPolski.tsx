@@ -17,10 +17,6 @@ const PucharPolskiDivider = lazy(() => import('./PucharPolskiDivider')),
 	PucharPolskiItem = lazy(() => import('./PucharPolskiItem'))
 
 const PucharPolskiSection: styledSectionType = styled.section`
-	display: flex;
-	flex-direction: column;
-	padding: 100px 10%;
-
 	& > h1 {
 		font-size: 35px;
 		text-transform: uppercase;
@@ -40,14 +36,6 @@ const PucharPolskiSection: styledSectionType = styled.section`
 			border-color: lightgray;
 			color: red;
 		}
-	}
-
-	@media only screen and (max-width: 900px) {
-		padding: 100px 5%;
-	}
-
-	@media only screen and (max-width: 600px) {
-		padding: 100px 1%;
 	}
 `
 
