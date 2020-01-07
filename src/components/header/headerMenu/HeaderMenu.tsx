@@ -1,13 +1,15 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components'
-import {styledNavType} from '../../../types/styledTypes'
-import HeaderMenuItem from './HeaderMenuItem'
 import {linksArrayType} from 'types/allTypes'
-import themeContext from '../../../context/themeContext'
 import {headerMenuPropsType} from 'types/propsTypes'
+import {HeaderMenuNavStyledType} from 'types/styledTypes'
+import themeContext from '../../../context/themeContext'
+import HeaderMenuItem from './HeaderMenuItem'
 
-const HeaderMenuNav: styledNavType = styled.nav`
-	// @ts-ignore
+const HeaderMenuNav =
+	styled.nav <
+	HeaderMenuNavStyledType >
+	`
 	min-height: ${({headerItemHeight}) => headerItemHeight};
 	display: flex;
 	align-items: center;
@@ -15,12 +17,9 @@ const HeaderMenuNav: styledNavType = styled.nav`
 
 	@media only screen and (max-width: 900px) {
 		flex-direction: column;
-
-		//@ts-ignore
 		display: ${({mobileMenuOpen}) => (mobileMenuOpen ? 'block' : 'none')};
 		position: absolute;
 		left: 0;
-		// @ts-ignore
 		top: ${({headerItemHeight}) => headerItemHeight};
 		width: 100%;
 	}
@@ -38,7 +37,6 @@ const HeaderMenu = ({mobileMenuOpen}: headerMenuPropsType) => {
 	const {headerItemHeight} = useContext(themeContext)
 
 	return (
-		// @ts-ignore
 		<HeaderMenuNav headerItemHeight={headerItemHeight} mobileMenuOpen={mobileMenuOpen}>
 			{linksArray.map(({title, path}, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
 		</HeaderMenuNav>

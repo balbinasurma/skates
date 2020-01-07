@@ -6,6 +6,7 @@ import styled, {keyframes} from 'styled-components'
 import {routesArrayType} from 'types/allTypes'
 import theme from '../context/theme'
 import themeContext from '../context/themeContext'
+import isDevelopment from '../functions/isDevelopment'
 import {styledMainType} from '../types/styledTypes'
 
 const Instruktor = lazy(() => import('./routes/instruktor/Instruktor')),
@@ -91,7 +92,7 @@ const App = () => {
 						</Route>
 					))}
 				</Switch>
-				{process.env.NODE_ENV === 'development' && (
+				{isDevelopment() && (
 					<Suspense fallback={<p>...</p>}>
 						<Footer />
 					</Suspense>

@@ -2,12 +2,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React, {useContext} from 'react'
 import styled from 'styled-components'
 import {headerSocialItemPropsType} from 'types/propsTypes'
-import {styledAType} from 'types/styledTypes'
+import {HeaderSocialItemAStyledType} from 'types/styledTypes'
 import themeContext from '../../../context/themeContext'
 
-const HeaderSocialItemA: styledAType = styled.a`
+const HeaderSocialItemA =
+	styled.a <
+	HeaderSocialItemAStyledType >
+	`
 	width: 80px;
-	// @ts-ignore
 	height: ${({headerItemHeight}) => headerItemHeight};
 	background: none;
 	border: none;
@@ -23,7 +25,6 @@ const HeaderSocialItem = ({icon, link, label}: headerSocialItemPropsType) => {
 
 	return (
 		<HeaderSocialItemA
-			// @ts-ignore
 			headerItemHeight={headerItemHeight}
 			href={link}
 			target='_blank'

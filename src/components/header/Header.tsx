@@ -1,7 +1,8 @@
 import React, {Fragment, lazy, Suspense, useState} from 'react'
 import styled from 'styled-components'
 import {mobileMenuOpenStateType} from 'types/hooksTypes'
-import {styledHeaderType} from '../../types/styledTypes'
+import {styledHeaderType} from 'types/styledTypes'
+import isDevelopment from '../../functions/isDevelopment'
 
 const HeaderMenu = lazy(() => import('./headerMenu/HeaderMenu')),
 	HeaderSocial = lazy(() => import('./headerSocial/HeaderSocial')),
@@ -11,7 +12,7 @@ const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
-	flex-direction: ${process.env.NODE_ENV === 'development' ? 'row' : 'row-reversed'};
+	flex-direction: ${isDevelopment() ? 'row' : 'row-reverse'};
 	background: none;
 	justify-content: space-between;
 	position: absolute;
@@ -37,7 +38,7 @@ const Header = () => {
 
 	return (
 		<HeaderHeader>
-			{process.env.NODE_ENV === 'development' && (
+			{isDevelopment() && (
 				<Fragment>
 					<Suspense fallback={<p>...</p>}>
 						<HeaderMenu mobileMenuOpen={mobileMenuOpen} />

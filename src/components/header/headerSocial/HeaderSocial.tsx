@@ -3,13 +3,15 @@ import {faAt} from '@fortawesome/free-solid-svg-icons'
 import React, {useContext} from 'react'
 import styled from 'styled-components'
 import {socialMediaArrayType} from 'types/allTypes'
-import {styledSectionType} from 'types/styledTypes'
+import {HeaderSocialSectionStyledType} from 'types/styledTypes'
 import themeContext from '../../../context/themeContext'
 import HeaderSocialItem from './HeaderSocialItem'
 
-const HeaderSocialSection: styledSectionType = styled.section`
+const HeaderSocialSection =
+	styled.section <
+	HeaderSocialSectionStyledType >
+	`
 	display: flex;
-	// @ts-ignore
 	min-height: ${({headerItemHeight}) => headerItemHeight};
 `
 const HeaderSocial = () => {
@@ -23,7 +25,6 @@ const HeaderSocial = () => {
 	]
 
 	return (
-		// @ts-ignore
 		<HeaderSocialSection headerItemHeight={headerItemHeight}>
 			{socialMedia.map(({icon, link, label}, index) => (
 				<HeaderSocialItem label={label} icon={icon} link={link} key={index} />

@@ -3,14 +3,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React, {useContext} from 'react'
 import styled from 'styled-components'
 import {MobileMenuIconPropsType} from 'types/propsTypes'
+import {MobileMenuIconButtonStyledType} from 'types/styledTypes'
 import themeContext from '../../context/themeContext'
-import {styledButtonType} from '../../types/styledTypes'
 
-const MobileMenuIconButton: styledButtonType = styled.button`
+const MobileMenuIconButton =
+	styled.button <
+	MobileMenuIconButtonStyledType >
+	`
 	background: none;
 	border: none;
 	width: 80px;
-	// @ts-ignore
 	height: ${({headerItemHeight}) => headerItemHeight};
 	cursor: pointer;
 	display: none;
@@ -25,7 +27,6 @@ const MobileMenuIcon = ({mobileMenuOpen, setMobileMenuOpen}: MobileMenuIconProps
 	const {headerItemHeight} = useContext(themeContext)
 
 	return (
-		// @ts-ignore
 		<MobileMenuIconButton headerItemHeight={headerItemHeight} aria-label='menu'>
 			<FontAwesomeIcon
 				onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -1,11 +1,14 @@
 import React, {useContext} from 'react'
-import styled from 'styled-components'
-import {styledLinkType} from 'types/styledTypes'
 import {Link} from 'react-router-dom'
+import styled from 'styled-components'
 import {headerMenuItemPropsType} from 'types/propsTypes'
+import {HeaderMenuItemLinkStyledType, styledLinkType} from 'types/styledTypes'
 import themeContext from '../../../context/themeContext'
 
-const HeaderMenuItemLink: styledLinkType = styled(Link)`
+const HeaderMenuItemLink: styledLinkType =
+	styled(Link) <
+	HeaderMenuItemLinkStyledType >
+	`
 	height: 50%;
 	display: flex;
 	background: none;
@@ -34,7 +37,6 @@ const HeaderMenuItemLink: styledLinkType = styled(Link)`
 	}
 
 	@media only screen and (max-width: 900px) {
-		// @ts-ignore
 		height: ${({headerItemHeight}) => headerItemHeight};
 		border-color: transparent !important;
 		align-items: center;

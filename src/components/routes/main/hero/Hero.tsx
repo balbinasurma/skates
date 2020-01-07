@@ -1,9 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components'
+import {HeroHeaderStyledType} from 'types/styledTypes'
 //@ts-ignore
 import heroImage from './heroImage.jpg'
 
-const HeroHeader = styled.header`
+const HeroHeader =
+	styled.header <
+	HeroHeaderStyledType >
+	`
 	width: 100%;
 	height: calc(100vh - 5px);
 	display: flex;
@@ -17,12 +21,10 @@ const HeroHeader = styled.header`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		// @ts-ignore
 		background-image: url(${heroImage});
 		background-size: cover;
 		background-position: center top;
 		z-index: -1;
-		// @ts-ignore
 		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
 	}
 
@@ -71,7 +73,6 @@ const Hero = () => {
 	}, [])
 
 	return (
-		// @ts-ignore
 		<HeroHeader ref={heroRef} heroScrollPercentage={heroScrollPercentage}>
 			<main>Balbina Surma</main>
 		</HeroHeader>
