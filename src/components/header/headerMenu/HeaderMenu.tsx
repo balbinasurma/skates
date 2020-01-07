@@ -15,6 +15,7 @@ const HeaderMenuNav: styledNavType = styled.nav`
 
 	@media only screen and (max-width: 900px) {
 		flex-direction: column;
+
 		//@ts-ignore
 		display: ${({mobileMenuOpen}) => (mobileMenuOpen ? 'block' : 'none')};
 		position: absolute;

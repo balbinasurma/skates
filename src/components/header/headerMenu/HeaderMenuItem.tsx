@@ -23,6 +23,7 @@ const HeaderMenuItemLink: styledLinkType = styled(Link)`
 	border-bottom: 3px solid transparent;
 	text-decoration: none;
 	transition: border 0.8s;
+	text-shadow: 1px 1px 1px gray;
 
 	&:first-child {
 		border-bottom: 3px solid white;

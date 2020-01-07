@@ -1,16 +1,21 @@
-import React from 'react'
+import React, {lazy, Suspense} from 'react'
 import styled from 'styled-components'
 import {styledMainType} from 'types/styledTypes'
-import Hero from './hero/Hero'
-import PucharPolski from './pucharPolski/PucharPolski'
 
-const MainMain: styledMainType = styled.main`height: 100%;`
+const Hero = lazy(() => import('./hero/Hero')),
+	PucharPolski = lazy(() => import('./pucharPolski/PucharPolski'))
+
+const MainMain: styledMainType = styled.main`height: auto;`
 
 const Main = () => {
 	return (
 		<MainMain id='main'>
-			<Hero />
-			<PucharPolski />
+			<Suspense fallback={<p>...</p>}>
+				<Hero />
+			</Suspense>
+			<Suspense fallback={<p>...</p>}>
+				<PucharPolski />
+			</Suspense>
 		</MainMain>
 	)
 }

@@ -6,6 +6,7 @@ export type pathType = string
 export type titleType = string
 export type themeValueType = string
 export type linkType = string
+export type labelType = string
 export type pucharPolskiItemTitleType = string
 export type pucharPolskiItemTime = string
 export type pucharPolskiItemComment = string
@@ -28,6 +29,7 @@ export interface linkItemInterface {
 export interface socialMediaInterface {
 	icon: IconDefinition
 	link: linkType
+	label: labelType
 }
 
 export interface pucharPolskiItemInterface {

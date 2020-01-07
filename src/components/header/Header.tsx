@@ -1,17 +1,17 @@
-import React from 'react'
-// {useState}
+import React, {Fragment, lazy, Suspense, useState} from 'react'
 import styled from 'styled-components'
+import {mobileMenuOpenStateType} from 'types/hooksTypes'
 import {styledHeaderType} from '../../types/styledTypes'
-// import HeaderMenu from './headerMenu/HeaderMenu'
-import HeaderSocial from './headerSocial/HeaderSocial'
-// import MobileMenuIcon from './MobileMenuIcon'
-// import {mobileMenuOpenStateType} from 'types/hooksTypes'
+
+const HeaderMenu = lazy(() => import('./headerMenu/HeaderMenu')),
+	HeaderSocial = lazy(() => import('./headerSocial/HeaderSocial')),
+	MobileMenuIcon = lazy(() => import('./MobileMenuIcon'))
 
 const HeaderHeader: styledHeaderType = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: ${process.env.NODE_ENV === 'development' ? 'row' : 'row-reversed'};
 	background: none;
 	justify-content: space-between;
 	position: absolute;
@@ -33,13 +33,25 @@ const HeaderHeader: styledHeaderType = styled.header`
 	}
 `
 const Header = () => {
-	// const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
+	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
 
 	return (
 		<HeaderHeader>
-			{/* <HeaderMenu mobileMenuOpen={mobileMenuOpen} /> */}
-			{/* <MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} /> */}
-			<HeaderSocial />
+			{process.env.NODE_ENV === 'development' && (
+				<Fragment>
+					<Suspense fallback={<p>...</p>}>
+						<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
+					</Suspense>
+
+					<Suspense fallback={<p>...</p>}>
+						<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+					</Suspense>
+				</Fragment>
+			)}
+
+			<Suspense fallback={<p>...</p>}>
+				<HeaderSocial />
+			</Suspense>
 		</HeaderHeader>
 	)
 }

@@ -1,17 +1,19 @@
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, {lazy, Suspense} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
-import themeContext from '../context/themeContext'
-import theme from '../context/theme'
-import {styledMainType} from '../types/styledTypes'
-import Header from './header/Header'
-import Instruktor from './routes/instruktor/Instruktor'
-import Main from './routes/main/Main'
-import Osiagniecia from './routes/osiagniecia/Osiagniecia'
-import Zawody from './routes/zawody/Zawody'
 import {routesArrayType} from 'types/allTypes'
+import theme from '../context/theme'
+import themeContext from '../context/themeContext'
+import {styledMainType} from '../types/styledTypes'
+
+const Instruktor = lazy(() => import('./routes/instruktor/Instruktor')),
+	Osiagniecia = lazy(() => import('./routes/osiagniecia/Osiagniecia')),
+	Zawody = lazy(() => import('./routes/zawody/Zawody')),
+	Main = lazy(() => import('./routes/main/Main')),
+	Header = lazy(() => import('./header/Header')),
+	Footer = lazy(() => import('./footer/Footer'))
 
 const bounce = keyframes`
 from,
@@ -42,6 +44,9 @@ to {
 const AppMain: styledMainType = styled.main`
 	min-height: 100vh;
 	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
 	position: relative;
 
 	& > aside {
@@ -54,38 +59,6 @@ const AppMain: styledMainType = styled.main`
 `
 
 const App = () => {
-	// useEffect(() => {
-	// 	let resources
-	// 	;(async () => {
-	// 		function initMap() {
-	// 			map = new google.maps.Map(document.getElementById('map'), {
-	// 				center: {lat: -34.397, lng: 150.644},
-	// 				zoom: 8
-	// 			})
-	// 		}
-
-	// 		let aaa = async () => {
-	// 			if (resources) {
-	// 				await resources
-	// 				return
-	// 			}
-
-	// 			const SCRIPT = document.createElement('script')
-	// 			SCRIPT.type = 'text/javascript'
-	// 			SCRIPT.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDyvK1-DbhdWI6CXi2i_0ejD2CrHpqPb1U'
-
-	// 			document.head.appendChild(SCRIPT)
-	// 			// @ts-ignore
-	// 			SCRIPT.loaded = new Promise((resolved) => (SCRIPT.onload = () => resolved()))
-
-	// 			resources = Promise.all([SCRIPT.loaded])
-	// 			await resources
-	// 		}
-
-	// 		let aaa = await aaa()
-	// 	})()
-	// }, [])
-
 	let routesArray: routesArrayType = [
 		{
 			path: '/',
@@ -108,14 +81,21 @@ const App = () => {
 	return (
 		<AppMain id='app'>
 			<themeContext.Provider value={theme}>
-				<Header />
+				<Suspense fallback={<p>...</p>}>
+					<Header />
+				</Suspense>
 				<Switch>
 					{routesArray.map(({path, component}, index) => (
 						<Route exact path={path} key={index}>
-							{component}
+							<Suspense fallback={<p>...</p>}>{component}</Suspense>
 						</Route>
 					))}
 				</Switch>
+				{process.env.NODE_ENV === 'development' && (
+					<Suspense fallback={<p>...</p>}>
+						<Footer />
+					</Suspense>
+				)}
 				<aside>
 					<FontAwesomeIcon icon={faAngleDoubleDown} color='white' size='4x' />
 				</aside>

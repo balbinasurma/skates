@@ -1,19 +1,20 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, lazy} from 'react'
 import styled from 'styled-components'
+import {pucharPolskiItemArray} from 'types/allTypes'
 import {styledSectionType} from 'types/styledTypes'
-// @ts-ignore
-import katowice from './katowice.jpg'
 // @ts-ignore
 import gdansk from './gdansk.jpg'
 // @ts-ignore
 import gorlice from './gorlice.jpg'
 // @ts-ignore
+import gostyn from './gostyn.jpg'
+// @ts-ignore
 import grodzisk from './grodzisk.jpg'
 // @ts-ignore
-import gostyn from './gostyn.jpg'
-import PucharPolskiItem from './PucharPolskiItem'
-import {pucharPolskiItemArray} from 'types/allTypes'
-import PucharPolskiDivider from './PucharPolskiDivider'
+import katowice from './katowice.jpg'
+
+const PucharPolskiDivider = lazy(() => import('./PucharPolskiDivider')),
+	PucharPolskiItem = lazy(() => import('./PucharPolskiItem'))
 
 const PucharPolskiSection: styledSectionType = styled.section`
 	box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);

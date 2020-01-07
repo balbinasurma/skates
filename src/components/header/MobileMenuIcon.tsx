@@ -1,10 +1,10 @@
+import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React, {useContext} from 'react'
 import styled from 'styled-components'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons'
-import {styledButtonType} from '../../types/styledTypes'
 import {MobileMenuIconPropsType} from 'types/propsTypes'
 import themeContext from '../../context/themeContext'
+import {styledButtonType} from '../../types/styledTypes'
 
 const MobileMenuIconButton: styledButtonType = styled.button`
 	background: none;
@@ -26,7 +26,7 @@ const MobileMenuIcon = ({mobileMenuOpen, setMobileMenuOpen}: MobileMenuIconProps
 
 	return (
 		// @ts-ignore
-		<MobileMenuIconButton headerItemHeight={headerItemHeight}>
+		<MobileMenuIconButton headerItemHeight={headerItemHeight} aria-label='menu'>
 			<FontAwesomeIcon
 				onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 				icon={mobileMenuOpen ? faTimes : faBars}

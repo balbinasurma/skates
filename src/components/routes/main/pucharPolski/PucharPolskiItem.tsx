@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styledArticleType} from 'types/styledTypes'
 import {pucharPolskiItemPropsType} from 'types/propsTypes'
+import {styledArticleType} from 'types/styledTypes'
 
 const PucharPolskiItemArticle: styledArticleType = styled.article`
 	display: flex;

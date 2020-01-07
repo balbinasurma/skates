@@ -17,6 +17,7 @@ const HeroHeader = styled.header`
 		left: 0;
 		width: 100%;
 		height: 100%;
+		// @ts-ignore
 		background-image: url(${heroImage});
 		background-size: cover;
 		background-position: center top;
