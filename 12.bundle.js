@@ -1,45 +1,13 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{58:function(e,t,n){"use strict";n.r(t);var a=n(0),i=n.n(a);const r=n(10).a.article`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{59:function(e,a,n){"use strict";n.r(a);var t=n(0),r=n.n(t),l=n(10),i=n(20),c=n(19);const o=l.a.aside`
+	margin: 50px 0;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	height: 100vh;
-	margin-bottom: 50px;
 
-	& > h3 {
-		font-size: 24px;
-		text-transform: uppercase;
-		text-align: center;
-		font-weight: 700;
-		letter-spacing: 5px;
+	& > hr {
+		width: 40%;
+		border-color: lightgray;
+		color: red;
+		height: 1px;
 	}
-
-	& > h2 {
-		font-size: 70px;
-		text-transform: uppercase;
-		text-align: center;
-		font-weight: 700;
-		// letter-spacing: 5px;
-	}
-
-	& > img {
-		max-width: 100%;
-		height: auto;
-	}
-
-	& > h4 {
-		text-align: justify;
-		font-size: 20px;
-		letter-spacing: 2px;
-	}
-
-	& > div {
-		// @ts-ignore
-		background-image: ${({picture:e})=>`url(${e})`};
-		background-size: auto;
-		background-position: center top;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 60%;
-	}
-`;t.default=({title:e,comment:t,date:n,picture:a})=>i.a.createElement(r,{picture:a},i.a.createElement("h3",null,e),i.a.createElement("h2",null,n),i.a.createElement("h4",null,t),i.a.createElement("div",null))}}]);
+`;a.default=()=>r.a.createElement(o,null,r.a.createElement("hr",null),r.a.createElement(c.a,{icon:i.e,size:"2x"}),r.a.createElement("hr",null))}}]);

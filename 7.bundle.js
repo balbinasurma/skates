@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{51:function(n,t,a){"use strict";a.r(t);var e=a(0),o=a.n(e);const s=a(10).a.main``;t.default=()=>o.a.createElement(s,null,"Instruktor")}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{53:function(n,t,a){"use strict";a.r(t);var e=a(0),o=a.n(e);const s=a(10).a.main``;t.default=()=>o.a.createElement(s,null,"Instruktor")}}]);

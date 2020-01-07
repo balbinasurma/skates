@@ -1,35 +1,44 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{47:function(e,a,t){"use strict";t.r(a);var i=t(0),n=t.n(i),o=t(10),c=t.p+"6befdd70258d923c50aafb15ffec9c2f.jpg",r=t.p+"574a7fafc98a0bf32e8d71570bbd6408.jpg",d=t.p+"9ce97a56a6d0127562d52aa5bbe3ac1e.jpg",l=t.p+"91b6656bee828d8f9817486182751442.jpg",s=t.p+"dda8d404a1f29fe8e5ec49df0cbf3262.jpg";const p=Object(i.lazy)(()=>t.e(11).then(t.bind(null,57))),u=Object(i.lazy)(()=>t.e(12).then(t.bind(null,58))),m=o.a.section`
-	box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
-	display: flex;
-	flex-direction: column;
-	padding: 100px 10%;
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{50:function(e,t,n){"use strict";n.r(t);var i=n(0),a=n.n(i),o=n(10),r=n.p+"6befdd70258d923c50aafb15ffec9c2f.jpg";const c=o.a.header`
+	height: calc(100vh - 5px);
+	position: relative;
+	flex-direction: column-reverse;
 
-	& > h1 {
-		font-size: 35px;
-		text-transform: uppercase;
-		text-align: center;
-		font-weight: 700;
-		letter-spacing: 5px;
-		margin-top: 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url(${r});
+		background-size: cover;
+		background-position: center top;
+		z-index: -1;
+		filter: ${({heroScrollPercentage:e})=>`grayscale(70%) brightness(85%) blur(${7*e}px)`};
 	}
 
-	& > aside {
-		margin: 50px 0;
-		width: 100%;
-		display: flex;
-
-		& > hr {
-			width: 40%;
-			border-color: lightgray;
-			color: red;
-		}
+	& > main {
+		width: 400px;
+		max-width: 100vw;
+		height: auto;
+		text-align: justify;
+		color: white;
+		line-height: 100%;
+		font-size: 9vw;
+		z-index: 1;
+		text-shadow: 1px 1px 1px gray;
 	}
 
 	@media only screen and (max-width: 900px) {
-		padding: 100px 5%;
+		& > main {
+			font-size: 14vw;
+		}
 	}
 
 	@media only screen and (max-width: 600px) {
-		padding: 100px 1%;
+		& > main {
+			font-size: 24vw;
+		}
 	}
-`;let w=[{title:"X Puchar Śląska Katowice",date:"01.09.2019",picture:s,comment:"Finał Długodystansowego Pucharu Polski 2019 na dystansie maratonu w Katowicach. Sezon rolkowy zakończony 7 msc w generalnej klasyfikacji OPEN PP wśród Polek i 4 msc Finału Pucharu Kaszub w klasyfikacji OPEN!"},{title:"XI Maraton Sierpniowy Gdańsk",date:"17.08.2019",picture:c,comment:"Długodystansowe Mistrzostwa Polski na dystansie maratonu i IV edycja Pucharu Polski w Gdańsku. Nowy rekord trasy... lekcje odrobione"},{title:"Weekend Pełen Energii Gorlice",date:"18.05.2019",picture:r,comment:"III Edycja Pucharu Polski w Gorlicach zaliczona i zakończona życiówką na dystansie maratonu 1:29:53"},{title:"IV Półmaraton o Dzban Bernarda Grodzisk Wielkopolski",date:"27.04.2019",picture:l,comment:"Długodystansowe Mistrzostwa Polski na dystansie półmaratonu oraz II edycja Pucharu Polski w Grodzisku Wielkopolskim. III msc w kategorii wiekowej"},{title:"II Wyścig o Puchar Siemowita Gostynin",date:"14.04.2019",picture:d,comment:""}];a.default=()=>n.a.createElement(m,null,w.map(({title:e,date:a,picture:t,comment:o},c)=>n.a.createElement(i.Fragment,{key:c},n.a.createElement(u,{comment:o,picture:t,date:a,title:e}),c!==w.length-1&&n.a.createElement(p,null))))}}]);
+`;t.default=()=>{const e=Object(i.useRef)(),[t,n]=Object(i.useState)(0);return Object(i.useEffect)(()=>{document.addEventListener("scroll",()=>{let t=window.scrollY,i=e.current.clientHeight;t<i&&n(t/i)})},[]),a.a.createElement(c,{ref:e,heroScrollPercentage:t},a.a.createElement("main",null,"Balbina Surma"))}}}]);
