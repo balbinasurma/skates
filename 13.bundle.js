@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{52:function(n,a,e){"use strict";e.r(a);var i=e(0),c=e.n(i);const s=e(10).a.main``;a.default=()=>c.a.createElement(s,null,"Osiagniecia")}}]);
