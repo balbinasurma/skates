@@ -1,47 +1,31 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{49:function(e,t,n){"use strict";n.r(t);var a=n(0),i=n.n(a),r=n(10),o=n.p+"cc0a229e4f05748f0ace983dbf00fb34.jpg";const l=r.a.section`
-	align-items: center;
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{56:function(e,n,a){"use strict";a.r(n);var l=a(0),t=a.n(l),c=a(10);const i=Object(l.lazy)(()=>a.e(10).then(a.bind(null,49))),d=Object(l.lazy)(()=>a.e(11).then(a.bind(null,50))),h=Object(l.lazy)(()=>a.e(12).then(a.bind(null,48))),p=c.a.main`
+	height: auto;
 
-	& > h1 {
-		font-size: 50px;
-		margin: 0;
-		text-align: center;
-	}
-
-	& > main {
-		margin-top: 4vh;
-		width: 100%;
-		height: 100%;
+	& > * {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
+		padding: 10vh 10%;
+		min-height: 100vh;
+		height: 100vh;
 
-		& > img {
-			max-width: 50%;
-			max-height: 100%;
-			height: auto;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			/* border: 5px solid transparent; */
+		&:nth-child(2) {
+			box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
+		}
+
+		&:last-child {
+			height: unset;
 		}
 	}
 
 	@media only screen and (max-width: 900px) {
-		border: 1px solid blue;
+		& > * {
+			padding: 5vh 5%;
+		}
 	}
 
 	@media only screen and (max-width: 600px) {
-		border: 1px solid green;
-		height: auto;
-
-		& > h1 {
-			font-size: 7vh;
-		}
-
-		& > main {
-			flex-direction: column;
-
-			& > img {
-				max-width: 100%;
-			}
+		& > * {
+			padding: 5vh 1%;
 		}
 	}
-`;t.default=()=>i.a.createElement(l,null,i.a.createElement("h1",null,"Ferie Zimowe 2019"),i.a.createElement("main",null,i.a.createElement("img",{src:o,alt:"poster"})))}}]);
+`;n.default=()=>t.a.createElement(p,{id:"main"},t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(d,null)),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(i,null)),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(h,null)))}}]);

@@ -1,13 +1,49 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{52:function(e,t,a){"use strict";a.r(t);var n=a(46),i=a(20),l=a(0),o=a.n(l),r=a(10),c=a(18),b=a(19);const s=r.a.a`
-	width: 80px;
-	height: ${({headerItemHeight:e})=>e};
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{51:function(e,t,n){"use strict";n.r(t);var o=n(0),i=n.n(o),a=n(10),r=n(19),s=n(12);const l=Object(a.a)(s.b)`
+	height: 50%;
+	display: flex;
 	background: none;
+	color: white;
 	border: none;
+	text-align: center;
+	padding: 0 10px;
+	justify-content: center;
 	cursor: pointer;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 10px;
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	transition: border 0.8s;
+	text-shadow: 1px 1px 1px gray;
+
+	&:first-child {
+		border-bottom: 3px solid white;
+	}
+
+	&:hover {
+		border-color: white;
+	}
+
+	@media only screen and (max-width: 900px) {
+		height: ${({headerItemHeight:e})=>e};
+		border-color: transparent !important;
+		align-items: center;
+	}
+
+`;var p=({title:e,path:t})=>{const{headerItemHeight:n}=Object(o.useContext)(r.a);return(i.a.createElement(l,{headerItemHeight:n,to:t},e))};const d=a.a.nav`
+	min-height: ${({headerItemHeight:e})=>e};
 	display: flex;
 	align-items: center;
-	justify-content: center;
-`;var h=({icon:e,link:t,label:a})=>{const{headerItemHeight:n}=Object(l.useContext)(c.a);return o.a.createElement(s,{headerItemHeight:n,href:t,target:"_blank",rel:"noopener","aria-label":a},o.a.createElement(b.a,{icon:e,color:"white",size:"3x"}))};const m=r.a.section`
-	display: flex;
-	min-height: ${({headerItemHeight:e})=>e};
-`;t.default=()=>{const{headerItemHeight:e}=Object(l.useContext)(c.a);let t=[{label:"email",icon:i.b,link:"mailto:balbina.surma@gmail.gmail?subject=Kontakt ze strony internetowej"},{label:"LinkedIn",icon:n.b,link:"https://pl.linkedin.com/in/balbina-surma-5a78a8171"},{label:"Facebook",icon:n.a,link:"http://facebook.com/balbina.surma.1"}];return o.a.createElement(m,{headerItemHeight:e},t.map(({icon:e,link:t,label:a},n)=>o.a.createElement(h,{label:a,icon:e,link:t,key:n})))}}}]);
+	position: relative;
+
+	@media only screen and (max-width: 900px) {
+		flex-direction: column;
+		display: ${({mobileMenuOpen:e})=>e?"block":"none"};
+		position: absolute;
+		left: 0;
+		top: ${({headerItemHeight:e})=>e};
+		width: 100%;
+	}
+`;let h=[{title:"głowna",path:"/"},{title:"osiągnięcia",path:"/osiagniecia"},{title:"instruktor",path:"/instruktor"},{title:"zawody",path:"/zawody"}];t.default=({mobileMenuOpen:e})=>{const{headerItemHeight:t}=Object(o.useContext)(r.a);return i.a.createElement(d,{headerItemHeight:t,mobileMenuOpen:e},h.map(({title:e,path:t},n)=>i.a.createElement(p,{title:e,path:t,key:n})))}}}]);

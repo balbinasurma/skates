@@ -1,12 +1,25 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{47:function(e,n,t){"use strict";t.r(n);var o=t(20),a=t(19),i=t(0),r=t.n(i),c=t(10),d=t(18);const s=c.a.button`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{57:function(e,n,a){"use strict";a.r(n);var t=a(0),l=a.n(t),c=a(10),i=a(13);const r=Object(t.lazy)(()=>a.e(6).then(a.bind(null,51))),s=Object(t.lazy)(()=>Promise.all([a.e(1),a.e(7)]).then(a.bind(null,52))),d=Object(t.lazy)(()=>a.e(5).then(a.bind(null,47))),o=c.a.header`
+	height: auto;
+	padding: 0 1vw;
+	display: flex;
+	flex-direction: ${Object(i.a)()?"row":"row-reverse"};
 	background: none;
-	border: none;
-	width: 80px;
-	height: ${({headerItemHeight:e})=>e};
-	cursor: pointer;
-	display: none;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+
+	& > span {
+		display: none;
+	}
+
+	@media only screen and (max-width: 600px) {
+		padding: 0;
+	}
 
 	@media only screen and (max-width: 900px) {
-		display: block;
+		padding: 0;
 	}
-`;n.default=({mobileMenuOpen:e,setMobileMenuOpen:n})=>{const{headerItemHeight:t}=Object(i.useContext)(d.a);return r.a.createElement(s,{headerItemHeight:t,"aria-label":"menu"},r.a.createElement(a.a,{onClick:()=>n(!e),icon:e?o.d:o.c,color:"white",size:"3x"}))}}}]);
+`;n.default=()=>{const[e,n]=Object(t.useState)(!1);return l.a.createElement(o,null,Object(i.a)()&&l.a.createElement(t.Fragment,null,l.a.createElement(t.Suspense,{fallback:l.a.createElement("p",null,"...")},l.a.createElement(r,{mobileMenuOpen:e})),l.a.createElement(t.Suspense,{fallback:l.a.createElement("p",null,"...")},l.a.createElement(d,{mobileMenuOpen:e,setMobileMenuOpen:n}))),l.a.createElement(t.Suspense,{fallback:l.a.createElement("p",null,"...")},l.a.createElement(s,null)))}}}]);
