@@ -76,8 +76,6 @@ const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemProps
 
 					// @ts-ignore
 					target.parentElement.scrollLeft = pictureWidth / 3
-
-					console.log('aaa')
 				}}
 			/>
 		</div>

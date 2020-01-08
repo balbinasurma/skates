@@ -1,9 +1,8 @@
+import {faTrophy} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import {styledAsideType} from 'types/styledTypes'
-
-import {faTrophy} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const PucharPolskiDividerAside: styledAsideType = styled.aside`
 	margin: 50px 0;

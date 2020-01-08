@@ -33,7 +33,7 @@ const MainMain: styledMainType = styled.main`
 
 	@media only screen and (max-width: 600px) {
 		& > * {
-			padding: 3vh 1%;
+			padding: 5vh 1%;
 		}
 	}
 `

@@ -54,7 +54,7 @@ const Ferie2019Section: styledSectionType = styled.section`
 
 const Ferie2019 = () => (
 	<Ferie2019Section>
-		<h1>Ferie Zimowe 2019</h1>
+		<h1>Ferie Zimowe 2019/2020</h1>
 		<main>
 			<img src={poster} alt={'poster'} />
 		</main>

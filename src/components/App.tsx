@@ -14,7 +14,8 @@ const Instruktor = lazy(() => import('./routes/instruktor/Instruktor')),
 	Zawody = lazy(() => import('./routes/zawody/Zawody')),
 	Main = lazy(() => import('./routes/main/Main')),
 	Header = lazy(() => import('./header/Header')),
-	Footer = lazy(() => import('./footer/Footer'))
+	Footer = lazy(() => import('./footer/Footer')),
+	Test = lazy(() => import('./Test'))
 
 const bounce = keyframes`
 from,
@@ -85,6 +86,11 @@ const App = () => {
 				<Suspense fallback={<p>...</p>}>
 					<Header />
 				</Suspense>
+				{isDevelopment() && (
+					<Suspense fallback={<p>...</p>}>
+						<Test />
+					</Suspense>
+				)}
 				<Switch>
 					{routesArray.map(({path, component}, index) => (
 						<Route exact path={path} key={index}>
