@@ -1,25 +1,31 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{56:function(e,n,a){"use strict";a.r(n);var l=a(0),t=a.n(l),c=a(10);const d=Object(l.lazy)(()=>a.e(9).then(a.bind(null,46))),i=Object(l.lazy)(()=>a.e(10).then(a.bind(null,50))),p=Object(l.lazy)(()=>a.e(11).then(a.bind(null,49))),s=c.a.main`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{56:function(e,n,a){"use strict";a.r(n);var l=a(0),t=a.n(l),c=a(10);const i=Object(l.lazy)(()=>a.e(9).then(a.bind(null,49))),d=Object(l.lazy)(()=>a.e(10).then(a.bind(null,50))),h=Object(l.lazy)(()=>a.e(11).then(a.bind(null,48))),p=c.a.main`
 	height: auto;
 
 	& > * {
 		display: flex;
 		flex-direction: column;
-		padding: 100px 10%;
+		padding: 10vh 10%;
+		min-height: 100vh;
+		height: 100vh;
 
 		&:nth-child(2) {
 			box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
+		}
+
+		&:last-child {
+			height: unset;
 		}
 	}
 
 	@media only screen and (max-width: 900px) {
 		& > * {
-			padding: 100px 5%;
+			padding: 5vh 5%;
 		}
 	}
 
 	@media only screen and (max-width: 600px) {
 		& > * {
-			padding: 100px 1%;
+			padding: 3vh 1%;
 		}
 	}
-`;n.default=()=>(console.log(d),t.a.createElement(s,{id:"main"},t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(i,null),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")})),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(p,null))))}}]);
+`;n.default=()=>t.a.createElement(p,{id:"main"},t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(d,null)),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(i,null)),t.a.createElement(l.Suspense,{fallback:t.a.createElement("p",null,"...")},t.a.createElement(h,null)))}}]);

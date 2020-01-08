@@ -1,5 +1,5 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{58:function(e,o,t){"use strict";t.r(o);var n=t(0),r=t.n(n);const a=t(10).a.footer`
-	border: 1px solid red;
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{58:function(e,o,n){"use strict";n.r(o);var t=n(0),r=n.n(t);const a=n(10).a.footer`
+	border: 1px solid green;
 	width: 100%;
 	height: 200px;
 `;o.default=()=>r.a.createElement(a,null,"footer")}}]);
