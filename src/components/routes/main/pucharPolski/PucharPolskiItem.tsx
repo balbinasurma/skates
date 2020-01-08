@@ -71,8 +71,10 @@ const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemProps
 				src={picture}
 				alt={title}
 				onLoad={({target}) => {
+					// @ts-ignore
 					let pictureWidth = target.width
 
+					// @ts-ignore
 					target.parentElement.scrollLeft = pictureWidth / 3
 
 					console.log('aaa')
