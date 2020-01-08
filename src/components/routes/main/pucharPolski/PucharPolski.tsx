@@ -82,7 +82,7 @@ const PucharPolski = () => (
 		{pucharPolskiDataArray.map(({title, date, picture, comment}, index) => (
 			<Fragment key={index}>
 				<PucharPolskiItem comment={comment} picture={picture} date={date} title={title} />
-				{index !== pucharPolskiDataArray.length - 1 && <PucharPolskiDivider />}
+				<PucharPolskiDivider />
 			</Fragment>
 		))}
 	</PucharPolskiSection>

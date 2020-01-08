@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterFooter = styled.footer`
-	border: 1px solid red;
+	border: 1px solid green;
 	width: 100%;
 	height: 200px;
 `

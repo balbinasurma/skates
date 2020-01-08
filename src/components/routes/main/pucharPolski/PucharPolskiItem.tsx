@@ -7,7 +7,7 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 	margin-bottom: 50px;
 
 	& > h3 {
@@ -26,9 +26,18 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 		// letter-spacing: 5px;
 	}
 
-	& > img {
-		max-width: 100%;
-		height: auto;
+	& > div {
+		min-width: 100%;
+		max-height: 100vh;
+		display: flex;
+		align-items: center;
+
+		& > img {
+			margin: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 100vh;
+		}
 	}
 
 	& > h4 {
@@ -37,25 +46,39 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 		letter-spacing: 2px;
 	}
 
-	& > div {
-		// @ts-ignore
-		background-image: ${({picture}) => `url(${picture})`};
-		background-size: auto;
-		background-position: center top;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 60%;
+	@media only screen and (max-width: 600px) {
+		& > div {
+			height: 98vh;
+			overflow-y: auto;
+			max-width: 100vw;
+
+			& > img {
+				height: 95%;
+				width: auto;
+				max-width: unset;
+			}
+		}
 	}
 `
 
 const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemPropsType) => (
-	// @ts-ignore
-	<PucharPolskiItemArticle picture={picture}>
+	<PucharPolskiItemArticle>
 		<h3>{title}</h3>
 		<h2>{date}</h2>
 		<h4>{comment}</h4>
-		<div />
+		<div>
+			<img
+				src={picture}
+				alt={title}
+				onLoad={({target}) => {
+					let pictureWidth = target.width
+
+					target.parentElement.scrollLeft = pictureWidth / 3
+
+					console.log('aaa')
+				}}
+			/>
+		</div>
 	</PucharPolskiItemArticle>
 )
 

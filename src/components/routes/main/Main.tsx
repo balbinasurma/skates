@@ -12,22 +12,28 @@ const MainMain: styledMainType = styled.main`
 	& > * {
 		display: flex;
 		flex-direction: column;
-		padding: 100px 10%;
+		padding: 10vh 10%;
+		min-height: 100vh;
+		height: 100vh;
 
 		&:nth-child(2) {
 			box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
+		}
+
+		&:last-child {
+			height: unset;
 		}
 	}
 
 	@media only screen and (max-width: 900px) {
 		& > * {
-			padding: 100px 5%;
+			padding: 5vh 5%;
 		}
 	}
 
 	@media only screen and (max-width: 600px) {
 		& > * {
-			padding: 100px 1%;
+			padding: 3vh 1%;
 		}
 	}
 `
@@ -37,9 +43,10 @@ const Main = () => {
 		<MainMain id='main'>
 			<Suspense fallback={<p>...</p>}>
 				<Hero />
-				<Suspense fallback={<p>...</p>} />
 			</Suspense>
-			<Ferie2019 />
+			<Suspense fallback={<p>...</p>}>
+				<Ferie2019 />
+			</Suspense>
 			<Suspense fallback={<p>...</p>}>
 				<PucharPolski />
 			</Suspense>
