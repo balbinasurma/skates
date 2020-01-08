@@ -42,4 +42,10 @@
 		width: 100%;
 		height: 60%;
 	}
+
+	@media only screen and (max-width: 900px) {
+		& > div {
+			background-attachment: scroll;
+		}
+	}
 `;t.default=({title:e,comment:t,date:n,picture:a})=>i.a.createElement(r,{picture:a},i.a.createElement("h3",null,e),i.a.createElement("h2",null,n),i.a.createElement("h4",null,t),i.a.createElement("div",null))}}]);
