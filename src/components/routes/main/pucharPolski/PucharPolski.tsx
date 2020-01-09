@@ -52,20 +52,20 @@ let pucharPolskiDataArray: pucharPolskiItemArray = [
 		date: '17.08.2019',
 		picture: gdansk,
 		comment:
-			'Długodystansowe Mistrzostwa Polski na dystansie maratonu i IV edycja Pucharu Polski w Gdańsku. Nowy rekord trasy... lekcje odrobione'
+			'Długodystansowe Mistrzostwa Polski na dystansie maratonu i IV edycja Pucharu Polski w Gdańsku. Nowy rekord trasy... lekcje odrobione.'
 	},
 	{
 		title: 'Weekend Pełen Energii Gorlice',
 		date: '18.05.2019',
 		picture: gorlice,
-		comment: 'III Edycja Pucharu Polski w Gorlicach zaliczona i zakończona życiówką na dystansie maratonu 1:29:53'
+		comment: 'III Edycja Pucharu Polski w Gorlicach zaliczona i zakończona życiówką na dystansie maratonu 1:29:53.'
 	},
 	{
 		title: 'IV Półmaraton o Dzban Bernarda Grodzisk Wielkopolski',
 		date: '27.04.2019',
 		picture: grodzisk,
 		comment:
-			'Długodystansowe Mistrzostwa Polski na dystansie półmaratonu oraz II edycja Pucharu Polski w Grodzisku Wielkopolskim. III msc w kategorii wiekowej'
+			'Długodystansowe Mistrzostwa Polski na dystansie półmaratonu oraz II edycja Pucharu Polski w Grodzisku Wielkopolskim. III msc w kategorii wiekowej!'
 	},
 	{
 		title: 'II Wyścig o Puchar Siemowita Gostynin',
