@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import styled, {keyframes} from 'styled-components'
 
 const bounce = keyframes`
@@ -33,6 +33,7 @@ const TestSection = styled.section`
 	height: 750px;
 	background: white;
 	z-index: 10;
+	display: none;
 
 	& > svg {
 		width: 100%;
@@ -47,11 +48,17 @@ const TestSection = styled.section`
 `
 
 const Test = () => {
+	const testSVGRef = useRef()
+
+	useEffect(() => {
+		console.log(testSVGRef)
+
+		//	testSVGRef.current.append(<circle cx='100' cy='100' r='50' />)
+	}, [])
+
 	return (
 		<TestSection>
-			<svg>
-				<circle cx='350' cy='350' r='300' />
-			</svg>
+			<svg />
 		</TestSection>
 	)
 }

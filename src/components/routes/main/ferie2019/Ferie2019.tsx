@@ -28,6 +28,20 @@ const Ferie2019Section: styledSectionType = styled.section`
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			/* border: 5px solid transparent; */
 		}
+
+		& > div {
+			border: 1px solid red;
+			width: 50%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+
+			& > * {
+				width: 100%;
+				border: 1px solid red;
+				height: 50%;
+			}
+		}
 	}
 
 	@media only screen and (max-width: 900px) {
@@ -57,6 +71,10 @@ const Ferie2019 = () => (
 		<h1>Ferie Zimowe 2019/2020</h1>
 		<main>
 			<img src={poster} alt={'poster'} />
+			<div>
+				<p>pppppp</p>
+				<p>pppppppppp</p>
+			</div>
 		</main>
 	</Ferie2019Section>
 )
