@@ -19,7 +19,7 @@ const HeaderSocial = () => {
 	const {headerItemHeight} = useContext(themeContext)
 
 	let socialMedia: socialMediaArrayType = [
-		{label: 'email', icon: faAt, link: 'mailto:balbina.surma@gmail.gmail?subject=Kontakt ze strony internetowej'},
+		{label: 'email', icon: faAt, link: 'mailto:balbina.surma@gmail.com?subject=Kontakt ze strony internetowej'},
 		{label: 'LinkedIn', icon: faLinkedin, link: 'https://pl.linkedin.com/in/balbina-surma-5a78a8171'},
 		{label: 'Facebook', icon: faFacebookSquare, link: 'http://facebook.com/balbina.surma.1'}
 	]

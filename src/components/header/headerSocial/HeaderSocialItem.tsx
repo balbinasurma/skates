@@ -17,6 +17,7 @@ const HeaderSocialItemA =
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
 `
 
 const HeaderSocialItem = ({icon, link, label}: headerSocialItemPropsType) => {
