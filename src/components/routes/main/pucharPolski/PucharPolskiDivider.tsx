@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import {styledAsideType} from 'types/styledTypes'
 
 const PucharPolskiDividerAside: styledAsideType = styled.aside`
-	margin: 50px 0;
+	margin: 75px 0;
 	width: 100%;
 	display: flex;
 	align-items: center;

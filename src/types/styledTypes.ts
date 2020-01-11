@@ -8,6 +8,7 @@ export type styledArticleType = StyledComponent<'article', never>
 export type styledAsideType = StyledComponent<'aside', never>
 export type styledButtonType = StyledComponent<'button', never>
 export type styledDivType = StyledComponent<'div', never>
+export type styledH1Type = StyledComponent<'h1', never>
 export type styledHeaderType = StyledComponent<'header', never>
 export type styledLinkType = StyledComponent<typeof Link, never>
 export type styledMainType = StyledComponent<'main', never>

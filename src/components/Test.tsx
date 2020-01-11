@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 import styled, {keyframes} from 'styled-components'
 
 const bounce = keyframes`
@@ -41,20 +41,12 @@ const TestSection = styled.section`
 
 		& > circle {
 			stroke: red;
-			/* fill: red; */
-			/* animation: ${bounce} 2s linear infinite; */
 		}
 	}
 `
 
 const Test = () => {
 	const testSVGRef = useRef()
-
-	useEffect(() => {
-		console.log(testSVGRef)
-
-		//	testSVGRef.current.append(<circle cx='100' cy='100' r='50' />)
-	}, [])
 
 	return (
 		<TestSection>

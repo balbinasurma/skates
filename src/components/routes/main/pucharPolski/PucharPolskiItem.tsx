@@ -9,7 +9,6 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 	align-items: center;
 	height: 100vh;
 	padding: 1% 0;
-	border: 1px solid green;
 	position: relative;
 	box-sizing: border-box;
 

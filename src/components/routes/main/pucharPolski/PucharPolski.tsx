@@ -25,18 +25,6 @@ const PucharPolskiSection: styledSectionType = styled.section`
 		letter-spacing: 5px;
 		margin-top: 0;
 	}
-
-	& > aside {
-		margin: 50px 0;
-		width: 100%;
-		display: flex;
-
-		& > hr {
-			width: 40%;
-			border-color: lightgray;
-			color: red;
-		}
-	}
 `
 
 let pucharPolskiDataArray: pucharPolskiItemArray = [
