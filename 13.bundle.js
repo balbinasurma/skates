@@ -1,5 +1,5 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[13],{60:function(e,a,n){"use strict";n.r(a);var t=n(21),r=n(20),l=n(0),i=n.n(l);const c=n(10).a.aside`
-	margin: 50px 0;
+	margin: 75px 0;
 	width: 100%;
 	display: flex;
 	align-items: center;

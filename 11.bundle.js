@@ -16,6 +16,7 @@
 		background-position: center top;
 		z-index: -1;
 		filter: ${({heroScrollPercentage:e})=>`grayscale(70%) brightness(85%) blur(${7*e}px)`};
+		transition-timing-function: cubic-bezier(.95,.02,.75,.66);
 	}
 
 	& > main {
