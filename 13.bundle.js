@@ -10,4 +10,4 @@
 		color: red;
 		height: 1px;
 	}
-`;a.default=()=>i.a.createElement(c,null,i.a.createElement("hr",null),i.a.createElement(r.a,{icon:t.e,size:"2x"}),i.a.createElement("hr",null))}}]);
+`;a.default=()=>i.a.createElement(c,null,i.a.createElement("hr",null),i.a.createElement(r.a,{icon:t.i,size:"2x"}),i.a.createElement("hr",null))}}]);

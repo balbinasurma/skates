@@ -9,4 +9,4 @@
 	@media only screen and (max-width: 900px) {
 		display: block;
 	}
-`;n.default=({mobileMenuOpen:e,setMobileMenuOpen:n})=>{const{headerItemHeight:t}=Object(i.useContext)(d.a);return r.a.createElement(s,{headerItemHeight:t,"aria-label":"menu"},r.a.createElement(a.a,{onClick:()=>n(!e),icon:e?o.d:o.c,color:"white",size:"3x"}))}}}]);
+`;n.default=({mobileMenuOpen:e,setMobileMenuOpen:n})=>{const{headerItemHeight:t}=Object(i.useContext)(d.a);return r.a.createElement(s,{headerItemHeight:t,"aria-label":"menu"},r.a.createElement(a.a,{onClick:()=>n(!e),icon:e?o.h:o.c,color:"white",size:"3x"}))}}}]);
