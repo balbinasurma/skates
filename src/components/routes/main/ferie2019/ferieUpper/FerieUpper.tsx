@@ -1,4 +1,4 @@
-import {faCalendarAlt, faClock, faMapMarkedAlt, faSkating} from '@fortawesome/free-solid-svg-icons'
+import {faCalendarAlt, faClock, faMapMarkedAlt, faSkating, IconDefinition} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
@@ -129,7 +129,12 @@ const FerieUpper = () => {
 		'Zabierz strój sportowy, a także jeśli posiadasz własne rolki. Nie jest to jednak koniecznością - naukę wrotkarstwa zaczyna się właśnie od ćwiczeń w butach :-)'
 	]
 
-	let infoData = [
+	interface infoDataItemInterface {
+		icon: IconDefinition
+		value: string
+	}
+
+	let infoData: infoDataItemInterface[] = [
 		{icon: faCalendarAlt, value: '27 styczeń\n - 2 luty'},
 		{icon: faClock, value: 'w czasie zajęć sportowych'},
 		{icon: faMapMarkedAlt, value: 'Szkoła Podstawowa nr. 2 w świeciu '}
