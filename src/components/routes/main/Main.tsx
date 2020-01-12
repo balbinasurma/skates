@@ -16,7 +16,8 @@ const MainMain: styledMainType = styled.main`
 		min-height: 100vh;
 		height: 100vh;
 
-		&:nth-child(2) {
+		&:nth-child(2),
+		:nth-child(3) {
 			box-shadow: 0 -3px 6px rgba(0, 0, 0, .5);
 		}
 
