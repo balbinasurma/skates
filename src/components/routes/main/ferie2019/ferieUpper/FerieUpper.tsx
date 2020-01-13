@@ -119,7 +119,7 @@ const FerieUpperDiv: styledDivType = styled.div`
 const FerieUpper = () => {
 	let infoText: string[] = [
 		'Cześć!',
-		'Już w pierwszy tydzień ferii zapraszam serdecznie dzieci i młodzież ze Szkoły Podstawowej nr 2 w Świeciu na bezpłatne warsztaty z techniki jazdy szybkiej na rolkach.',
+		'Już w pierwszy tydzień ferii zapraszam dzieci i młodzież ze Szkoły Podstawowej nr 2 w Świeciu na bezpłatne warsztaty z techniki jazdy szybkiej na rolkach.',
 		'Warsztaty odbędą się w ramach trwania zajęć sportowych ,,białych ferii’’ na sali gimnastycznej szkoły.',
 		'Obejmować będą m.in. ćwiczenia prawidłowej postawy rolkarskiej, bezpiecznego hamowania i upadku, jeśli tylko czas pozwoli zapraszam do gry w hokeja na rolkach!',
 		'Dwie drużyny z zawodnikami mieszanymi w butach/na rolkach - może być ciekawie :-)',
