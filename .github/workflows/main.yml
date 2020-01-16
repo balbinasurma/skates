@@ -30,9 +30,10 @@ jobs:
       - name: git
         run: |
           git init
-          git add .
-          git status
           git config  user.email grandalf6@gmail.com
           git config user.email
           git config user.name Presh Rychlewicz
           git config user.name
+          type nul > hello.txt
+          git add .
+          git status
