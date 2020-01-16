@@ -32,6 +32,5 @@ jobs:
           git init
           git add .
           git status
-          git config  user.email "grandalf6@gmail.com"
-          git commit -m "automatic push"
-          git status
+          git config  user.email grandalf6@gmail.com
+        
