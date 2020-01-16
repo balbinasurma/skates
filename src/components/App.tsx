@@ -7,16 +7,10 @@ import {routesArrayType} from 'types/allTypes'
 import theme from '../context/theme'
 import themeContext from '../context/themeContext'
 import injectTagInHtml from '../functions/injectTagInHtml'
-import isDevelopment from '../functions/isDevelopment'
 import {styledMainType} from '../types/styledTypes'
 
-const Instruktor = lazy(() => import('./routes/instruktor/Instruktor')),
-	Osiagniecia = lazy(() => import('./routes/osiagniecia/Osiagniecia')),
-	Zawody = lazy(() => import('./routes/zawody/Zawody')),
-	Main = lazy(() => import('./routes/main/Main')),
-	Header = lazy(() => import('./header/Header')),
-	Footer = lazy(() => import('./footer/Footer')),
-	Test = lazy(() => import('./Test'))
+const Main = lazy(() => import('./routes/main/Main')),
+	Header = lazy(() => import('./header/Header'))
 
 const bounce = keyframes`
 from,
@@ -66,18 +60,6 @@ const App = () => {
 		{
 			path: '/',
 			component: <Main />
-		},
-		{
-			path: '/osiagniecia',
-			component: <Osiagniecia />
-		},
-		{
-			path: '/instruktor',
-			component: <Instruktor />
-		},
-		{
-			path: '/zawody',
-			component: <Zawody />
 		}
 	]
 
@@ -91,11 +73,7 @@ const App = () => {
 				<Suspense fallback={<p>...</p>}>
 					<Header />
 				</Suspense>
-				{isDevelopment() && (
-					<Suspense fallback={<p>...</p>}>
-						<Test />
-					</Suspense>
-				)}
+
 				<Switch>
 					{routesArray.map(({path, component}, index) => (
 						<Route exact path={path} key={index}>
@@ -103,11 +81,7 @@ const App = () => {
 						</Route>
 					))}
 				</Switch>
-				{isDevelopment() && (
-					<Suspense fallback={<p>...</p>}>
-						<Footer />
-					</Suspense>
-				)}
+
 				<aside>
 					<FontAwesomeIcon icon={faAngleDoubleDown} color='white' size='4x' />
 				</aside>
