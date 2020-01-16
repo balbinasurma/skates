@@ -27,9 +27,5 @@ jobs:
           name: buildOutcome
           path: build
 
-
-  PUSH:
-    needs: [BUILD]
-    runs-on: [ubuntu-latest]
-    steps:
-      - run: git status
+      - name: pull
+        run: create-pull-request
