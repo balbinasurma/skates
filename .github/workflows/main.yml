@@ -27,5 +27,5 @@ jobs:
           name: buildOutcome
           path: build
 
-      - name: pull
-        run: create-pull-request
+      - name: git
+        run: git init
