@@ -7,21 +7,20 @@ jobs:
   BUILD:
     runs-on: [ubuntu-latest]
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
       - name: checkout
         uses: actions/checkout@v1
+
       - name: node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: [12.x]
+
       - name: npm
         run: |
           npm install
           npm run build
+          
       - name: artefact
         uses: actions/upload-artifact@v1
         with:
@@ -29,15 +28,8 @@ jobs:
           path: build
 
 
-      # - name: use build
-      #   uses: actions/download-artifact@v1.0.0
-      #   with:
-      #     # Artifact name
-      #     name: buildOutcome
-      #     # Destination path
-      #     path: build
-
-      # - name: gh
-      #   run:
-      #     git config user.email grandalf6@gmail.com
-      #     npm run deploy
+  PUSH:
+    needs: [BUILD]
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: git status
