@@ -22,18 +22,21 @@ jobs:
       - name: npm
         run: |
           npm install
-          npm run build
-      # - name: artefact
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: alfa
-      #     path: build
+          npm run deploy
+      - name: artefact
+        uses: actions/upload-artifact@v1
+        with:
+          name: save build
+          path: build
 
 
-      - name: Download artifact
+      - name: use build
         uses: actions/download-artifact@v1.0.0
         with:
           # Artifact name
-          name: test1
+          name: use build
           # Destination path
-          path: test1
+          path: build
+
+      - name: gh
+        run: npm run deploy
