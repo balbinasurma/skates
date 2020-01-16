@@ -41,5 +41,4 @@ jobs:
       - name: gh
         run:
           git config user.email grandalf6@gmail.com
-          git config user.name grandalf6
           npm run deploy
