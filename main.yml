@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: 
+      - code
+
+jobs:
+  test1:
+    name: test1
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: |
+          npm install
+          npm run build
