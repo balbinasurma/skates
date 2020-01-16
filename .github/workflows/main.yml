@@ -39,4 +39,7 @@ jobs:
           path: build
 
       - name: gh
-        run: npm run deploy
+        run:
+          git config user.email grandalf6@gmail.com
+          git config user.name grandalf6
+          npm run deploy
