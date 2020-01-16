@@ -26,7 +26,7 @@ jobs:
       - name: artefact
         uses: actions/upload-artifact@v1
         with:
-          name: save build
+          name: buildOutcome
           path: build
 
 
@@ -34,7 +34,7 @@ jobs:
         uses: actions/download-artifact@v1.0.0
         with:
           # Artifact name
-          name: use build
+          name: buildOutcome
           # Destination path
           path: build
 
