@@ -1,7 +1,7 @@
-import getDataFromDB from 'functions/getDataFromDB'
 import React, {Fragment, lazy, useEffect, useState} from 'react'
 import styled from 'styled-components'
 import {styledSectionType} from 'types/styledTypes'
+import getDataFromDB from '../../../../functions/getDataFromDB'
 
 const PucharPolskiDivider = lazy(() => import('./PucharPolskiDivider')),
 	PucharPolskiItem = lazy(() => import('./PucharPolskiItem'))
