@@ -34,6 +34,6 @@ jobs:
           git config user.email
           git config user.name Presh Rychlewicz
           git config user.name
-          type nul > hello.txt
+          echo hello > hello.txt
           git add .
           git status
