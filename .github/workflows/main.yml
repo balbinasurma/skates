@@ -28,4 +28,7 @@ jobs:
           path: build
 
       - name: git
-        run: git init
+        run: |
+          git init
+          git add .
+          git status
