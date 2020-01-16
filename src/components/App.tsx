@@ -1,11 +1,12 @@
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React, {lazy, Suspense} from 'react'
+import React, {lazy, Suspense, useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import {routesArrayType} from 'types/allTypes'
 import theme from '../context/theme'
 import themeContext from '../context/themeContext'
+import injectTagInHtml from '../functions/injectTagInHtml'
 import isDevelopment from '../functions/isDevelopment'
 import {styledMainType} from '../types/styledTypes'
 
@@ -79,6 +80,10 @@ const App = () => {
 			component: <Zawody />
 		}
 	]
+
+	useEffect(() => {
+		injectTagInHtml('meta', 'htmlMetaData')
+	}, [])
 
 	return (
 		<AppMain id='app'>
