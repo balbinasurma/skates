@@ -4,8 +4,7 @@ on:
       - code
 
 jobs:
-  test1:
-    name: test1
+  BUILD:
     runs-on: [ubuntu-latest]
 
     strategy:
@@ -30,15 +29,15 @@ jobs:
           path: build
 
 
-      - name: use build
-        uses: actions/download-artifact@v1.0.0
-        with:
-          # Artifact name
-          name: buildOutcome
-          # Destination path
-          path: build
+      # - name: use build
+      #   uses: actions/download-artifact@v1.0.0
+      #   with:
+      #     # Artifact name
+      #     name: buildOutcome
+      #     # Destination path
+      #     path: build
 
-      - name: gh
-        run:
-          git config user.email grandalf6@gmail.com
-          npm run deploy
+      # - name: gh
+      #   run:
+      #     git config user.email grandalf6@gmail.com
+      #     npm run deploy
