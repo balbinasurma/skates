@@ -40,5 +40,5 @@ jobs:
           git status
           git commit -m "automated commit"
           git status
-          git remote add origin 'https://${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.gi
-          git remote -v
+          git remote add origin 'https://${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git'
+          # git remote -v
