@@ -34,9 +34,11 @@ jobs:
           git config user.email
           git config user.name Presh Rychlewicz
           git config user.name
+          git checkout -b auto
           echo hello > hello.txt
           git add .
           git status
           git commit -m "automated commit"
           git status
+          
           git push
