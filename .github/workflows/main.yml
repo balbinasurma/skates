@@ -16,22 +16,22 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: npm
-        run: |
-          npm install
-          npm run build
+      # - name: npm
+      #   run: |
+      #     npm install
+      #     npm run build
 
-      - name: artefact
-        uses: actions/upload-artifact@v1
-        with:
-          name: buildOutcome
-          path: build
+      # - name: artefact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: buildOutcome
+      #     path: build
 
       - name: git
         run: |
           git init
           git add .
           git status
-          git config  ${{ secrets.GITHUB_TOKEN }}
+          git config  user.email "grandalf6@gmail.com"
           git commit -m "automatic push"
           git status
