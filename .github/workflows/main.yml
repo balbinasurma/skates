@@ -14,13 +14,13 @@ jobs:
       - name: node
         uses: actions/setup-node@v1
         with:
-          node-version: [12.x]
+          node-version: 12.x
 
       - name: npm
         run: |
           npm install
           npm run build
-          
+
       - name: artefact
         uses: actions/upload-artifact@v1
         with:
