@@ -40,5 +40,4 @@ jobs:
           git status
           git commit -m "automated commit"
           git status
-          
-          git push
+          git push --set-upstream origin auto
