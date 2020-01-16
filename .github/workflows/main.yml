@@ -32,5 +32,6 @@ jobs:
           git init
           git add .
           git status
+          git config  ${{ secrets.GITHUB_TOKEN }}
           git commit -m "automatic push"
           git status
