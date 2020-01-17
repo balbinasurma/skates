@@ -25,10 +25,10 @@ jobs:
       - run: git checkout -b auto
       - run: echo "auto" > auto.html
       - run: git add .
-      - run: git config user.email grandalf6@gmail.com
-      - run: git config user.name grandalf6
+      - run: git config user.email ${{secrets.email}}
+      - run: git config user.name ${{secrets.user}}
       - run: git config user.email
-       - run: git config user.name
+      - run: git config user.name
 
       # - name: npm
       #   run: |
