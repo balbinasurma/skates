@@ -47,7 +47,7 @@ const AppMain: styledMainType = styled.main`
 		position: fixed;
 		right: 51px;
 		bottom: 51px;
-		animation: ${bounce} 2s linear infinite;
+		
 		transform-origin: center bottom;
 	} */
 `
