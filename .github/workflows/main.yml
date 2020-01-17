@@ -37,7 +37,7 @@ jobs:
       - uses: actions/download-artifact@v1.0.0
         with:
           name: buildOutcome
-          path: ./build
+          path: ./build/
 
       - run: git status
       - run: git add .
