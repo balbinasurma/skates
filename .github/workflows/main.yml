@@ -37,7 +37,6 @@ jobs:
       - uses: actions/download-artifact@v1.0.0
         with:
           name: buildOutcome
-          path: ./build/
 
       - run: git status
       - run: git add .
@@ -45,12 +44,6 @@ jobs:
       - run: dir
       - run: git commit -m "autoCommit"
       - run: git push --set-upstream origin auto
-
-
-      # - name: npm
-      #   run: |
-      #     npm install
-      #     npm run build
 
       # - name: artefact
       #   uses: actions/upload-artifact@v1
