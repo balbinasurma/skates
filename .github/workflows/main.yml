@@ -29,10 +29,11 @@ jobs:
 
     steps:
       - run: git init
-      - run: git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN}}@github.com/balbinasurma/test.git
+      - run: git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN}}@github.com/balbinasurma/balbinasurma.github.io.git
       - run: git config user.email ${{secrets.email}}
       - run: git config user.name ${{secrets.user}}
 
+      - run: git checkout -b auto
       - uses: actions/download-artifact@v1.0.0
         with:
           name: buildOutcome
@@ -42,6 +43,8 @@ jobs:
       - run: git add .
       - run: git status
       - run: dir
+      - run: git commit -m "autoCommit"
+      - run: git push --set-upstream origin auto
 
 
       # - name: npm
