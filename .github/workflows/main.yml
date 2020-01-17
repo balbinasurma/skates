@@ -4,17 +4,30 @@ on:
       - code
 
 jobs:
-  BUILD:
+  # BUILD:
+  #   runs-on: [ubuntu-latest]
+
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@v1
+
+  #     - name: node
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12.x
+
+  GIT:
     runs-on: [ubuntu-latest]
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
-
-      - name: node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+      - run: git init
+      - run: git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN}}@github.com/balbinasurma/test.git
+      - run: git checkout -b auto
+      - run: echo "auto" > auto.html
+      - run: git add .
+      - run: git config user.email grandalf6@gmail.com
+      - run: git config user.name grandalf6
+      - run: git config user
 
       # - name: npm
       #   run: |
