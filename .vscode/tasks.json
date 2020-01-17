@@ -6,7 +6,8 @@
         {
             "label": "status",
             "type": "shell",
-            "command": "git status & git add . & git commit -m 'CI' & git push "
+            "command": "git status & git add . & git commit -m 'CI' & git push ",
+            "problemMatcher": []
         }
     ]
 }
