@@ -42,6 +42,6 @@ jobs:
           # git commit -m "automated commit"
           # git status
           # git remote remove origin
-          # git remote add origin 'https://grandalf6@github.com/balbinasurma/balbinasurma.github.io.git'
+          # git remote add origin 'https://github.com/balbinasurma/balbinasurma.github.io.git'
           # git remote -v
           # git push --set-upstream origin auto
