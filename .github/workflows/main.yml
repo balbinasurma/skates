@@ -24,6 +24,7 @@ jobs:
           path: build
 
   GIT:
+    needs: [BUILD]
     runs-on: [ubuntu-latest]
 
     steps:
