@@ -43,3 +43,4 @@ jobs:
           git remote remove origin
           git remote add origin 'https://${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git'
           # git remote -v
+          git push
