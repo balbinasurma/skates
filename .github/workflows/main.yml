@@ -34,7 +34,7 @@ jobs:
           # git config user.email
           # git config user.name grandalf6
           # git config user.name
-          curl -u username:token https://api.github.com/user
+          curl -u username:${{ secrets.GITHUB_TOKEN }} https://api.github.com/user
           git config user.email
           # git checkout -b auto
           # echo hello > hello.txt
