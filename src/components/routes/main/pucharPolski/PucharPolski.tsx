@@ -29,13 +29,13 @@ const PucharPolski = () => {
 	return (
 		<PucharPolskiSection>
 			{/* <h1>puchar polski 2019</h1> */}
-
-			{pucharPolskiDataArray.map(({title, date, picture, comment}, index) => (
-				<Fragment key={index}>
-					<PucharPolskiItem comment={comment} picture={picture} date={date} title={title} />
-					<PucharPolskiDivider />
-				</Fragment>
-			))}
+			{pucharPolskiDataArray &&
+				pucharPolskiDataArray.sectionContent.map(({title, date, picture, comment}, index) => (
+					<Fragment key={index}>
+						<PucharPolskiItem comment={comment} picture={picture} date={date} title={title} />
+						<PucharPolskiDivider />
+					</Fragment>
+				))}
 		</PucharPolskiSection>
 	)
 }
