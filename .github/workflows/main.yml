@@ -35,13 +35,13 @@ jobs:
           # git config user.name grandalf6
           # git config user.name
           git config user.email
-          # git checkout -b auto
-          # echo hello > hello.txt
-          # git add .
-          # git status
-          # git commit -m "automated commit"
-          # git status
-          # git remote remove origin
-          # git remote add origin 'https://github.com/balbinasurma/balbinasurma.github.io.git'
-          # git remote -v
-          # git push --set-upstream origin auto
+          git checkout -b auto
+          echo hello > hello.txt
+          git add .
+          git status
+          git commit -m "automated commit"
+          git status
+          git remote remove origin
+          git remote add origin 'https://grandalf6@github.com/balbinasurma/balbinasurma.github.io.git'
+          git remote -v
+          git push --set-upstream origin auto
