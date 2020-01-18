@@ -6,18 +6,14 @@ on:
 jobs:
   BUILD:
     runs-on: [ubuntu-latest]
-
     steps:
       - uses: actions/checkout@v1
-
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-
       - run: |
           npm install
           npm run build
-          
       - uses: actions/upload-artifact@v1
         with:
           name: buildOutcome
@@ -26,7 +22,6 @@ jobs:
   GIT:
     needs: [BUILD]
     runs-on: [ubuntu-latest]
-
     steps:
       - run: git init
       - run: git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN}}@github.com/balbinasurma/balbinasurma.github.io.git
@@ -38,9 +33,7 @@ jobs:
         with:
           name: buildOutcome
           path: ./
-
       - run: git add .
-      - run: dir
       - run: git commit -m "autoCommit"
       - run: git show-ref
       - run: git push --force origin HEAD:master
