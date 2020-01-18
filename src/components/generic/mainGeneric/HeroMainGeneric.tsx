@@ -72,6 +72,7 @@ const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
 	return (
 		// @ts-ignore
 		<HeroMainGenericHeader
+			className="hero-main-generic"
 			// @ts-ignore
 			ref={heroRef}
 			heroScrollPercentage={heroScrollPercentage}

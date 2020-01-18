@@ -8,7 +8,7 @@ const SectionTitleForMainGenericH1 = styled.h1`
 	text-transform: uppercase;
 
 	// @ts-ignore
-	color: ${({ isWhite }) => (isWhite ? 'white' : undefined)};
+	color: ${({isWhite}) => (isWhite ? 'white' : undefined)};
 
 	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
 		font-size: 40px;
@@ -19,9 +19,11 @@ const SectionTitleForMainGenericH1 = styled.h1`
 	}
 `
 
-const SectionTitleForMainGeneric = ({ isWhite, mainSectionTitle }) => (
+const SectionTitleForMainGeneric = ({isWhite, mainSectionTitle}) => (
 	// @ts-ignore
-	<SectionTitleForMainGenericH1 isWhite={isWhite}>{mainSectionTitle}</SectionTitleForMainGenericH1>
+	<SectionTitleForMainGenericH1 className="section-title-for-main-generic" isWhite={isWhite}>
+		{mainSectionTitle}
+	</SectionTitleForMainGenericH1>
 )
 
 export default SectionTitleForMainGeneric

@@ -41,8 +41,10 @@ const SectionForMainGeneric = ({
 	let isWhite = mainSectionBackgroundImage ? true : false
 
 	return (
-		// @ts-ignore
-		<SectionForMainGenericSection mainSectionBackgroundImage={mainSectionBackgroundImage}>
+		<SectionForMainGenericSection
+			className="section-for-main-generic"
+			// @ts-ignore
+			mainSectionBackgroundImage={mainSectionBackgroundImage}>
 			{mainSectionTitle && <SectionTitleForMainGeneric isWhite={isWhite} mainSectionTitle={mainSectionTitle} />}
 			{mainSectionContent}
 		</SectionForMainGenericSection>
