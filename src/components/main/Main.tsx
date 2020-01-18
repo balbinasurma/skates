@@ -54,13 +54,6 @@ const Main = () => {
 		})()
 	}, [])
 
-	useEffect(
-		() => {
-			console.log(pucharPolskiData)
-		},
-		[ pucharPolskiData ]
-	)
-
 	return (
 		<MainMain id="main">
 			<Hero />
