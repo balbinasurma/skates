@@ -25,7 +25,7 @@ const HeaderHeader = styled.header`
 		display: none;
 	}
 
-	@media only screen and (max-width: ${process.env.REACT_APP_BREAKPOINT_1}) {
+	@media only screen and (max-width: 600px) {
 		padding: 0;
 		border-color: blue;
 	}
