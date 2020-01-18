@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import themeContext from '../../../context/themeContext'
 
 const HeaderMenuItemLink = styled(Link)`
 	height: 50%;
@@ -31,25 +30,13 @@ const HeaderMenuItemLink = styled(Link)`
 		border-color: white;
 	}
 
-	@media only screen and (max-width: 900px) {
-		// @ts-ignore
-		height: ${({ headerItemHeight }) => headerItemHeight};
+	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
+		height: 70px;
 		border-color: transparent !important;
 		align-items: center;
 	}
-
 `
 
-const HeaderMenuItem = ({ title, path }) => {
-	// @ts-ignore
-	const { headerItemHeight } = useContext(themeContext)
-
-	return (
-		// @ts-ignore
-		<HeaderMenuItemLink headerItemHeight={headerItemHeight} to={path}>
-			{title}
-		</HeaderMenuItemLink>
-	)
-}
+const HeaderMenuItem = ({ title, path }) => <HeaderMenuItemLink to={path}>{title}</HeaderMenuItemLink>
 
 export default HeaderMenuItem

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import HeaderMenuItem from './HeaderMenuItem'
+import getDataFromDB from 'functions/getDataFromDB'
 
 const HeaderMenuNav = styled.nav`
 	min-height: 70px;
@@ -8,7 +9,7 @@ const HeaderMenuNav = styled.nav`
 	align-items: center;
 	position: relative;
 
-	@media only screen and (max-width: 900px) {
+	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
 		flex-direction: column;
 		// @ts-ignore
 		display: ${({ mobileMenuOpen }) => (mobileMenuOpen ? 'block' : 'none')};
@@ -19,18 +20,22 @@ const HeaderMenuNav = styled.nav`
 	}
 `
 
-let linksArray = [
-	{ title: 'głowna', path: '/' },
-	{ title: 'osiągnięcia', path: '/osiagniecia' },
-	{ title: 'instruktor', path: '/instruktor' },
-	{ title: 'zawody', path: '/zawody' }
-]
+const HeaderMenu = ({ mobileMenuOpen }) => {
+	const [ linksArray, setLinksArray ] = useState()
 
-const HeaderMenu = ({ mobileMenuOpen }) => (
-	// @ts-ignore
-	<HeaderMenuNav mobileMenuOpen={mobileMenuOpen}>
-		{linksArray.map(({ title, path }, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
-	</HeaderMenuNav>
-)
+	useEffect(() => {
+		;(async () => {
+			setLinksArray(await getDataFromDB(process.env.DATABASE_OTHER_ROUTES))
+		})()
+	}, [])
+
+	return (
+		// @ts-ignore
+		<HeaderMenuNav mobileMenuOpen={mobileMenuOpen}>
+			{linksArray &&
+				linksArray.map(({ title, path }, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
+		</HeaderMenuNav>
+	)
+}
 
 export default HeaderMenu

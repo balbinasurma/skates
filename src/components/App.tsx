@@ -1,6 +1,19 @@
 import injectTagInHtml from 'functions/injectTagInHtml'
 import Header from 'components/header/Header'
 import React, { Fragment, useEffect } from 'react'
+import {
+	faAt,
+	faBars,
+	faCalendarAlt,
+	faClock,
+	faMapMarkedAlt,
+	faSkating,
+	faTimes
+} from '@fortawesome/free-solid-svg-icons'
+import { faFacebookSquare, faLinkedin, fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(fab, faFacebookSquare, faLinkedin, faAt, faBars, faTimes, faSkating, faCalendarAlt, faClock, faMapMarkedAlt)
 
 const App = () => {
 	//injection meta data to index.html
