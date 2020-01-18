@@ -1,5 +1,5 @@
-import isDeployment from '../src/functions/isDevelopment'
+const isDeployment = require('../src/functions/isDevelopment').default
 
 test('first test', () => {
-	expect(isDeployment().toBe(false))
+	expect(isDeployment()).toBe(false)
 })
