@@ -44,7 +44,7 @@ jobs:
       - run: git status
       - run: dir
       - run: git commit -m "autoCommit"
-      - run: git push --set-upstream gh-pages auto
+      - run: git push --set-upstream origin auto
 
       # - name: artefact
       #   uses: actions/upload-artifact@v1

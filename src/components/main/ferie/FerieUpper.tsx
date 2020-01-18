@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const FerieUpperDiv = styled.div`
 	color: white;
+	margin-bottom: 3vh;
 
 	& > main {
 		padding: 1%;
