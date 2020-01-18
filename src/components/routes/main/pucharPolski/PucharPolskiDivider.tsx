@@ -1,10 +1,9 @@
-import {faTrophy} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import {styledAsideType} from 'types/styledTypes'
 
-const PucharPolskiDividerAside: styledAsideType = styled.aside`
+const PucharPolskiDividerAside = styled.aside`
 	margin: 75px 0;
 	width: 100%;
 	display: flex;
@@ -20,7 +19,7 @@ const PucharPolskiDividerAside: styledAsideType = styled.aside`
 const PucharPolskiDivider = () => (
 	<PucharPolskiDividerAside>
 		<hr />
-		<FontAwesomeIcon icon={faTrophy} size='2x' />
+		<FontAwesomeIcon icon={faTrophy} size="2x" />
 		<hr />
 	</PucharPolskiDividerAside>
 )

@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styledH1Type} from 'types/styledTypes'
 
-const FerieTitleH1: styledH1Type = styled.h1`
+const FerieTitleH1 = styled.h1`
 	font-size: 50px;
 	margin: 0;
 	text-align: center;

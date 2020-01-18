@@ -1,17 +1,12 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import {HeroHeaderStyledType} from 'types/styledTypes'
 //@ts-ignore
 import heroImage from './heroImage.jpg'
 
-const HeroHeader =
-	styled.header <
-	HeroHeaderStyledType >
-	`
+const HeroHeader = styled.header`
 	height: calc(100vh - 5px);
 	position: relative;
 	flex-direction: column-reverse;
-
 
 	&::before {
 		content: "";
@@ -24,8 +19,9 @@ const HeroHeader =
 		background-size: cover;
 		background-position: center top;
 		z-index: -1;
-		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
-		transition-timing-function: cubic-bezier(.95,.02,.75,.66);
+		// @ts-ignore
+		filter: ${({ heroScrollPercentage }) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
+		transition-timing-function: cubic-bezier(.95, .02, .75, .66);
 	}
 
 	& > main {
@@ -55,7 +51,7 @@ const HeroHeader =
 
 const Hero = () => {
 	const heroRef: React.MutableRefObject<any> = useRef(),
-		[heroScrollPercentage, setHeroScrollPercentage] = useState(0)
+		[ heroScrollPercentage, setHeroScrollPercentage ] = useState(0)
 
 	useEffect(() => {
 		document.addEventListener('scroll', () => {
@@ -69,6 +65,7 @@ const Hero = () => {
 	}, [])
 
 	return (
+		// @ts-ignore
 		<HeroHeader ref={heroRef} heroScrollPercentage={heroScrollPercentage}>
 			<main>Balbina Surma</main>
 		</HeroHeader>

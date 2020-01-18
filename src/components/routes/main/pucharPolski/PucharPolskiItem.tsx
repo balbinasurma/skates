@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {pucharPolskiItemPropsType} from 'types/propsTypes'
-import {styledArticleType} from 'types/styledTypes'
 
-const PucharPolskiItemArticle: styledArticleType = styled.article`
+const PucharPolskiItemArticle = styled.article`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -57,7 +55,7 @@ const PucharPolskiItemArticle: styledArticleType = styled.article`
 	}
 `
 
-const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemPropsType) => (
+const PucharPolskiItem = ({ title, comment, date, picture }) => (
 	// @ts-ignore
 	<PucharPolskiItemArticle picture={picture}>
 		<h3>{title}</h3>
@@ -68,7 +66,7 @@ const PucharPolskiItem = ({title, comment, date, picture}: pucharPolskiItemProps
 		<img
 			src={picture}
 			alt={title}
-			onLoad={({target}) => {
+			onLoad={({ target }) => {
 				// @ts-ignore
 				let pictureWidth = target.width
 

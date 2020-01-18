@@ -1,11 +1,10 @@
-import {faCalendarAlt, faClock, faMapMarkedAlt, faSkating, IconDefinition} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faCalendarAlt, faClock, faMapMarkedAlt, faSkating } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import {styledDivType} from 'types/styledTypes'
 import FerieTitle from './FerieTitle'
 
-const FerieUpperDiv: styledDivType = styled.div`
+const FerieUpperDiv = styled.div`
 	color: white;
 
 	& > main {
@@ -117,7 +116,7 @@ const FerieUpperDiv: styledDivType = styled.div`
 `
 
 const FerieUpper = () => {
-	let infoText: string[] = [
+	let infoText = [
 		'Cześć!',
 		'Już w pierwszy tydzień ferii zapraszam dzieci i młodzież ze Szkoły Podstawowej nr 2 w Świeciu na bezpłatne warsztaty z techniki jazdy szybkiej na rolkach.',
 		'Warsztaty odbędą się w ramach trwania zajęć sportowych ,,białych ferii’’ na sali gimnastycznej szkoły.',
@@ -129,15 +128,10 @@ const FerieUpper = () => {
 		'Zabierz strój sportowy, a także jeśli posiadasz własne rolki. Nie jest to jednak koniecznością - naukę wrotkarstwa zaczyna się właśnie od ćwiczeń w butach :-)'
 	]
 
-	interface infoDataItemInterface {
-		icon: IconDefinition
-		value: string
-	}
-
-	let infoData: infoDataItemInterface[] = [
-		{icon: faCalendarAlt, value: '27 styczeń\n - 2 luty'},
-		{icon: faClock, value: 'w czasie zajęć sportowych'},
-		{icon: faMapMarkedAlt, value: 'Szkoła Podstawowa nr. 2 w świeciu '}
+	let infoData = [
+		{ icon: faCalendarAlt, value: '27 styczeń\n - 2 luty' },
+		{ icon: faClock, value: 'w czasie zajęć sportowych' },
+		{ icon: faMapMarkedAlt, value: 'Szkoła Podstawowa nr. 2 w świeciu ' }
 	]
 
 	return (
@@ -145,12 +139,12 @@ const FerieUpper = () => {
 			<FerieTitle />
 			<main>
 				<div>{infoText.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
-				<FontAwesomeIcon icon={faSkating} color='white' size='8x' />
+				<FontAwesomeIcon icon={faSkating} color="white" size="8x" />
 			</main>
 			<footer>
-				{infoData.map(({icon, value}, index) => (
+				{infoData.map(({ icon, value }, index) => (
 					<article key={index}>
-						<FontAwesomeIcon icon={icon} color='white' size='4x' />
+						<FontAwesomeIcon icon={icon} color="white" size="4x" />
 						<h2>{value}</h2>
 					</article>
 				))}

@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const config = {
 	entry: './src/index.tsx',
@@ -11,7 +12,8 @@ const config = {
 		new HtmlWebpackPlugin({
 			title: 'Balbina Surma - Strona Oficjalna',
 			template: 'public/index.html'
-		})
+		}),
+		new Dotenv()
 	],
 	devServer: {
 		port: 3000,

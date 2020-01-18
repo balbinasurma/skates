@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {styledDivType} from 'types/styledTypes'
 
-const FerieLowerDiv: styledDivType = styled.div`
+const FerieLowerDiv = styled.div`
 	background: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -132,13 +131,13 @@ const FerieLowerDiv: styledDivType = styled.div`
 `
 
 let aray = [
-	{step: 'przygotowanie do zajęć', points: ['rozgrzewka ogólna', 'rozgrzewka rolkarska w butach sportowych']},
+	{ step: 'przygotowanie do zajęć', points: [ 'rozgrzewka ogólna', 'rozgrzewka rolkarska w butach sportowych' ] },
 	{
 		step: 'elementy Wrotkarstwa Szybkiego',
 		content: [
 			{
 				stage: 'technika',
-				points: ['prawidłowa postawa rolkarska', 'ćwiczenia specjalistyczne']
+				points: [ 'prawidłowa postawa rolkarska', 'ćwiczenia specjalistyczne' ]
 			},
 			{
 				stage: 'praktyka',
@@ -155,7 +154,7 @@ let aray = [
 	},
 	{
 		step: 'zabawa',
-		points: ['mecz hokeja', 'ćwiczenia rozciągające']
+		points: [ 'mecz hokeja', 'ćwiczenia rozciągające' ]
 	}
 ]
 
@@ -163,7 +162,7 @@ const FerieLower = () => (
 	<FerieLowerDiv>
 		<h1>Plan Zajęć</h1>
 		<section>
-			{aray.map(({step, points, content}, index) => (
+			{aray.map(({ step, points, content }, index) => (
 				<article key={index}>
 					<h2>{step}</h2>
 					<hr />
@@ -172,7 +171,7 @@ const FerieLower = () => (
 							<ul>{points.map((point, index) => <li key={index}>{point}</li>)}</ul>
 						) : (
 							content &&
-							content.map(({stage, points}, index) => (
+							content.map(({ stage, points }, index) => (
 								<ul key={index}>
 									{stage}
 									{points.map((point, index) => <li key={index}>{point}</li>)}

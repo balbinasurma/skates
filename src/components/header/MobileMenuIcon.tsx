@@ -1,19 +1,15 @@
-import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React, {useContext} from 'react'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import {MobileMenuIconPropsType} from 'types/propsTypes'
-import {MobileMenuIconButtonStyledType} from 'types/styledTypes'
 import themeContext from '../../context/themeContext'
 
-const MobileMenuIconButton =
-	styled.button <
-	MobileMenuIconButtonStyledType >
-	`
+const MobileMenuIconButton = styled.button`
 	background: none;
 	border: none;
 	width: 80px;
-	height: ${({headerItemHeight}) => headerItemHeight};
+	// @ts-ignore
+	height: ${({ headerItemHeight }) => headerItemHeight};
 	cursor: pointer;
 	display: none;
 
@@ -22,17 +18,18 @@ const MobileMenuIconButton =
 	}
 `
 
-const MobileMenuIcon = ({mobileMenuOpen, setMobileMenuOpen}: MobileMenuIconPropsType) => {
+const MobileMenuIcon = ({ mobileMenuOpen, setMobileMenuOpen }) => {
 	// @ts-ignore
-	const {headerItemHeight} = useContext(themeContext)
+	const { headerItemHeight } = useContext(themeContext)
 
 	return (
-		<MobileMenuIconButton headerItemHeight={headerItemHeight} aria-label='menu'>
+		// @ts-ignore
+		<MobileMenuIconButton headerItemHeight={headerItemHeight} aria-label="menu">
 			<FontAwesomeIcon
 				onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 				icon={mobileMenuOpen ? faTimes : faBars}
-				color='white'
-				size='3x'
+				color="white"
+				size="3x"
 			/>
 		</MobileMenuIconButton>
 	)

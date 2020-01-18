@@ -1,14 +1,11 @@
-import React, {Fragment, lazy, Suspense, useState} from 'react'
+import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
-import {mobileMenuOpenStateType} from 'types/hooksTypes'
-import {styledHeaderType} from 'types/styledTypes'
 import isDevelopment from '../../functions/isDevelopment'
+import HeaderMenu from './headerMenu/HeaderMenu'
+import HeaderSocial from './headerSocial/HeaderSocial'
+import MobileMenuIcon from './MobileMenuIcon'
 
-const HeaderMenu = lazy(() => import('./headerMenu/HeaderMenu')),
-	HeaderSocial = lazy(() => import('./headerSocial/HeaderSocial')),
-	MobileMenuIcon = lazy(() => import('./MobileMenuIcon'))
-
-const HeaderHeader: styledHeaderType = styled.header`
+const HeaderHeader = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
@@ -21,38 +18,31 @@ const HeaderHeader: styledHeaderType = styled.header`
 	width: 100%;
 	z-index: 2;
 
+	border: 1px solid red;
+	background: black;
+
 	& > span {
 		display: none;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: ${process.env.REACT_APP_BREAKPOINT_1}) {
 		padding: 0;
-	}
-
-	@media only screen and (max-width: 900px) {
-		padding: 0;
+		border-color: blue;
 	}
 `
 const Header = () => {
-	const [mobileMenuOpen, setMobileMenuOpen]: mobileMenuOpenStateType = useState(false)
+	const [ mobileMenuOpen, setMobileMenuOpen ] = useState(false)
 
 	return (
 		<HeaderHeader>
 			{isDevelopment() && (
 				<Fragment>
-					<Suspense fallback={<p>...</p>}>
-						<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
-					</Suspense>
-
-					<Suspense fallback={<p>...</p>}>
-						<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-					</Suspense>
+					<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
+					<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 				</Fragment>
 			)}
 
-			<Suspense fallback={<p>...</p>}>
-				<HeaderSocial />
-			</Suspense>
+			<HeaderSocial />
 		</HeaderHeader>
 	)
 }

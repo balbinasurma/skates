@@ -1,6 +1,5 @@
-import {createContext} from 'react'
-import {themeContextType} from 'types/hooksTypes'
+import { createContext } from 'react'
 
-const themeContext: themeContextType = createContext({})
+const themeContext = createContext({})
 
 export default themeContext

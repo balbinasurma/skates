@@ -1,12 +1,11 @@
-import React, {lazy, Suspense} from 'react'
+import React, { lazy, Suspense } from 'react'
 import styled from 'styled-components'
-import {styledMainType} from 'types/styledTypes'
 
 const Ferie2019 = lazy(() => import('./ferie2019/Ferie2019')),
 	Hero = lazy(() => import('./hero/Hero')),
 	PucharPolski = lazy(() => import('./pucharPolski/PucharPolski'))
 
-const MainMain: styledMainType = styled.main`
+const MainMain = styled.main`
 	height: auto;
 
 	& > * {
@@ -41,7 +40,7 @@ const MainMain: styledMainType = styled.main`
 
 const Main = () => {
 	return (
-		<MainMain id='main'>
+		<MainMain id="main">
 			<Suspense fallback={<p>...</p>}>
 				<Hero />
 			</Suspense>
