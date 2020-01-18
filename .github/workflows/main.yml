@@ -39,13 +39,10 @@ jobs:
           name: buildOutcome
           path: ./
 
-      - run: git status
       - run: git add .
-      - run: git status
-      - run: dir
       - run: git commit -m "autoCommit"
-      - run: git show-ref
-      - run: git push --force origin HEAD:master
+      - run: git rebase origin/master
+      - run: git push --force origin auto
 
       # - name: artefact
       #   uses: actions/upload-artifact@v1
