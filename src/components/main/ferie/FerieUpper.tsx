@@ -6,6 +6,7 @@ const FerieUpperDiv = styled.div`
 	color: white;
 
 	& > main {
+		padding: 1%;
 		flex-grow: 1;
 		height: 80%;
 		display: flex;
@@ -67,6 +68,10 @@ const FerieUpperDiv = styled.div`
 			& > div {
 				min-height: 50%;
 				width: 100%;
+			}
+
+			& > *:first-child {
+				margin: 5% auto;
 			}
 		}
 

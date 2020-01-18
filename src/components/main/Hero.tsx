@@ -26,7 +26,7 @@ const HeroHeader = styled.header`
 
 	& > main {
 		width: 400px;
-		max-width: 100vw;
+		max-width: 100%;
 		height: auto;
 		text-align: justify;
 		color: white;
@@ -44,7 +44,7 @@ const HeroHeader = styled.header`
 
 	@media only screen and (max-width: ${process.env.BREAKPOINT_ONE}) {
 		& > main {
-			font-size: 24vw;
+			font-size: 20vw;
 		}
 	}
 `

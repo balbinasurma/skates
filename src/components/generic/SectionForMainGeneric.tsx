@@ -13,7 +13,7 @@ const SectionForMainGenericSection = styled.section`
 	background-size: cover;
 	justify-content: space-between;
 
-	& > *:not(:first-child) {
+	& > *:not(:first-child):not(aside) {
 		width: 100%;
 		height: 95vh;
 		display: flex;
@@ -29,12 +29,24 @@ const SectionForMainGenericSection = styled.section`
 	}
 `
 
-const SectionForMainGeneric = ({ mainSectionTitle, mainSectionContent, mainSectionBackgroundImage }) => (
-	// @ts-ignore
-	<SectionForMainGenericSection mainSectionBackgroundImage={mainSectionBackgroundImage}>
-		{mainSectionTitle && <SectionTitleForMainGeneric mainSectionTitle={mainSectionTitle} />}
-		{mainSectionContent}
-	</SectionForMainGenericSection>
-)
+const SectionForMainGeneric = ({
+	mainSectionTitle,
+	mainSectionContent,
+	mainSectionBackgroundImage
+}: {
+	mainSectionTitle
+	mainSectionContent
+	mainSectionBackgroundImage?: string
+}) => {
+	let isWhite = mainSectionBackgroundImage ? true : false
+
+	return (
+		// @ts-ignore
+		<SectionForMainGenericSection mainSectionBackgroundImage={mainSectionBackgroundImage}>
+			{mainSectionTitle && <SectionTitleForMainGeneric isWhite={isWhite} mainSectionTitle={mainSectionTitle} />}
+			{mainSectionContent}
+		</SectionForMainGenericSection>
+	)
+}
 
 export default SectionForMainGeneric
