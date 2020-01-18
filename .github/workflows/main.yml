@@ -41,7 +41,7 @@ jobs:
 
       - run: git add .
       - run: git commit -m "autoCommit"
-      - run: git rebase origin/master
+      - run: git rebase master
       - run: git push --force origin auto
 
       # - name: artefact
