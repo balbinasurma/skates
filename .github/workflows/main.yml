@@ -45,7 +45,7 @@ jobs:
       - run: dir
       - run: git commit -m "autoCommit"
       - run: git show-ref
-      - run: git push --force origin HEAD:master
+      # - run: git push --force origin HEAD:master
       - run: git push --force origin auto
 
       # - name: artefact

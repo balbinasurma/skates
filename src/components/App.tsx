@@ -27,7 +27,6 @@ const App = () => {
 		// app doesn't have styled, becuase doesn't need additional main tag
 		<Fragment>
 			<Header />
-
 			{[
 				{
 					path: '/',
