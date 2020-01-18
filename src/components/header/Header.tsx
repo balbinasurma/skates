@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
-import isDevelopment from '../../functions/isDevelopment'
+import isDevelopment from 'functions/isDevelopment'
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'
@@ -18,14 +18,14 @@ const HeaderHeader = styled.header`
 	width: 100%;
 	z-index: 2;
 
-	border: 1px solid red;
+	// TEMP
 	background: black;
 
 	& > span {
 		display: none;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: ${process.env.BREAKPOINT_ONE}) {
 		padding: 0;
 		border-color: blue;
 	}
@@ -34,7 +34,7 @@ const Header = () => {
 	const [ mobileMenuOpen, setMobileMenuOpen ] = useState(false)
 
 	return (
-		<HeaderHeader>
+		<HeaderHeader className="header">
 			{isDevelopment() && (
 				<Fragment>
 					<HeaderMenu mobileMenuOpen={mobileMenuOpen} />

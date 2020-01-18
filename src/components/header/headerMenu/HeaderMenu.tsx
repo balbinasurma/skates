@@ -1,11 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import themeContext from '../../../context/themeContext'
 import HeaderMenuItem from './HeaderMenuItem'
 
 const HeaderMenuNav = styled.nav`
-	// @ts-ignore
-	min-height: ${({ headerItemHeight }) => headerItemHeight};
+	min-height: 70px;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -16,8 +14,7 @@ const HeaderMenuNav = styled.nav`
 		display: ${({ mobileMenuOpen }) => (mobileMenuOpen ? 'block' : 'none')};
 		position: absolute;
 		left: 0;
-		// @ts-ignore
-		top: ${({ headerItemHeight }) => headerItemHeight};
+		top: 70px;
 		width: 100%;
 	}
 `
@@ -29,16 +26,11 @@ let linksArray = [
 	{ title: 'zawody', path: '/zawody' }
 ]
 
-const HeaderMenu = ({ mobileMenuOpen }) => {
+const HeaderMenu = ({ mobileMenuOpen }) => (
 	// @ts-ignore
-	const { headerItemHeight } = useContext(themeContext)
-
-	return (
-		// @ts-ignore
-		<HeaderMenuNav headerItemHeight={headerItemHeight} mobileMenuOpen={mobileMenuOpen}>
-			{linksArray.map(({ title, path }, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
-		</HeaderMenuNav>
-	)
-}
+	<HeaderMenuNav mobileMenuOpen={mobileMenuOpen}>
+		{linksArray.map(({ title, path }, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
+	</HeaderMenuNav>
+)
 
 export default HeaderMenu
