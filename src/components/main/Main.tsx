@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Hero from './Hero'
-import SectionForMainGeneric from './SectionForMainGeneric'
+import SectionForMainGeneric from '../generic/SectionForMainGeneric'
 import FerieLower from './ferie/FerieLower'
 import FerieUpper from './ferie/FerieUpper'
 import getDataFromDB from 'functions/getDataFromDB'
