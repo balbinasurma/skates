@@ -24,7 +24,11 @@ const config = {
 		clientLogLevel: 'none'
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js']
+		alias: {
+			functions: path.join(__dirname, 'src', '/functions'),
+			components: path.join(__dirname, 'src', '/components')
+		},
+		extensions: [ '.tsx', '.ts', '.js' ]
 	},
 	module: {
 		rules: [
@@ -34,11 +38,11 @@ const config = {
 			},
 			{
 				test: /\.css$/i,
-				use: ['style-loader', 'css-loader']
+				use: [ 'style-loader', 'css-loader' ]
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
-				use: ['file-loader']
+				use: [ 'file-loader' ]
 			}
 		]
 	}
