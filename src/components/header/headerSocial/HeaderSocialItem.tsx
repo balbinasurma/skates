@@ -11,6 +11,11 @@ const HeaderSocialItemA = styled.a`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: 0.4s;
+
+	&:hover {
+		transform: scale(0.9);
+	}
 `
 
 const HeaderSocialItem = ({ icon, link, label }) => (

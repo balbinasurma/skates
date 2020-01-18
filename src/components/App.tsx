@@ -12,6 +12,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faLinkedin, fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { Route } from 'react-router-dom'
+import Main from './main/Main'
 
 library.add(fab, faFacebookSquare, faLinkedin, faAt, faBars, faTimes, faSkating, faCalendarAlt, faClock, faMapMarkedAlt)
 
@@ -21,11 +23,21 @@ const App = () => {
 		injectTagInHtml('meta', process.env.DATABASE_HTML_META_DATA_PATH)
 	}, [])
 
-	// @ts-ignore
 	return (
 		// app doesn't have styled, becuase doesn't need additional main tag
 		<Fragment>
 			<Header />
+
+			{[
+				{
+					path: '/',
+					component: <Main />
+				}
+			].map(({ path, component }, index) => (
+				<Route exact path={path} key={index}>
+					{component}
+				</Route>
+			))}
 		</Fragment>
 	)
 }
