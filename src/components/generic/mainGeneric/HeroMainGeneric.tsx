@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import styled from 'styled-components'
 
 const HeroMainGenericHeader = styled.header`
-	border: 2px solid blue;
 	min-height: 30vh;
-	height: calc(100vh - 5px);
+	// @ts-ignore
+	height: ${({isHeroFullSize}) => `calc(${isHeroFullSize ? '100vh' : '35vh'} - 5px)`};
 	position: relative;
 	display: flex;
 	flex-direction: column-reverse;
@@ -17,12 +17,14 @@ const HeroMainGenericHeader = styled.header`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-image: url(${process.env.LINKS_HERO_BACKGROUND});
+		// @ts-ignore
+		background-image: ${({heroBackgroundImage}) =>
+			heroBackgroundImage ? `url(${heroBackgroundImage})` : undefined};
 		background-size: cover;
 		background-position: center top;
 		z-index: -1;
 		// @ts-ignore
-		filter: ${({ heroScrollPercentage }) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
+		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
 		transition-timing-function: cubic-bezier(.95, .02, .75, .66);
 	}
 
@@ -33,7 +35,7 @@ const HeroMainGenericHeader = styled.header`
 		text-align: justify;
 		color: white;
 		line-height: 100%;
-		font-size: 9vw;
+		font-size: 9vh;
 		z-index: 1;
 		text-shadow: 1px 1px 1px gray;
 	}
@@ -51,7 +53,7 @@ const HeroMainGenericHeader = styled.header`
 	}
 `
 
-const HeroMainGeneric = ({ heroTitle }) => {
+const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
 	const heroRef = useRef(),
 		[ heroScrollPercentage, setHeroScrollPercentage ] = useState(0)
 
@@ -69,7 +71,14 @@ const HeroMainGeneric = ({ heroTitle }) => {
 
 	return (
 		// @ts-ignore
-		<HeroMainGenericHeader heroScrollPercentage={heroScrollPercentage}>
+		<HeroMainGenericHeader
+			// @ts-ignore
+			ref={heroRef}
+			heroScrollPercentage={heroScrollPercentage}
+			// @ts-ignore
+			heroBackgroundImage={heroBackgroundImage}
+			// @ts-ignore
+			isHeroFullSize={isHeroFullSize}>
 			<h1>{heroTitle}</h1>
 		</HeroMainGenericHeader>
 	)

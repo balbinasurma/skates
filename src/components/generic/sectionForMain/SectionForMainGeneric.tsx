@@ -8,7 +8,7 @@ const SectionForMainGenericSection = styled.section`
 	padding: 10vh 10%;
 	min-height: 100vh;
 	// @ts-ignore
-	background-image: ${({ mainSectionBackgroundImage }) => `url(${mainSectionBackgroundImage})`};
+	background-image: ${({mainSectionBackgroundImage}) => `url(${mainSectionBackgroundImage})`};
 	background-repeat: no-repeat;
 	background-size: cover;
 	justify-content: space-between;

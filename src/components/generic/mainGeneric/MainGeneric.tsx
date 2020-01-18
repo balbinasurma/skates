@@ -7,9 +7,9 @@ const MainGenericMain = styled.main`
 	height: auto;
 `
 
-const MainGeneric = ({ title, content }) => (
+const MainGeneric = ({title, content, heroBackgroundImage, isHeroFullSize}) => (
 	<MainGenericMain>
-		<HeroMainGeneric heroTitle={title} />
+		<HeroMainGeneric heroTitle={title} heroBackgroundImage={heroBackgroundImage} isHeroFullSize={isHeroFullSize} />
 		{content}
 	</MainGenericMain>
 )
