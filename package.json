@@ -23,7 +23,6 @@
 		"@fortawesome/free-brands-svg-icons": "^5.12.0",
 		"@fortawesome/free-solid-svg-icons": "^5.12.0",
 		"@fortawesome/react-fontawesome": "^0.1.8",
-		"@types/react-router-dom": "^5.1.3",
 		"async": "^3.1.0",
 		"d3": "^5.15.0",
 		"d3-geo": "^1.11.9",
@@ -35,15 +34,10 @@
 		"react-router-dom": "^5.1.2",
 		"styled-components": "^4.4.1",
 		"topojson": "^3.0.2",
-		"ts-loader": "^6.2.1",
-		"typescript": "^3.7.4",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10"
 	},
 	"devDependencies": {
-		"@types/react": "^16.9.17",
-		"@types/react-dom": "^16.9.4",
-		"@types/styled-components": "^4.4.2",
 		"css-loader": "^3.4.2",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.2",
@@ -51,7 +45,6 @@
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "^24.9.0",
 		"style-loader": "^1.1.2",
-		"ts-jest": "^24.3.0",
 		"webpack-dev-server": "^3.10.1"
 	}
 }
