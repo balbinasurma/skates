@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react'
+import React, {Fragment, useState} from 'react'
 import styled from 'styled-components'
-import isDevelopment from 'functions/isDevelopment'
+import isDevelopment from '../../functions/isDevelopment'
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'

@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -15,8 +15,8 @@ const MobileMenuIconButton = styled.button`
 	}
 `
 
-const MobileMenuIcon = ({ mobileMenuOpen, setMobileMenuOpen }) => (
-	<MobileMenuIconButton aria-label="menu">
+const MobileMenuIcon = ({mobileMenuOpen, setMobileMenuOpen}) => (
+	<MobileMenuIconButton aria-label="menu" className="mobile-menu-icon">
 		<FontAwesomeIcon
 			onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 			icon={mobileMenuOpen ? [ 'fas', 'times' ] : [ 'fas', 'bars' ]}

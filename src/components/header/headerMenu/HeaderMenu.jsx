@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import HeaderMenuItem from './HeaderMenuItem'
-import getDataFromDB from 'functions/getDataFromDB'
+import getDataFromDB from '../../../functions/getDataFromDB'
 
 const HeaderMenuNav = styled.nav`
 	min-height: 70px;
@@ -29,7 +29,7 @@ const HeaderMenu = ({mobileMenuOpen}) => {
 	}, [])
 
 	return (
-		<HeaderMenuNav mobileMenuOpen={mobileMenuOpen}>
+		<HeaderMenuNav mobileMenuOpen={mobileMenuOpen} className="header-menu">
 			{linksArray &&
 				linksArray.map(({title, path}, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
 		</HeaderMenuNav>

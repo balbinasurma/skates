@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import HeaderSocialItem from './HeaderSocialItem'
-import getDataFromDB from 'functions/getDataFromDB'
+import getDataFromDB from '../../../functions/getDataFromDB'
 
 const HeaderSocialSection = styled.section`
 	display: flex;
@@ -19,7 +19,7 @@ const HeaderSocial = () => {
 	return (
 		<HeaderSocialSection>
 			{socialMedia &&
-				socialMedia.map(({ icon, link, label }, index) => (
+				socialMedia.map(({icon, link, label}, index) => (
 					<HeaderSocialItem label={label} icon={[ icon ]} link={link} key={index} />
 				))}
 		</HeaderSocialSection>
