@@ -7,7 +7,6 @@ const SectionForMainGenericSection = styled.section`
 	flex-direction: column;
 	padding: 10vh 10%;
 	min-height: 100vh;
-	// @ts-ignore
 	background-image: ${({mainSectionBackgroundImage}) => `url(${mainSectionBackgroundImage})`};
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -29,21 +28,12 @@ const SectionForMainGenericSection = styled.section`
 	}
 `
 
-const SectionForMainGeneric = ({
-	mainSectionTitle,
-	mainSectionContent,
-	mainSectionBackgroundImage
-}: {
-	mainSectionTitle?: string
-	mainSectionContent
-	mainSectionBackgroundImage?: string
-}) => {
+const SectionForMainGeneric = ({mainSectionTitle, mainSectionContent, mainSectionBackgroundImage}) => {
 	let isWhite = mainSectionBackgroundImage ? true : false
 
 	return (
 		<SectionForMainGenericSection
 			className="section-for-main-generic"
-			// @ts-ignore
 			mainSectionBackgroundImage={mainSectionBackgroundImage}>
 			{mainSectionTitle && <SectionTitleForMainGeneric isWhite={isWhite} mainSectionTitle={mainSectionTitle} />}
 			{mainSectionContent}

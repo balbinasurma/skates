@@ -2327,10 +2327,7 @@ const Zawody = ({dataArray}) => {
 
 	return (
 		<ZawodyDiv>
-			<svg
-				// @ts-ignore
-				ref={chartRef}
-			/>
+			<svg ref={chartRef} />
 		</ZawodyDiv>
 	)
 }

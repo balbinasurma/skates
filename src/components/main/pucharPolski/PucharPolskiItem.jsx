@@ -54,8 +54,7 @@ const PucharPolskiItemArticle = styled.article`
 	}
 `
 
-const PucharPolskiItem = ({ title, comment, date, picture }) => (
-	// @ts-ignore
+const PucharPolskiItem = ({title, comment, date, picture}) => (
 	<PucharPolskiItemArticle picture={picture}>
 		<h3>{title}</h3>
 		<h2>{date}</h2>
@@ -65,11 +64,9 @@ const PucharPolskiItem = ({ title, comment, date, picture }) => (
 		<img
 			src={picture}
 			alt={title}
-			onLoad={({ target }) => {
-				// @ts-ignore
+			onLoad={({target}) => {
 				let pictureWidth = target.width
 
-				// @ts-ignore
 				target.parentElement.scrollLeft = pictureWidth / 3
 			}}
 		/>

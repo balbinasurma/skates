@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import HeaderMenuItem from './HeaderMenuItem'
 import getDataFromDB from 'functions/getDataFromDB'
@@ -11,8 +11,7 @@ const HeaderMenuNav = styled.nav`
 
 	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
 		flex-direction: column;
-		// @ts-ignore
-		display: ${({ mobileMenuOpen }) => (mobileMenuOpen ? 'block' : 'none')};
+		display: ${({mobileMenuOpen}) => (mobileMenuOpen ? 'block' : 'none')};
 		position: absolute;
 		left: 0;
 		top: 70px;
@@ -20,7 +19,7 @@ const HeaderMenuNav = styled.nav`
 	}
 `
 
-const HeaderMenu = ({ mobileMenuOpen }) => {
+const HeaderMenu = ({mobileMenuOpen}) => {
 	const [ linksArray, setLinksArray ] = useState()
 
 	useEffect(() => {
@@ -30,10 +29,9 @@ const HeaderMenu = ({ mobileMenuOpen }) => {
 	}, [])
 
 	return (
-		// @ts-ignore
 		<HeaderMenuNav mobileMenuOpen={mobileMenuOpen}>
 			{linksArray &&
-				linksArray.map(({ title, path }, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
+				linksArray.map(({title, path}, index) => <HeaderMenuItem title={title} path={path} key={index} />)}
 		</HeaderMenuNav>
 	)
 }

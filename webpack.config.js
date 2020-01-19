@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 const config = {
-	entry: './src/index.jsx',
+	entry: [ '@babel/polyfill', './src/index.jsx' ],
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'build')

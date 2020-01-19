@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const HeroMainGenericHeader = styled.header`
 	min-height: 30vh;
-	// @ts-ignore
 	height: ${({isHeroFullSize}) => `calc(${isHeroFullSize ? '100vh' : '35vh'} - 5px)`};
 	position: relative;
 	display: flex;
@@ -17,13 +16,11 @@ const HeroMainGenericHeader = styled.header`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		// @ts-ignore
 		background-image: ${({heroBackgroundImage}) =>
 			heroBackgroundImage ? `url(${heroBackgroundImage})` : undefined};
 		background-size: cover;
 		background-position: center top;
 		z-index: -1;
-		// @ts-ignore
 		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
 		transition-timing-function: cubic-bezier(.95, .02, .75, .66);
 	}
@@ -61,7 +58,6 @@ const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
 	useEffect(() => {
 		document.addEventListener('scroll', () => {
 			let scrollPosition = window.scrollY,
-				// @ts-ignore
 				heroHeight = heroRef.current.clientHeight
 
 			if (scrollPosition < heroHeight) {
@@ -71,15 +67,11 @@ const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
 	}, [])
 
 	return (
-		// @ts-ignore
 		<HeroMainGenericHeader
 			className="hero-main-generic"
-			// @ts-ignore
 			ref={heroRef}
 			heroScrollPercentage={heroScrollPercentage}
-			// @ts-ignore
 			heroBackgroundImage={heroBackgroundImage}
-			// @ts-ignore
 			isHeroFullSize={isHeroFullSize}>
 			<h1>{heroTitle}</h1>
 		</HeroMainGenericHeader>

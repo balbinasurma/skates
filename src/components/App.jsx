@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import injectTagInHtml from 'functions/injectTagInHtml'
 import Header from 'components/header/Header'
 import React, {Fragment, useEffect, useState} from 'react'
