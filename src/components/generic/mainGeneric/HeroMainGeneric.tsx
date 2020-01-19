@@ -38,6 +38,7 @@ const HeroMainGenericHeader = styled.header`
 		font-size: 9vh;
 		z-index: 1;
 		text-shadow: 1px 1px 1px gray;
+		margin: 0;
 	}
 
 	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {

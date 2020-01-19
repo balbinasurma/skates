@@ -34,7 +34,7 @@ const SectionForMainGeneric = ({
 	mainSectionContent,
 	mainSectionBackgroundImage
 }: {
-	mainSectionTitle
+	mainSectionTitle?: string
 	mainSectionContent
 	mainSectionBackgroundImage?: string
 }) => {
