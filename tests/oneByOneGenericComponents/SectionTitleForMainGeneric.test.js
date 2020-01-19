@@ -1,6 +1,5 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import 'jest-styled-components'
 
 import SectionTitleForMainGeneric from '../../src/components/generic/sectionForMain/SectionTitleForMainGeneric'
 
