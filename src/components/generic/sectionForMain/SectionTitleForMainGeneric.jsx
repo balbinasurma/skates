@@ -18,7 +18,7 @@ const SectionTitleForMainGenericH1 = styled.h1`
 `
 
 const SectionTitleForMainGeneric = ({isWhite, mainSectionTitle}) => (
-	<SectionTitleForMainGenericH1 style={{color: 'red'}} className="section-title-for-main-generic" isWhite={isWhite}>
+	<SectionTitleForMainGenericH1 className="section-title-for-main-generic" isWhite={isWhite}>
 		{mainSectionTitle}
 	</SectionTitleForMainGenericH1>
 )

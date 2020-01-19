@@ -7,10 +7,12 @@ const SectionForMainGenericSection = styled.section`
 	flex-direction: column;
 	padding: 10vh 10%;
 	min-height: 100vh;
-	background-image: ${({mainSectionBackgroundImage}) => `url(${mainSectionBackgroundImage})`};
+	background-image: ${({mainSectionBackgroundImage}) =>
+		mainSectionBackgroundImage ? `url(${mainSectionBackgroundImage})` : undefined};
 	background-repeat: no-repeat;
 	background-size: cover;
 	justify-content: space-between;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
 
 	& > *:not(:first-child):not(aside) {
 		width: 100%;

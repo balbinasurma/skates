@@ -8,6 +8,7 @@ const HeroMainGenericHeader = styled.header`
 	display: flex;
 	flex-direction: column-reverse;
 	padding: 10vh 10%;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
 
 	&::before {
 		content: "";
