@@ -86,6 +86,24 @@ const App = () => {
 		})()
 	}, [])
 
+	////////////////////// TEST
+
+	// useEffect(() => {
+	// 	getDataAndAppendComponents(
+	// 		process.env.DATABASE_ZAWODY,
+	// 		// this is wrong
+	// 		<Zawody dataArray={zawodyData.dataArray} />,
+	// 		setZawodyData
+	// 	)
+	// })
+
+	// // this should be external function
+	// const getDataAndAppendComponents = async (env, components, setToState) => {
+	// 	let thisPathData = await getDataFromDB(env)
+	// 	thisPathData.components = components
+	// 	setToState(thisPathData)
+	// }
+
 	return (
 		// app doesn't have styled, becuase doesn't need additional main tag
 		<Fragment>
