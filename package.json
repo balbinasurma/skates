@@ -5,15 +5,22 @@
 	"homepage": ".",
 	"main": "index.jsx",
 	"babel": {
-		"presets": [ "@babel/preset-env", "@babel/preset-react" ],
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		],
 		"env": {
 			"test": {
-				"plugins": [ "@babel/plugin-transform-runtime" ]
+				"plugins": [
+					"@babel/plugin-transform-runtime"
+				]
 			}
 		}
 	},
 	"jest": {
-		"setupFilesAfterEnv": [ "<rootDir>/jest.setup.js" ]
+		"setupFilesAfterEnv": [
+			"<rootDir>/jest.setup.js"
+		]
 	},
 	"scripts": {
 		"start": "webpack-dev-server  --mode=development",
@@ -61,6 +68,7 @@
 		"file-loader": "^5.0.2",
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "^24.9.0",
+		"jest-styled-components": "^7.0.0",
 		"style-loader": "^1.1.2",
 		"webpack-dev-server": "^3.10.1"
 	}
