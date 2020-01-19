@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 const config = {
-	entry: './src/index.tsx',
+	entry: './src/index.jsx',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'build')
@@ -28,13 +28,14 @@ const config = {
 			functions: path.join(__dirname, 'src', '/functions'),
 			components: path.join(__dirname, 'src', '/components')
 		},
-		extensions: [ '.tsx', '.ts', '.js' ]
+		extensions: [ '.jsx', '.js' ]
 	},
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
-				loader: 'ts-loader'
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.css$/i,
