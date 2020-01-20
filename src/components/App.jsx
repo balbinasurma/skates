@@ -22,7 +22,6 @@ import FerieUpper from './main/ferie/FerieUpper'
 import FerieLower from './main/ferie/FerieLower'
 import {Switch, Route} from 'react-router-dom'
 import Zawody from './zawody/Zawody'
-import NowySezon from './nowySezon/NowySezon'
 // import Footer from './Footer'
 
 library.add(fab, faFacebookSquare, faLinkedin, faAt, faBars, faTimes, faSkating, faCalendarAlt, faClock, faMapMarkedAlt)
@@ -119,10 +118,6 @@ const App = () => {
 						heroBackgroundImage={process.env.LINKS_HERO_BACKGROUND}
 						mainContent={
 							<Fragment>
-								<SectionForMainGeneric
-									mainSectionTitle="Nowy Sezon 2020"
-									mainSectionContent={<NowySezon />}
-								/>
 								{ferieData && (
 									<SectionForMainGeneric
 										mainSectionTitle={ferieData.sectionTitle}
