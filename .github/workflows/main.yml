@@ -54,7 +54,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - run: >-
-        curl -L -X POST
-        -H "Content-Type: application/json"
-        -H "Authorization: token ${{ secrets.personalAccessToken }}"
-        "https://api.github.com/repos/balbinasurma/balbinasurma.github.io/pages/builds"
+          curl -L -X POST
+          -H "Content-Type: application/json"
+          -H "Authorization: token ${{ secrets.personalAccessToken }}"
+          "https://api.github.com/repos/balbinasurma/balbinasurma.github.io/pages/builds"
