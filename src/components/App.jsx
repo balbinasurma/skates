@@ -22,6 +22,7 @@ import FerieUpper from './main/ferie/FerieUpper'
 import FerieLower from './main/ferie/FerieLower'
 import {Switch, Route} from 'react-router-dom'
 import Zawody from './zawody/Zawody'
+// import Footer from './Footer'
 
 library.add(fab, faFacebookSquare, faLinkedin, faAt, faBars, faTimes, faSkating, faCalendarAlt, faClock, faMapMarkedAlt)
 
@@ -144,6 +145,7 @@ const App = () => {
 					</Route>
 				)}
 			</Switch>
+			{/* <Footer /> */}
 		</Fragment>
 	)
 }
