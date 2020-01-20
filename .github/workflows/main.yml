@@ -9,20 +9,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     # - name: step one access folders
-    #   run: git status
-    # - run: git remote -v
     # - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
-    # - run: git remote -v
     # - run: git config user.email ${{secrets.email}}
     # - run: git config user.name ${{secrets.user}}
     # - run: git checkout -b auto
     # - run: echo "123" > aaa.html
     # - run: git add .
-    # - run: git status
     # - run: git commit -m "auto"
     # - run: git push --set-upstream origin auto
 
     - name: ssh
       env:
         SSH_AUTH_SOCK: /tmp/ssh_Agent.sock
-      run: echo SSH_AUTH_SOCK
+      run: echo $SSH_AUTH_SOCK
