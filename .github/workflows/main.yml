@@ -24,6 +24,4 @@ jobs:
       run: |
         echo $SSH_AUTH_SOCK
         mkdir -p ~/.ssh
-        ssh-keyscan github.com
         ssh-keyscan github.com >> ~/.shh/known_hosts
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
