@@ -11,3 +11,4 @@ jobs:
     - name: step one access folders
       run: git status
     - run: git remote -v
+    - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
