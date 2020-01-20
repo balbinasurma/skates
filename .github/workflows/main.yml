@@ -12,3 +12,4 @@ jobs:
       run: git status
     - run: git remote -v
     - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
+    - run: git remote -v
