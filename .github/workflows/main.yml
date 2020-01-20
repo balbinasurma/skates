@@ -38,14 +38,15 @@ jobs:
       # - run: git remote add origin https://grandalf6:${{ secrets.GRANDALF6_DEPLOY_KEY}}@github.com/balbinasurma/balbinasurma.github.io.git
       - run: git config user.email ${{secrets.email}}
       - run: git config user.name ${{secrets.user}}
+      - run: git remote -v
       - run: git remote show origin
       - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
 
-      - run: git checkout -b auto
-      - uses: actions/download-artifact@v1.0.0
-        with:
-          name: buildOutcome
-          path: ./
-      - run: git add .
-      - run: git commit -m "autoCommit"
-      - run: git push --force origin HEAD:master
+      # - run: git checkout -b auto
+      # - uses: actions/download-artifact@v1.0.0
+      #   with:
+      #     name: buildOutcome
+      #     path: ./
+      # - run: git add .
+      # - run: git commit -m "autoCommit"
+      # - run: git push --force origin HEAD:master
