@@ -9,5 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: step one access folders
-    - run: git status
-    
+      - run: git status
