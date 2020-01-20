@@ -41,7 +41,7 @@ jobs:
       # - run: git remote -v
       # - run: git remote show origin
       # - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
-      - run: git clone git@github.com:balbinasurma/balbinasurma.github.io.git
+      - run: GIT_SSH_COMMAND="ssh -i ${{ secrets.GRANDALF6_DEPLOY_KEY}}" git clone git@github.com:balbinasurma/balbinasurma.github.io.git
       - run: git status
 
       # - run: git checkout -b auto
