@@ -36,12 +36,11 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - run: |
-          git init
-          git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git
-          git config user.email ${{secrets.email}}
-          git config user.name ${{secrets.user}}
-          git status
           git remote -v
+          # git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git
+          # git config user.email ${{secrets.email}}
+          # git config user.name ${{secrets.user}}
+          git status
 
       # - uses: actions/download-artifact@v1.0.0
       #   with:
