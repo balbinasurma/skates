@@ -4,19 +4,19 @@ on:
       - code
 
 jobs:
-  TEST:
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - run: |
-          npm install
-          npm run test
+  # TEST:
+  #   runs-on: [ubuntu-latest]
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12.x
+  #     - run: |
+  #         npm install
+  #         npm run test
 
   BUILD:
-    needs: [TEST]
+    # needs: [TEST]
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
@@ -40,8 +40,10 @@ jobs:
           git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git
           git config user.email ${{secrets.email}}
           git config user.name ${{secrets.user}}
-          git checkout -b auto
-      
+          git status
+          git pull
+          git status
+
       - uses: actions/download-artifact@v1.0.0
         with:
           name: buildOutcome
@@ -49,7 +51,6 @@ jobs:
       - run: |
           git add .
           git commit -m "autoCommit"
-          git show-ref
           git push --force origin HEAD:master
   
   INVOKE_BUILD:
