@@ -4,54 +4,9 @@ on:
       - code
 
 jobs:
-  # TEST:
-  #   runs-on: [ubuntu-latest]
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - run: npm install
-  #     - run: npm run test
-
-  # BUILD:
-  #   needs: [TEST]
-  #   runs-on: [ubuntu-latest]
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - run: |
-  #         npm install
-  #         npm run build
-  #     - uses: actions/upload-artifact@v1
-  #       with:
-  #         name: buildOutcome
-  #         path: build
-
   GIT:
-    # needs: [BUILD]
     runs-on: [ubuntu-latest]
     steps:
-      # - run: git init
-      # - run: git remote add origin https://grandalf6:${{ secrets.GRANDALF6_DEPLOY_KEY}}@github.com/balbinasurma/balbinasurma.github.io.git
-      # - run: git config user.email ${{secrets.email}}
-      # - run: git config user.name ${{secrets.user}}
-      # - run: git remote -v
-      # - run: git remote show origin
-      # - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
-      # - run: GIT_SSH_COMMAND="ssh -i ${{ secrets.GRANDALF6_DEPLOY_KEY}}" git clone git@github.com:balbinasurma/balbinasurma.github.io.git
-      # - run: git status
-
-      # - run: git checkout -b auto
-      # - uses: actions/download-artifact@v1.0.0
-      #   with:
-      #     name: buildOutcome
-      #     path: ./
-      # - run: git add .
-      # - run: git commit -m "autoCommit"
-      # - run: git push --force origin HEAD:master
     - uses: actions/checkout@v1
     - name: Setup SSH Keys and known_hosts
         env:
