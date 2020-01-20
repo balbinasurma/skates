@@ -13,6 +13,9 @@ jobs:
     - run: git remote -v
     - run: git remote set-url origin git@github.com:balbinasurma/balbinasurma.github.io.git
     - run: git remote -v
+    - run: git checkout -b auto
     - run: echo "123" > aaa.html
     - run: git add .
     - run: git status
+    - run: git commit -m "auto"
+    - run: git push --set-upstream origin auto
