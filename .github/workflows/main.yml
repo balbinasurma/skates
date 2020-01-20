@@ -31,7 +31,7 @@ jobs:
   #         path: build
 
   GIT:
-    needs: [BUILD]
+    # needs: [BUILD]
     runs-on: [ubuntu-latest]
     steps:
       - run: git init
