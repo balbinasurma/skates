@@ -24,4 +24,5 @@ jobs:
       run: |
         echo $SSH_AUTH_SOCK
         mkdir -p ~/.ssh
+        echo $GITHUB_WORKSPACE
         ssh-keyscan github.com >> ~/.shh/known_hosts
