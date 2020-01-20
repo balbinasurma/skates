@@ -22,3 +22,6 @@ jobs:
       env:
         SSH_AUTH_SOCK: /tmp/ssh_Agent.sock
       run: echo $SSH_AUTH_SOCK
+      run: mkdir -p ~/.ssh
+      run: git status
+      run: dir
