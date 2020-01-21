@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import DivTitleForMainSection from './DivTitleForMainSection'
 
 const DivForMainSectionDiv = styled.div`
 	border: 1px solid red;
@@ -8,7 +9,7 @@ const DivForMainSectionDiv = styled.div`
 
 const DivForMainSection = ({divTitle, content}) => {
 	return (
-		<DivForMainSectionDiv>
+		<DivForMainSectionDiv className="div-for-main-section">
 			<DivTitleForMainSection divTitle={divTitle} />
 			{content}
 		</DivForMainSectionDiv>
