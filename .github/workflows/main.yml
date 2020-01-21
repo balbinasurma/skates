@@ -36,7 +36,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - run: |
-          git remote -v
+          git init
           # git remote add origin https://grandalf6:${{ secrets.GITHUB_TOKEN }}@github.com/balbinasurma/balbinasurma.github.io.git
           # git config user.email ${{secrets.email}}
           # git config user.name ${{secrets.user}}
