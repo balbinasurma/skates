@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import styled from 'styled-components'
 
-const HeaderMenuItemLink = styled(Link)`
+const HeaderMenuItemNavLink = styled(NavLink)`
 	height: 50%;
 	display: flex;
 	background: none;
@@ -22,12 +22,12 @@ const HeaderMenuItemLink = styled(Link)`
 	transition: border 0.8s;
 	text-shadow: 1px 1px 1px gray;
 
-	&:first-child {
-		border-bottom: 3px solid white;
-	}
-
 	&:hover {
 		border-color: white;
+	}
+
+	&.active {
+		border-bottom: 3px solid white;
 	}
 
 	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
@@ -37,6 +37,10 @@ const HeaderMenuItemLink = styled(Link)`
 	}
 `
 
-const HeaderMenuItem = ({ title, path }) => <HeaderMenuItemLink to={path}>{title}</HeaderMenuItemLink>
+const HeaderMenuItem = ({title, path}) => (
+	<HeaderMenuItemNavLink exact to={path}>
+		{title}
+	</HeaderMenuItemNavLink>
+)
 
 export default HeaderMenuItem

@@ -9,7 +9,8 @@ import {
 	faClock,
 	faMapMarkedAlt,
 	faSkating,
-	faTimes
+	faTimes,
+	faSortDown
 } from '@fortawesome/free-solid-svg-icons'
 import {faFacebookSquare, faLinkedin, fab} from '@fortawesome/free-brands-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -22,9 +23,21 @@ import FerieUpper from './main/ferie/FerieUpper'
 import FerieLower from './main/ferie/FerieLower'
 import {Switch, Route} from 'react-router-dom'
 import Zawody from './zawody/Zawody'
-import Footer from './Footer'
+// import Footer from './Footer'
 
-library.add(fab, faFacebookSquare, faLinkedin, faAt, faBars, faTimes, faSkating, faCalendarAlt, faClock, faMapMarkedAlt)
+library.add(
+	fab,
+	faFacebookSquare,
+	faLinkedin,
+	faAt,
+	faBars,
+	faTimes,
+	faSkating,
+	faCalendarAlt,
+	faClock,
+	faMapMarkedAlt,
+	faSortDown
+)
 
 const App = () => {
 	/////////////// INIT
@@ -83,7 +96,7 @@ const App = () => {
 			// getting ferieData
 			let zawodyData = await getDataFromDB(process.env.DATABASE_ZAWODY)
 
-			zawodyData.components = <Zawody dataArray={zawodyData.dataArray} />
+			zawodyData.components = <Zawody />
 			setZawodyData(zawodyData)
 		})()
 	}, [])
@@ -114,46 +127,47 @@ const App = () => {
 				<Route exact path="/">
 					<MainGeneric
 						title="Balbina Surma"
+						isHeroShaded={70}
 						isHeroFullSize={true}
 						heroBackgroundImage={process.env.LINKS_HERO_BACKGROUND}
 						mainContent={
-							<Fragment>
-								{ferieData && (
-									<SectionForMainGeneric
-										mainSectionTitle={ferieData.sectionTitle}
-										mainSectionBackgroundImage={ferieData.backgroundImage}
-										mainSectionContent={ferieData.components}
-									/>
-								)}
-								{pucharPolskiData && (
-									<SectionForMainGeneric
-										mainSectionTitle={pucharPolskiData.sectionTitle}
-										mainSectionContent={pucharPolskiData.components}
-									/>
-								)}
-							</Fragment>
+							ferieData && (
+								<SectionForMainGeneric
+									mainSectionTitle={ferieData.sectionTitle}
+									mainSectionBackgroundImage={ferieData.backgroundImage}
+									mainSectionContent={ferieData.components}
+								/>
+							)
 						}
 					/>
 				</Route>
+				{pucharPolskiData && (
+					<Route exact path={pucharPolskiData.path}>
+						<MainGeneric
+							heroImagePositionTop={pucharPolskiData.heroImagePositionTop}
+							heroBackgroundImage={pucharPolskiData.heroBackgroundImage}
+							mainContent={
+								<SectionForMainGeneric
+									mainSectionTitle={pucharPolskiData.sectionTitle}
+									mainSectionContent={pucharPolskiData.components}
+								/>
+							}
+						/>
+					</Route>
+				)}
 				{zawodyData && (
 					<Route exact path={zawodyData.path}>
 						<MainGeneric
-							title={zawodyData.title}
+							heroImagePositionTop={zawodyData.heroImagePositionTop}
+							isHeroBright={zawodyData.isHeroBright}
+							heroBackgroundImage={zawodyData.heroBackgroundImage}
 							isHeroFullSize={zawodyData.isHeroFullSize}
 							mainContent={<SectionForMainGeneric mainSectionContent={zawodyData.components} />}
 						/>
 					</Route>
 				)}
-
-				<Route exact path={'/zawody'}>
-					<MainGeneric
-						// title={zawodyData.title}
-						// isHeroFullSize={zawodyData.isHeroFullSize}
-						mainContent={<SectionForMainGeneric mainSectionContent={<Zawody />} />}
-					/>
-				</Route>
 			</Switch>
-			<Footer />
+			{/* <Footer /> */}
 		</Fragment>
 	)
 }

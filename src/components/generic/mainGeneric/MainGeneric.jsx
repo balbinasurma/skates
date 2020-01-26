@@ -4,9 +4,24 @@ import HeroMainGeneric from './HeroMainGeneric'
 
 const MainGenericMain = styled.main`height: auto;`
 
-const MainGeneric = ({title, mainContent, heroBackgroundImage, isHeroFullSize}) => (
+const MainGeneric = ({
+	title,
+	mainContent,
+	heroBackgroundImage,
+	isHeroFullSize,
+	isHeroShaded,
+	heroImagePositionTop,
+	isHeroBright
+}) => (
 	<MainGenericMain className="main-generic">
-		<HeroMainGeneric heroTitle={title} heroBackgroundImage={heroBackgroundImage} isHeroFullSize={isHeroFullSize} />
+		<HeroMainGeneric
+			heroTitle={title}
+			heroImagePositionTop={heroImagePositionTop}
+			heroBackgroundImage={heroBackgroundImage}
+			isHeroBright={isHeroBright}
+			isHeroShaded={isHeroShaded}
+			isHeroFullSize={isHeroFullSize}
+		/>
 		{mainContent}
 	</MainGenericMain>
 )

@@ -17,3 +17,16 @@ body {
 	flex-direction: column;
 	position: relative;
 }
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: gray;
+	border-radius: 5px;
+}

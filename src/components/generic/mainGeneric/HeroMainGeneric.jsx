@@ -2,8 +2,8 @@ import React, {useState, useRef, useEffect} from 'react'
 import styled from 'styled-components'
 
 const HeroMainGenericHeader = styled.header`
-	min-height: 30vh;
-	height: ${({isHeroFullSize}) => `calc(${isHeroFullSize ? '100vh' : '35vh'} - 5px)`};
+	min-height: 40vh;
+	height: ${({isHeroFullSize}) => `calc(${isHeroFullSize ? '100vh' : '40vh'} - 5px)`};
 	position: relative;
 	display: flex;
 	flex-direction: column-reverse;
@@ -20,9 +20,13 @@ const HeroMainGenericHeader = styled.header`
 		background-image: ${({heroBackgroundImage}) =>
 			heroBackgroundImage ? `url(${heroBackgroundImage})` : undefined};
 		background-size: cover;
-		background-position: center top;
+		background-position: ${({heroImagePositionTop}) =>
+			heroImagePositionTop ? `center ${heroImagePositionTop}` : 'center'};
 		z-index: -1;
-		filter: ${({heroScrollPercentage}) => `grayscale(70%) brightness(85%) blur(${heroScrollPercentage * 7}px)`};
+		filter: ${({heroScrollPercentage, isHeroShaded, isHeroBright}) =>
+			`grayscale(${isHeroShaded ? `${isHeroShaded}%` : '0%'}) brightness(${isHeroBright
+				? `${isHeroBright}%`
+				: '100%'}) blur(${heroScrollPercentage * 7}px)`};
 		transition-timing-function: cubic-bezier(.95, .02, .75, .66);
 	}
 
@@ -52,7 +56,14 @@ const HeroMainGenericHeader = styled.header`
 	}
 `
 
-const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
+const HeroMainGeneric = ({
+	heroTitle,
+	heroBackgroundImage,
+	isHeroFullSize,
+	isHeroShaded,
+	isHeroBright,
+	heroImagePositionTop
+}) => {
 	const heroRef = useRef(),
 		[ heroScrollPercentage, setHeroScrollPercentage ] = useState(0)
 
@@ -71,6 +82,9 @@ const HeroMainGeneric = ({heroTitle, heroBackgroundImage, isHeroFullSize}) => {
 		<HeroMainGenericHeader
 			className="hero-main-generic"
 			ref={heroRef}
+			isHeroBright={isHeroBright}
+			isHeroShaded={isHeroShaded}
+			heroImagePositionTop={heroImagePositionTop}
 			heroScrollPercentage={heroScrollPercentage}
 			heroBackgroundImage={heroBackgroundImage}
 			isHeroFullSize={isHeroFullSize}>

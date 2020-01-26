@@ -1,25 +1,25 @@
-{
-	"type": "FeatureCollection",
-	"features": [
+let dataBackup = {
+	type: 'FeatureCollection',
+	features: [
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 1,
-				"NAME_1": "Łódź",
-				"HASC_1": "PL.LD",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Lódzkie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 1,
+				NAME_1: 'Łódź',
+				HASC_1: 'PL.LD',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Lódzkie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 19.34230995178234, 52.309185028076286 ],
 						[ 19.379350662231559, 52.290767669677734 ],
@@ -121,24 +121,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 2,
-				"NAME_1": "Świętokrzyskie",
-				"HASC_1": "PL.SK",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Swietokrzyskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 2,
+				NAME_1: 'Świętokrzyskie',
+				HASC_1: 'PL.SK',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Swietokrzyskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 20.707059860229549, 51.146389007568416 ],
 						[ 20.746347427368278, 51.116504669189567 ],
@@ -207,24 +207,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 3,
-				"NAME_1": "Greater Poland",
-				"HASC_1": "PL.WP",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Wielkopolskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 3,
+				NAME_1: 'Greater Poland',
+				HASC_1: 'PL.WP',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Wielkopolskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 16.921819686889762, 53.596515655517578 ],
 						[ 16.974912643432617, 53.576305389404297 ],
@@ -362,24 +362,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 4,
-				"NAME_1": "Kuyavian-Pomeranian",
-				"HASC_1": "PL.KP",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Kujawsko-Pomorskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 4,
+				NAME_1: 'Kuyavian-Pomeranian',
+				HASC_1: 'PL.KP',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Kujawsko-Pomorskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 18.255659103393498, 53.694229125976506 ],
 						[ 18.313724517822379, 53.653823852539062 ],
@@ -465,24 +465,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 5,
-				"NAME_1": "Lesser Poland",
-				"HASC_1": "PL.MA",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Malopolskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 5,
+				NAME_1: 'Lesser Poland',
+				HASC_1: 'PL.MA',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Malopolskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 20.159055709838867, 50.434627532959098 ],
 						[ 20.211643218994141, 50.432727813720817 ],
@@ -595,24 +595,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 6,
-				"NAME_1": "Lower Silesian",
-				"HASC_1": "PL.DS",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Dolnoslaskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 6,
+				NAME_1: 'Lower Silesian',
+				HASC_1: 'PL.DS',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Dolnoslaskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 16.168827056884766, 51.660892486572379 ],
 						[ 16.246667861938533, 51.661685943603516 ],
@@ -755,24 +755,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 7,
-				"NAME_1": "Lublin",
-				"HASC_1": "PL.LU",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Lubelskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 7,
+				NAME_1: 'Lublin',
+				HASC_1: 'PL.LU',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Lubelskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 23.199899673461971, 52.297153472900504 ],
 						[ 23.192348480224723, 52.285827636718864 ],
@@ -929,24 +929,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 8,
-				"NAME_1": "Lubusz",
-				"HASC_1": "PL.LB",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Lubuskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 8,
+				NAME_1: 'Lubusz',
+				HASC_1: 'PL.LB',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Lubuskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 16.02719688415533, 53.107391357421875 ],
 						[ 16.0577907562257, 53.061466217040959 ],
@@ -1044,24 +1044,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 9,
-				"NAME_1": "Masovian",
-				"HASC_1": "PL.MZ",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Mazowieckie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 9,
+				NAME_1: 'Masovian',
+				HASC_1: 'PL.MZ',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Mazowieckie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 21.561368942260799, 53.373596191406364 ],
 						[ 21.580892562866325, 53.306774139404297 ],
@@ -1210,24 +1210,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 10,
-				"NAME_1": "Opole",
-				"HASC_1": "PL.OP",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Opolskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 10,
+				NAME_1: 'Opole',
+				HASC_1: 'PL.OP',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Opolskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 17.793647766113338, 51.132637023925895 ],
 						[ 17.811014175415039, 51.079334259033317 ],
@@ -1316,24 +1316,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 11,
-				"NAME_1": "Podlachian",
-				"HASC_1": "PL.PD",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Podlaskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 11,
+				NAME_1: 'Podlachian',
+				HASC_1: 'PL.PD',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Podlaskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 22.884824752807617, 54.423789978027287 ],
 						[ 22.905992507934855, 54.396251678466797 ],
@@ -1431,24 +1431,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 12,
-				"NAME_1": "Pomeranian",
-				"HASC_1": "PL.PM",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Pomorskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 12,
+				NAME_1: 'Pomeranian',
+				HASC_1: 'PL.PM',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Pomorskie'
 			},
-			"geometry": {
-				"type": "MultiPolygon",
-				"coordinates": [
+			geometry: {
+				type: 'MultiPolygon',
+				coordinates: [
 					[
 						[
 							[ 18.796943664550838, 54.365695953369254 ],
@@ -1589,24 +1589,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 13,
-				"NAME_1": "Silesian",
-				"HASC_1": "PL.SL",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Slaskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 13,
+				NAME_1: 'Silesian',
+				HASC_1: 'PL.SL',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Slaskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 18.97734260559082, 51.013141632080192 ],
 						[ 19.169622421264762, 50.960159301757869 ],
@@ -1719,24 +1719,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 14,
-				"NAME_1": "Subcarpathian",
-				"HASC_1": "PL.PK",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Podkarpackie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 14,
+				NAME_1: 'Subcarpathian',
+				HASC_1: 'PL.PK',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Podkarpackie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 22.006273269653377, 50.767230987548885 ],
 						[ 22.117450714111328, 50.799907684326286 ],
@@ -1852,24 +1852,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 15,
-				"NAME_1": "Warmian-Masurian",
-				"HASC_1": "PL.WN",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Warminsko-Mazurskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 15,
+				NAME_1: 'Warmian-Masurian',
+				HASC_1: 'PL.WN',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Warminsko-Mazurskie'
 			},
-			"geometry": {
-				"type": "Polygon",
-				"coordinates": [
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
 					[
 						[ 19.803157806396541, 54.435363769531307 ],
 						[ 20.724056243896598, 54.359027862548771 ],
@@ -1951,24 +1951,24 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"properties": {
-				"ID_0": 181,
-				"ISO": "POL",
-				"NAME_0": "Poland",
-				"ID_1": 16,
-				"NAME_1": "West Pomeranian",
-				"HASC_1": "PL.ZP",
-				"CCN_1": 0,
-				"CCA_1": null,
-				"TYPE_1": "Województwo",
-				"ENGTYPE_1": "Voivodeship|Province",
-				"NL_NAME_1": null,
-				"name": "Zachodniopomorskie"
+			type: 'Feature',
+			properties: {
+				ID_0: 181,
+				ISO: 'POL',
+				NAME_0: 'Poland',
+				ID_1: 16,
+				NAME_1: 'West Pomeranian',
+				HASC_1: 'PL.ZP',
+				CCN_1: 0,
+				CCA_1: null,
+				TYPE_1: 'Województwo',
+				ENGTYPE_1: 'Voivodeship|Province',
+				NL_NAME_1: null,
+				name: 'Zachodniopomorskie'
 			},
-			"geometry": {
-				"type": "MultiPolygon",
-				"coordinates": [
+			geometry: {
+				type: 'MultiPolygon',
+				coordinates: [
 					[
 						[
 							[ 14.596389770507869, 53.63791656494152 ],
@@ -2269,3 +2269,5 @@
 		}
 	]
 }
+
+export default dataBackup
