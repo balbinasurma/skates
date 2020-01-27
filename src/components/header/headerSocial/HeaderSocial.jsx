@@ -20,7 +20,12 @@ const HeaderSocial = () => {
 		<HeaderSocialSection>
 			{socialMedia &&
 				socialMedia.map(({icon, link, label}, index) => (
-					<HeaderSocialItem label={label} icon={[ icon ]} link={link} key={index} />
+					<HeaderSocialItem
+						headerSocialItemLabel={label}
+						HeaderSocialItemIcon={[ icon ]}
+						headerSocialItemLink={link}
+						key={index}
+					/>
 				))}
 		</HeaderSocialSection>
 	)

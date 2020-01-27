@@ -9,13 +9,6 @@ const ZawodyDiv = styled.div``
 const Zawody = () => {
 	const [ filtersApplied, setFiltersApplied ] = useState()
 
-	useEffect(
-		() => {
-			console.log(filtersApplied)
-		},
-		[ filtersApplied ]
-	)
-
 	return (
 		<ZawodyDiv>
 			<ZawodyFilters

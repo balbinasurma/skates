@@ -1,6 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
+import {headerSocialItemIconType, headerSocialItemLinkType, headerSocialItemLabelType} from 'types/globalTypes'
 
 const HeaderSocialItemA = styled.a`
 	width: 80px;
@@ -18,10 +19,20 @@ const HeaderSocialItemA = styled.a`
 	}
 `
 
-const HeaderSocialItem = ({ icon, link, label }) => (
-	<HeaderSocialItemA href={link} target="_blank" rel="noopener" aria-label={label}>
-		<FontAwesomeIcon icon={[ icon[0].slice(0, 3), icon[0].slice(3) ]} color="white" size="3x" />
+const HeaderSocialItem = ({headerSocialItemIcon, headerSocialItemLink, headerSocialItemLabel}) => (
+	<HeaderSocialItemA href={headerSocialItemLink} target="_blank" rel="noopener" aria-label={headerSocialItemLabel}>
+		<FontAwesomeIcon
+			icon={[ headerSocialItemIcon[0].slice(0, 3), headerSocialItemIcon[0].slice(3) ]}
+			color="white"
+			size="3x"
+		/>
 	</HeaderSocialItemA>
 )
+
+HeaderSocialItem.propTypes = {
+	headerSocialItemIcon: headerSocialItemIconType,
+	headerSocialItemLink: headerSocialItemLinkType,
+	headerSocialItemLabel: headerSocialItemLabelType
+}
 
 export default HeaderSocialItem

@@ -1,5 +1,13 @@
 import React, {useState, useRef, useEffect} from 'react'
 import styled from 'styled-components'
+import {
+	heroTitleType,
+	heroBackgroundImageType,
+	isHeroFullSizeType,
+	isHeroShadedType,
+	isHeroBrightType,
+	heroImagePOsitionTopType
+} from 'types/globalTypes'
 
 const HeroMainGenericHeader = styled.header`
 	min-height: 40vh;
@@ -93,4 +101,12 @@ const HeroMainGeneric = ({
 	)
 }
 
+HeroMainGeneric.propTypes = {
+	heroTitle: heroTitleType,
+	heroBackgroundImage: heroBackgroundImageType,
+	isHeroFullSize: isHeroFullSizeType,
+	isHeroShaded: isHeroShadedType,
+	isHeroBright: isHeroBrightType,
+	heroImagePositionTop: heroImagePOsitionTopType
+}
 export default HeroMainGeneric

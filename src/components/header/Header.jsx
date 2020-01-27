@@ -32,13 +32,8 @@ const Header = () => {
 
 	return (
 		<HeaderHeader className="header">
-			{isDevelopment() && (
-				<Fragment>
-					<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
-					<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-				</Fragment>
-			)}
-
+			<HeaderMenu mobileMenuOpen={mobileMenuOpen} />
+			<MobileMenuIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 			<HeaderSocial />
 		</HeaderHeader>
 	)

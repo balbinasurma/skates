@@ -1,11 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import HeroMainGeneric from './HeroMainGeneric'
+import {
+	mainTitleType,
+	mainContentType,
+	heroBackgroundImageType,
+	isHeroFullSizeType,
+	isHeroShadedType,
+	heroImagePOsitionTopType,
+	isHeroBrightType
+} from 'types/globalTypes'
 
 const MainGenericMain = styled.main`height: auto;`
 
 const MainGeneric = ({
-	title,
+	mainTitle,
 	mainContent,
 	heroBackgroundImage,
 	isHeroFullSize,
@@ -15,7 +24,7 @@ const MainGeneric = ({
 }) => (
 	<MainGenericMain className="main-generic">
 		<HeroMainGeneric
-			heroTitle={title}
+			heroTitle={mainTitle}
 			heroImagePositionTop={heroImagePositionTop}
 			heroBackgroundImage={heroBackgroundImage}
 			isHeroBright={isHeroBright}
@@ -25,5 +34,15 @@ const MainGeneric = ({
 		{mainContent}
 	</MainGenericMain>
 )
+
+MainGeneric.propTypes = {
+	mainTitle: mainTitleType,
+	mainContent: mainContentType,
+	heroBackgroundImage: heroBackgroundImageType,
+	isHeroFullSize: isHeroFullSizeType,
+	isHeroShaded: isHeroShadedType,
+	heroImagePositionTop: heroImagePOsitionTopType,
+	isHeroBright: isHeroBrightType
+}
 
 export default MainGeneric

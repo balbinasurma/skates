@@ -1,6 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import styled from 'styled-components'
+import {headerMenuItemTitleType, headerMenuItemPathType} from 'types/globalTypes'
 
 const HeaderMenuItemNavLink = styled(NavLink)`
 	height: 50%;
@@ -37,10 +38,15 @@ const HeaderMenuItemNavLink = styled(NavLink)`
 	}
 `
 
-const HeaderMenuItem = ({title, path}) => (
-	<HeaderMenuItemNavLink exact to={path}>
-		{title}
+const HeaderMenuItem = ({headerMenuItemTitle, headerMenuItemPath}) => (
+	<HeaderMenuItemNavLink exact to={headerMenuItemPath}>
+		{headerMenuItemTitle}
 	</HeaderMenuItemNavLink>
 )
+
+HeaderMenuItem.propTypes = {
+	headerMenuItemTitle: headerMenuItemTitleType,
+	headerMenuItemPath: headerMenuItemPathType
+}
 
 export default HeaderMenuItem

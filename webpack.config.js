@@ -26,7 +26,8 @@ const config = {
 	resolve: {
 		alias: {
 			functions: path.join(__dirname, 'src', '/functions'),
-			components: path.join(__dirname, 'src', '/components')
+			components: path.join(__dirname, 'src', '/components'),
+			types: path.join(__dirname, 'src', '/types')
 		},
 		extensions: [ '.jsx', '.js' ]
 	},

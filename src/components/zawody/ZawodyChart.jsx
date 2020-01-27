@@ -6,29 +6,15 @@ import dataBackup from './data/dataBackup'
 import calcScale from './functions/calcScale'
 import calcOffset from './functions/calcOffset'
 import calcProjection from './functions/calcProjection'
+import ZawodyCityNameTooltip from './ZawodyCityNameTooltip'
+import ZawodyInfoTooltip from './ZawodyInfoTooltip'
+import handleHoverDataPoint from './functions/handleHoverDataPoint'
+import handleClickOnDataPoint from './functions/handleClickOnDataPoint'
 
 const ZawodyChartDiv = styled.div`
 	height: 500px;
 	user-select: none;
 	position: relative;
-
-	& > aside {
-		min-width: 10px;
-		padding: 0 8px;
-		font-family: Roboto;
-		font-size: 10px;
-		color: #ffffff;
-		border-radius: 4px;
-		background: rgba(97, 97, 97, 0.90);
-		height: 24px;
-		position: absolute;
-		top: 0;
-		display: none;
-		align-items: center;
-		justify-content: center;
-		transition: 0.0675s;
-		transform: scale(1) translate(-50%);
-	}
 
 	& > svg {
 		width: 100%;
@@ -66,6 +52,10 @@ const ZawodyChartDiv = styled.div`
 						font-size: 20px;
 						text-anchor: middle;
 					}
+
+					& > circle {
+						transition: 0.3s;
+					}
 				}
 			}
 		}
@@ -75,7 +65,8 @@ const ZawodyChartDiv = styled.div`
 const ZawodyChart = ({calendarData}) => {
 	const chartRef = useRef(),
 		[ chartDimmensions, setChartDimmensions ] = useState(),
-		cityNameRef = useRef()
+		cityNameRef = useRef(),
+		infoRef = useRef()
 
 	const drawChart = async () => {
 		// define basic variables
@@ -91,8 +82,6 @@ const ZawodyChart = ({calendarData}) => {
 
 			data = dataBackup,
 			{features} = data
-
-		console.log(calendarData)
 
 		// append WOJ to each woj
 		features.forEach((feature) => (feature.WOJ = feature.properties.HASC_1.replace('.', '').slice(2)))
@@ -134,23 +123,20 @@ const ZawodyChart = ({calendarData}) => {
 				.attr('id', ({WOJ}) => WOJ)
 				.attr('class', ({WOJ}) => `wojewodztwo ${hasWojAnyRecords(polandData, WOJ) ? 'notBlank' : 'blank'}`)
 
-		// define hovering on data dot
-		const handleHoverDataPoint = ({city}) => {
-			const {type, offsetX, offsetY} = d3.event
+		// append path to each woj
+		wojewodztwaGroup
+			.append('path')
+			.attr('d', path)
+			.attr('id', ({WOJ}) => WOJ)
+			.attr('fill', ({WOJ}) => wojColors(hasWojAnyRecords(polandData, WOJ)))
+			.on('click', (woj) => hasWojAnyRecords(polandData, woj.WOJ) && clickOnWoj(woj))
 
-			let tooltip = d3.select(cityNameRef.current)
-
-			if (type === 'mouseover') {
-				tooltip
-					.style('left', `${offsetX}px`)
-					.style('top', `${offsetY + 25}px`)
-					.html(city)
-					.transition()
-					.style('display', 'flex')
-			} else {
-				tooltip.style('display', 'none')
-			}
-		}
+		// append text numbers if there are any competitons in woj
+		wojewodztwaGroup
+			.append('text')
+			.attr('x', (d) => path.centroid(d)[0])
+			.attr('y', (d) => path.centroid(d)[1])
+			.text(({WOJ}) => (hasWojAnyRecords(polandData, WOJ) ? hasWojAnyRecords(polandData, WOJ) : undefined))
 
 		// define click on woj function
 		const clickOnWoj = (woj) => {
@@ -187,11 +173,13 @@ const ZawodyChart = ({calendarData}) => {
 					.append('circle')
 					.attr('cx', ({longitude, latitude}) => projection([ longitude, latitude ])[0])
 					.attr('cy', ({longitude, latitude}) => projection([ longitude, latitude ])[1])
-					.on('mouseover', handleHoverDataPoint)
-					.on('mouseleave', handleHoverDataPoint)
+					.attr('id', ({city}) => city)
+					.on('mouseover', (d) => handleHoverDataPoint(d, cityNameRef))
+					.on('mouseleave', (d) => handleHoverDataPoint(d, cityNameRef))
+					.on('click', (d) => handleClickOnDataPoint(d, infoRef))
 					.transition()
 					.duration(500)
-					.attr('r', 2)
+					.attr('r', 4)
 			}
 
 			// all other woj will have .active removed
@@ -207,21 +195,6 @@ const ZawodyChart = ({calendarData}) => {
 				)
 				.style('stroke-width', `${1.5 / zoom}px`)
 		}
-
-		// append path to each woj
-		wojewodztwaGroup
-			.append('path')
-			.attr('d', path)
-			.attr('id', ({WOJ}) => WOJ)
-			.attr('fill', ({WOJ}) => wojColors(hasWojAnyRecords(polandData, WOJ)))
-			.on('click', (woj) => hasWojAnyRecords(polandData, woj.WOJ) && clickOnWoj(woj))
-
-		// append text numbers if there are any competitons in woj
-		wojewodztwaGroup
-			.append('text')
-			.attr('x', (d) => path.centroid(d)[0])
-			.attr('y', (d) => path.centroid(d)[1])
-			.text(({WOJ}) => (hasWojAnyRecords(polandData, WOJ) ? hasWojAnyRecords(polandData, WOJ) : undefined))
 	}
 
 	// handleResizing
@@ -251,7 +224,8 @@ const ZawodyChart = ({calendarData}) => {
 	return (
 		<ZawodyChartDiv>
 			<svg ref={chartRef} />
-			<aside ref={cityNameRef} />
+			<ZawodyCityNameTooltip cityNameRef={cityNameRef} />
+			<ZawodyInfoTooltip infoRef={infoRef} />
 		</ZawodyChartDiv>
 	)
 }

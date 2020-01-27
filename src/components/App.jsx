@@ -126,7 +126,7 @@ const App = () => {
 			<Switch>
 				<Route exact path="/">
 					<MainGeneric
-						title="Balbina Surma"
+						mainTitle="Balbina Surma"
 						isHeroShaded={70}
 						isHeroFullSize={true}
 						heroBackgroundImage={process.env.LINKS_HERO_BACKGROUND}

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SectionTitleForMainGeneric from './SectionTitleForMainGeneric'
+import {mainSectionTitleType, mainSectionContentType, mainSectionBackgroundImageType} from 'types/globalTypes'
 
 const SectionForMainGenericSection = styled.section`
 	display: flex;
@@ -41,6 +42,12 @@ const SectionForMainGeneric = ({mainSectionTitle, mainSectionContent, mainSectio
 			{mainSectionContent}
 		</SectionForMainGenericSection>
 	)
+}
+
+SectionForMainGeneric.propTypes = {
+	mainSectionTitle: mainSectionTitleType,
+	mainSectionContent: mainSectionContentType,
+	mainSectionBackgroundImage: mainSectionBackgroundImageType
 }
 
 export default SectionForMainGeneric

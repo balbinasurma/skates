@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {mainSectionTitleType} from 'types/globalTypes'
 
 const SectionTitleForMainGenericH1 = styled.h1`
 	font-size: 50px;
@@ -23,4 +24,8 @@ const SectionTitleForMainGeneric = ({isWhite, mainSectionTitle}) => (
 	</SectionTitleForMainGenericH1>
 )
 
+SectionTitleForMainGeneric.propTypes = {
+	isWhite: isWhiteType,
+	mainSectionTitle: mainSectionTitleType
+}
 export default SectionTitleForMainGeneric

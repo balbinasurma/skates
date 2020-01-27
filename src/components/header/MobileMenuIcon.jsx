@@ -1,6 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
+import {mobileMenuOpenType, setMobileMenuOpenType} from 'types/globalTypes'
 
 const MobileMenuIconButton = styled.button`
 	background: none;
@@ -25,5 +26,10 @@ const MobileMenuIcon = ({mobileMenuOpen, setMobileMenuOpen}) => (
 		/>
 	</MobileMenuIconButton>
 )
+
+MobileMenuIcon.propTypes = {
+	mobileMenuOpen: mobileMenuOpenType,
+	setMobileMenuOpen: setMobileMenuOpenType
+}
 
 export default MobileMenuIcon
