@@ -16,7 +16,6 @@ const ZawodyCityNameTooltipAside = styled.aside`
 	align-items: center;
 	justify-content: center;
 	transition: 0.0675s;
-	transform: scale(1) translate(-50%);
 `
 const ZawodyCityNameTooltip = ({cityNameRef}) => <ZawodyCityNameTooltipAside ref={cityNameRef} />
 

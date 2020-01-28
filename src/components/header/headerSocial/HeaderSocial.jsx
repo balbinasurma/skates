@@ -22,7 +22,7 @@ const HeaderSocial = () => {
 				socialMedia.map(({icon, link, label}, index) => (
 					<HeaderSocialItem
 						headerSocialItemLabel={label}
-						HeaderSocialItemIcon={[ icon ]}
+						headerSocialItemIcon={[ icon ]}
 						headerSocialItemLink={link}
 						key={index}
 					/>

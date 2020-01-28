@@ -12,7 +12,7 @@ import handleHoverDataPoint from './functions/handleHoverDataPoint'
 import handleClickOnDataPoint from './functions/handleClickOnDataPoint'
 
 const ZawodyChartDiv = styled.div`
-	height: 500px;
+	height: 70vh;
 	user-select: none;
 	position: relative;
 
@@ -173,10 +173,10 @@ const ZawodyChart = ({calendarData}) => {
 					.append('circle')
 					.attr('cx', ({longitude, latitude}) => projection([ longitude, latitude ])[0])
 					.attr('cy', ({longitude, latitude}) => projection([ longitude, latitude ])[1])
-					.attr('id', ({city}) => city)
+					.attr('id', ({city}) => city.replace(/\W/g, ''))
 					.on('mouseover', (d) => handleHoverDataPoint(d, cityNameRef))
 					.on('mouseleave', (d) => handleHoverDataPoint(d, cityNameRef))
-					.on('click', (d) => handleClickOnDataPoint(d, infoRef))
+					.on('click', (d) => handleClickOnDataPoint(d, infoRef, cityNameRef))
 					.transition()
 					.duration(500)
 					.attr('r', 4)

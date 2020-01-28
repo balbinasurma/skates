@@ -2,27 +2,23 @@ import * as d3 from 'd3'
 
 // define hovering on data dot
 const handleHoverDataPoint = ({city}, cityNameRef) => {
-	// const {city} = d
 	const {type, offsetX, offsetY} = d3.event
 
 	let tooltip = d3.select(cityNameRef.current),
-		thisCircle = d3.select(`circle#${city}`)
+		thisCircle = d3.select(`circle#${city.replace(/\W/g, '')}`)
 
 	if (type === 'mouseover') {
-		thisCircle.style('fill', 'transparent')
-		thisCircle.style('stroke', 'red')
-
+		thisCircle.style('fill', 'transparent').style('stroke', 'black')
 		tooltip
-			.style('left', `${offsetX}px`)
-			.style('top', `${offsetY + 25}px`)
 			.html(city)
-			.transition()
 			.style('display', 'flex')
+			.style('left', `${offsetX}px`)
+			.style('top', `${offsetY + 35}px`)
+			.transition()
+			.delay(0)
 	} else {
 		tooltip.style('display', 'none')
-
-		thisCircle.style('stroke', 'transparent')
-		thisCircle.style('fill', 'black')
+		thisCircle.style('stroke', 'transparent').style('fill', 'black')
 	}
 }
 
