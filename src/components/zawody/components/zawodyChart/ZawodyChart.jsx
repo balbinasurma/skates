@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components'
 import * as d3 from 'd3'
-import hasWojAnyRecords from 'functions/hasWojAnyRecords'
+import hasWojAnyRecords from 'components/zawody/functions/hasWojAnyRecords'
 import dataBackup from './data/dataBackup'
 import calcScale from './functions/calcScale'
 import calcOffset from './functions/calcOffset'

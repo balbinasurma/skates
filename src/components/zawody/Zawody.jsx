@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import ZawodyFilters from './zawodyFilters/ZawodyFilters'
-import ZawodyChart from './ZawodyChart'
-import dataBackup from './data/dataBackup'
+import ZawodyFilters from './components/zawodyFilters/ZawodyFilters'
+import ZawodyChart from './components/zawodyChart/ZawodyChart'
 import calendarData from './data/calendarData'
+
 const ZawodyDiv = styled.div``
 
 const Zawody = () => {
