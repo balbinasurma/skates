@@ -1,7 +1,8 @@
+import {mainSectionBackgroundImageType, mainSectionContentType, mainSectionTitleType} from 'types/globalTypes'
+
 import React from 'react'
-import styled from 'styled-components'
 import SectionTitleForMainGeneric from './SectionTitleForMainGeneric'
-import {mainSectionTitleType, mainSectionContentType, mainSectionBackgroundImageType} from 'types/globalTypes'
+import styled from 'styled-components'
 
 const SectionForMainGenericSection = styled.section`
 	display: flex;

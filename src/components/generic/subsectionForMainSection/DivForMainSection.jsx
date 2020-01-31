@@ -1,6 +1,6 @@
+import DivTitleForMainSection from './DivTitleForMainSection'
 import React from 'react'
 import styled from 'styled-components'
-import DivTitleForMainSection from './DivTitleForMainSection'
 
 const DivForMainSectionDiv = styled.div`
 	border: 1px solid red;

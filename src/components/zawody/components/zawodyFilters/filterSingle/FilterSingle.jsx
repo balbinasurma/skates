@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react'
-import styled from 'styled-components'
+import React, {useEffect, useRef, useState} from 'react'
+
 import FilterFront from './FilterFront'
 import FilterOptions from './filterOptions/FilterOptions'
+import styled from 'styled-components'
 
 const FilterSingleArticle = styled.article`
 	display: flex;

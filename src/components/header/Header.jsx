@@ -1,9 +1,10 @@
 import React, {Fragment, useState} from 'react'
-import styled from 'styled-components'
-import isDevelopment from '../../functions/isDevelopment'
+
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'
+import isDevelopment from '../../functions/isDevelopment'
+import styled from 'styled-components'
 
 const HeaderHeader = styled.header`
 	height: auto;

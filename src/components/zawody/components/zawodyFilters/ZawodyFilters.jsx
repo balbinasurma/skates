@@ -1,6 +1,6 @@
+import FilterSingle from './filterSingle/FilterSingle'
 import React from 'react'
 import styled from 'styled-components'
-import FilterSingle from './filterSingle/FilterSingle'
 
 const ZawodyFiltersDiv = styled.div`
 	width: 100%;

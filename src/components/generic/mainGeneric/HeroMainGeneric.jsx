@@ -1,13 +1,14 @@
-import React, {useState, useRef, useEffect} from 'react'
-import styled from 'styled-components'
+import React, {useEffect, useRef, useState} from 'react'
 import {
-	heroTitleType,
 	heroBackgroundImageType,
-	isHeroFullSizeType,
-	isHeroShadedType,
+	heroImagePOsitionTopType,
+	heroTitleType,
 	isHeroBrightType,
-	heroImagePOsitionTopType
+	isHeroFullSizeType,
+	isHeroShadedType
 } from 'types/globalTypes'
+
+import styled from 'styled-components'
 
 const HeroMainGenericHeader = styled.header`
 	min-height: 40vh;

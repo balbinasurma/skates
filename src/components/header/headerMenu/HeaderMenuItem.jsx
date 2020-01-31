@@ -1,7 +1,8 @@
-import React from 'react'
+import {headerMenuItemPathType, headerMenuItemTitleType} from 'types/globalTypes'
+
 import {NavLink} from 'react-router-dom'
+import React from 'react'
 import styled from 'styled-components'
-import {headerMenuItemTitleType, headerMenuItemPathType} from 'types/globalTypes'
 
 const HeaderMenuItemNavLink = styled(NavLink)`
 	height: 50%;

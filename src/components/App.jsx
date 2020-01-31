@@ -1,16 +1,19 @@
 import '@babel/polyfill'
-import injectTagInHtml from 'functions/injectTagInHtml'
-import Header from 'components/header/Header'
+
 import React, {Fragment, useEffect, useState} from 'react'
-import MainGeneric from './generic/mainGeneric/MainGeneric'
-import getDataFromDB from 'functions/getDataFromDB'
-import PucharPolskiItem from './main/pucharPolski/PucharPolskiItem'
-import PucharPolskiDivider from './main/pucharPolski/PucharPolskiDivider'
-import SectionForMainGeneric from './generic/sectionForMain/SectionForMainGeneric'
-import FerieUpper from './main/ferie/FerieUpper'
+import {Route, Switch} from 'react-router-dom'
+
 import FerieLower from './main/ferie/FerieLower'
-import {Switch, Route} from 'react-router-dom'
+import FerieUpper from './main/ferie/FerieUpper'
+import Header from 'components/header/Header'
+import MainGeneric from './generic/mainGeneric/MainGeneric'
+import PucharPolskiDivider from './main/pucharPolski/PucharPolskiDivider'
+import PucharPolskiItem from './main/pucharPolski/PucharPolskiItem'
+import SectionForMainGeneric from './generic/sectionForMain/SectionForMainGeneric'
 import Zawody from './zawody/Zawody'
+import code2 from '../../code2.js'
+import getDataFromDB from 'functions/getDataFromDB'
+import injectTagInHtml from 'functions/injectTagInHtml'
 
 const App = () => {
 	// HOOKS
@@ -22,6 +25,8 @@ const App = () => {
 	useEffect(() => {
 		injectTagInHtml('meta', process.env.DATABASE_HTML_META_DATA_PATH)
 	}, [])
+
+	code2()
 
 	// getting data for Main
 	useEffect(() => {

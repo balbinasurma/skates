@@ -1,6 +1,6 @@
+import FilterOptionsItem from './FIlterOptionsItem'
 import React from 'react'
 import styled from 'styled-components'
-import FilterOptionsItem from './FIlterOptionsItem'
 
 const FilterOptionsDiv = styled.div`
 	width: 100%;

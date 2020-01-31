@@ -1,7 +1,8 @@
+import {headerSocialItemIconType, headerSocialItemLabelType, headerSocialItemLinkType} from 'types/globalTypes'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import {headerSocialItemIconType, headerSocialItemLinkType, headerSocialItemLabelType} from 'types/globalTypes'
 
 const HeaderSocialItemA = styled.a`
 	width: 80px;

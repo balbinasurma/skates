@@ -1,6 +1,6 @@
-import { faTrophy } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
+import {faTrophy} from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
 const PucharPolskiDividerAside = styled.aside`

@@ -1,4 +1,4 @@
-import {bool, string, isRequired, func, arrayOf, number, object} from 'prop-types'
+import {arrayOf, bool, func, isRequired, number, object, string} from 'prop-types'
 
 export const headerMenuItemPathType = string
 export const headerMenuItemTitleType = string

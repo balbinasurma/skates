@@ -1,15 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import HeroMainGeneric from './HeroMainGeneric'
 import {
-	mainTitleType,
-	mainContentType,
 	heroBackgroundImageType,
+	heroImagePOsitionTopType,
+	isHeroBrightType,
 	isHeroFullSizeType,
 	isHeroShadedType,
-	heroImagePOsitionTopType,
-	isHeroBrightType
+	mainContentType,
+	mainTitleType
 } from 'types/globalTypes'
+
+import HeroMainGeneric from './HeroMainGeneric'
+import React from 'react'
+import styled from 'styled-components'
 
 const MainGenericMain = styled.main`height: auto;`
 

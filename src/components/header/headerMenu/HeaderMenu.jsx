@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import styled from 'styled-components'
+
 import HeaderMenuItem from './HeaderMenuItem'
 import getDataFromDB from '../../../functions/getDataFromDB'
 import {mobileMenuOpenType} from 'types/globalTypes'
+import styled from 'styled-components'
 
 const HeaderMenuNav = styled.nav`
 	min-height: 70px;

@@ -1,6 +1,7 @@
+import {isWhiteType, mainSectionTitleType} from 'types/globalTypes'
+
 import React from 'react'
 import styled from 'styled-components'
-import {mainSectionTitleType, isWhiteType} from 'types/globalTypes'
 
 const SectionTitleForMainGenericH1 = styled.h1`
 	font-size: 50px;

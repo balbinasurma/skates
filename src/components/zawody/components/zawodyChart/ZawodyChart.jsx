@@ -1,15 +1,17 @@
-import React, {useEffect, useRef, useState} from 'react'
-import styled from 'styled-components'
 import * as d3 from 'd3'
-import hasWojAnyRecords from 'components/zawody/functions/hasWojAnyRecords'
-import dataBackup from '../../data/dataBackup'
-import calcScale from '../../functions/calcScale'
-import calcOffset from '../../functions/calcOffset'
-import calcProjection from '../../functions/calcProjection'
+
+import React, {useEffect, useRef, useState} from 'react'
+
 import ZawodyCityNameTooltip from './ZawodyCityNameTooltip'
 import ZawodyInfoTooltip from './ZawodyInfoTooltip'
-import handleHoverDataPoint from '../../functions/handleHoverDataPoint'
+import calcOffset from '../../functions/calcOffset'
+import calcProjection from '../../functions/calcProjection'
+import calcScale from '../../functions/calcScale'
+import dataBackup from '../../data/dataBackup'
 import handleClickOnDataPoint from '../../functions/handleClickOnDataPoint'
+import handleHoverDataPoint from '../../functions/handleHoverDataPoint'
+import hasWojAnyRecords from 'components/zawody/functions/hasWojAnyRecords'
+import styled from 'styled-components'
 
 const ZawodyChartDiv = styled.div`
 	height: 70vh;

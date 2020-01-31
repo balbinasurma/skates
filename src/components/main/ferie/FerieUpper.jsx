@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -98,7 +98,7 @@ const FerieUpperDiv = styled.div`
 	}
 `
 
-const FerieUpper = ({ data }) => {
+const FerieUpper = ({data}) => {
 	let infoText = data.text,
 		infoData = data.footer,
 		icon = data.icon
@@ -110,7 +110,7 @@ const FerieUpper = ({ data }) => {
 				<div>{infoText}</div>
 			</main>
 			<footer>
-				{infoData.map(({ icon, value }, index) => (
+				{infoData.map(({icon, value}, index) => (
 					<article key={index}>
 						<FontAwesomeIcon icon={icon} color="white" size="4x" />
 						<h2>{value}</h2>

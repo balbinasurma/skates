@@ -130,7 +130,7 @@ const FerieLowerDiv = styled.div`
 	}
 `
 
-const FerieLower = ({ data }) => {
+const FerieLower = ({data}) => {
 	let sectionTitle = data.subsectionTitle,
 		subsectionContent = data.subsectionContent
 
@@ -138,7 +138,7 @@ const FerieLower = ({ data }) => {
 		<FerieLowerDiv>
 			<h1>{sectionTitle}</h1>
 			<section>
-				{subsectionContent.map(({ step, points, content }, index) => (
+				{subsectionContent.map(({step, points, content}, index) => (
 					<article key={index}>
 						<h2>{step}</h2>
 						<hr />
@@ -147,7 +147,7 @@ const FerieLower = ({ data }) => {
 								<ul>{points.map((point, index) => <li key={index}>{point}</li>)}</ul>
 							) : (
 								content &&
-								content.map(({ stage, points }, index) => (
+								content.map(({stage, points}, index) => (
 									<ul key={index}>
 										{stage}
 										{points.map((point, index) => <li key={index}>{point}</li>)}
