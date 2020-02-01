@@ -10,8 +10,8 @@ const ZawodyFiltersDiv = styled.div`
 	justify-content: space-evenly;
 `
 
-const ZawodyFilters = ({calendarData, setFiltersApplied, filtersApplied}) => {
-	calendarData = calendarData.filter(({country}) => country === 'POL')
+const ZawodyFilters = ({dataArray, setFiltersApplied, filtersApplied}) => {
+	dataArray = dataArray && dataArray.filter(({country}) => country === 'POL')
 
 	let filters = [
 		{
@@ -28,9 +28,10 @@ const ZawodyFilters = ({calendarData, setFiltersApplied, filtersApplied}) => {
 			filterKey,
 			valuesArray: Array.from(
 				new Set(
-					calendarData.map(
-						(record) => Object.entries(record).filter(([ objectKey ]) => objectKey === filterKey)[0][1]
-					)
+					dataArray &&
+						dataArray.map(
+							(record) => Object.entries(record).filter(([ objectKey ]) => objectKey === filterKey)[0][1]
+						)
 				)
 			)
 		}

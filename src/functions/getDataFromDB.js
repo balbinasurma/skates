@@ -1,12 +1,10 @@
 import firebase from './firebase'
 
 const getDataFromDB = async (child) => {
-	let ref = firebase.database().ref(),
-		pucharRef = ref.child(child),
-		pucharTemp = await pucharRef.once('value'),
-		pucharPolskiValuesArray = await pucharTemp.val()
+	let ref = firebase.database().ref(child),
+		snapshot = await ref.once('value')
 
-	return pucharPolskiValuesArray
+	return await snapshot.val()
 }
 
 export default getDataFromDB

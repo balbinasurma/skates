@@ -1,7 +1,9 @@
 const hasWojAnyRecords = (polandData, WOJ) => {
-	let thisWojRecords = polandData.filter(({woj}) => woj === WOJ)
+	if (polandData) {
+		let thisWojRecords = polandData.filter(({woj}) => woj === WOJ)
 
-	return thisWojRecords.length
+		return thisWojRecords.length
+	}
 }
 
 export default hasWojAnyRecords

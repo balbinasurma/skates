@@ -64,9 +64,9 @@ const ZawodyChartDiv = styled.div`
 	}
 `
 
-const ZawodyChart = ({calendarData}) => {
-	const chartRef = useRef(),
-		[ chartDimmensions, setChartDimmensions ] = useState(),
+const ZawodyChart = ({dataArray}) => {
+	const [ chartDimmensions, setChartDimmensions ] = useState(),
+		chartRef = useRef(),
 		cityNameRef = useRef(),
 		infoRef = useRef()
 
@@ -77,7 +77,6 @@ const ZawodyChart = ({calendarData}) => {
 			totalHeight = chartDimmensions[1],
 			offset = calcOffset(totalWidth, totalHeight),
 			scale = calcScale(),
-			// get data
 			// dataLink =
 			// 	'https://gist.githubusercontent.com/filipstachura/391ecb779d56483c070616a4d9239cc7/raw/b0793391ab0478e0d92052d204e7af493a7ecc92/poland_woj.json',
 			// data = await d3.json(dataBackup)
@@ -94,8 +93,8 @@ const ZawodyChart = ({calendarData}) => {
 			path = d3.geoPath().projection(projection),
 			bounds = path.bounds(data),
 			// filter data to only Poland
-			polandData = calendarData.filter(({country}) => country === 'POL'),
-			uniqueWoj = Array.from(new Set(polandData.map((record) => record.woj))),
+			polandData = dataArray && dataArray.filter(({country}) => country === 'POL'),
+			uniqueWoj = Array.from(new Set(polandData && polandData.map((record) => record.woj))),
 			numberOfRecordsInWoj = uniqueWoj
 				.map((woj) => polandData.filter((record) => record.woj === woj).length)
 				.sort(),
@@ -220,7 +219,7 @@ const ZawodyChart = ({calendarData}) => {
 				drawChart()
 			}
 		},
-		[ dataBackup, chartDimmensions, calendarData ]
+		[ chartDimmensions, dataArray ]
 	)
 
 	return (

@@ -11,7 +11,6 @@ import PucharPolskiDivider from './main/pucharPolski/PucharPolskiDivider'
 import PucharPolskiItem from './main/pucharPolski/PucharPolskiItem'
 import SectionForMainGeneric from './generic/sectionForMain/SectionForMainGeneric'
 import Zawody from './zawody/Zawody'
-import code2 from '../../code2.js'
 import getDataFromDB from 'functions/getDataFromDB'
 import injectTagInHtml from 'functions/injectTagInHtml'
 
@@ -21,15 +20,10 @@ const App = () => {
 		[ pucharPolskiData, setPucharPolskiData ] = useState(),
 		[ zawodyData, setZawodyData ] = useState()
 
-	//injection meta data to index.html
-	useEffect(() => {
-		injectTagInHtml('meta', process.env.DATABASE_HTML_META_DATA_PATH)
-	}, [])
-
-	code2()
-
 	// getting data for Main
 	useEffect(() => {
+		//injection meta data to index.html
+		injectTagInHtml('meta', process.env.DATABASE_HTML_META_DATA_PATH)
 		;(async () => {
 			// getting ferieData
 			let ferieData = await getDataFromDB(process.env.DATABASE_FERIE)
@@ -64,15 +58,13 @@ const App = () => {
 			)
 			setPucharPolskiData(pucharPolskiData)
 		})()
-	}, [])
 
-	// getting data for Zawody
-	useEffect(() => {
+		// getting data for Zawody
 		;(async () => {
 			// getting ferieData
 			let zawodyData = await getDataFromDB(process.env.DATABASE_ZAWODY)
 
-			zawodyData.components = <Zawody />
+			zawodyData.components = <Zawody dataArray={zawodyData.data} />
 			setZawodyData(zawodyData)
 		})()
 	}, [])
