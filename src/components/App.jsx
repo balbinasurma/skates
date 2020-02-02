@@ -150,7 +150,7 @@ const App = () => {
 						<MainGeneric
 							heroImagePositionTop={zawodyData.heroImagePositionTop}
 							isHeroBright={zawodyData.isHeroBright}
-							// heroBackgroundImage={zawodyData.heroBackgroundImage}
+							heroBackgroundImage={zawodyData.heroBackgroundImage}
 							isHeroFullSize={zawodyData.isHeroFullSize}
 							mainContent={<SectionForMainGeneric mainSectionContent={zawodyData.components} />}
 						/>

@@ -9,6 +9,15 @@ const FilterSingleArticle = styled.article`
 	flex-direction: column;
 	position: relative;
 	min-width: 150px;
+
+	@media only screen and (max-width: ${process.env.BREAKPOINT_TWO}) {
+		min-width: 265px;
+		margin-bottom: 10px;
+	}
+
+	@media only screen and (max-width: ${process.env.BREAKPOINT_ONE}) {
+		min-width: 300px;
+	}
 `
 
 const FilterSingle = ({filterIcon, filterTitle, valuesArray, filterKey, setFiltersApplied, filtersApplied}) => {
@@ -16,15 +25,15 @@ const FilterSingle = ({filterIcon, filterTitle, valuesArray, filterKey, setFilte
 		thisFilterSingleRef = useRef()
 
 	useEffect(() => {
-		const handleClickOutsideFilter = (event) => {
-			const {target} = event
-
+		const handleClickOutsideFilter = ({target}) => {
 			if (!thisFilterSingleRef.current.contains(target)) {
 				setIsFilterOptionsOpen(false)
 			}
 		}
 
 		window.addEventListener('click', handleClickOutsideFilter)
+
+		return () => window.removeEventListener('click', handleClickOutsideFilter)
 	}, [])
 
 	return (
@@ -40,7 +49,6 @@ const FilterSingle = ({filterIcon, filterTitle, valuesArray, filterKey, setFilte
 			/>
 			<FilterOptions
 				setFiltersApplied={setFiltersApplied}
-				filtersApplied={filtersApplied}
 				filterKey={filterKey}
 				valuesArray={valuesArray}
 				setIsFilterOptionsOpen={setIsFilterOptionsOpen}

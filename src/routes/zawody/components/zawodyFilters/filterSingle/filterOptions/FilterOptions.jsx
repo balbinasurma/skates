@@ -15,14 +15,7 @@ const FilterOptionsDiv = styled.div`
 	z-index: 5;
 `
 
-const FilterOptions = ({
-	valuesArray,
-	isFilterOptionsOpen,
-	setIsFilterOptionsOpen,
-	filterKey,
-	setFiltersApplied,
-	filtersApplied
-}) => {
+const FilterOptions = ({valuesArray, isFilterOptionsOpen, setIsFilterOptionsOpen, filterKey, setFiltersApplied}) => {
 	return isFilterOptionsOpen ? (
 		<FilterOptionsDiv>
 			{valuesArray.map((value, index) => {

@@ -2,8 +2,7 @@ import * as d3 from 'd3'
 
 import React, {useEffect, useRef, useState} from 'react'
 
-import ZawodyCityNameTooltip from './ZawodyCityNameTooltip'
-import ZawodyInfoTooltip from './ZawodyInfoTooltip'
+import ZawodyChartTooltip from './ZawodyChartTooltip'
 import calcOffset from '../../functions/calcOffset'
 import calcProjection from '../../functions/calcProjection'
 import calcScale from '../../functions/calcScale'
@@ -71,7 +70,7 @@ const ZawodyChart = ({dataArray}) => {
 	const [ chartDimmensions, setChartDimmensions ] = useState(),
 		chartRef = useRef(),
 		cityNameRef = useRef(),
-		infoRef = useRef(),
+		chartTooltipRef = useRef(),
 		drawChart = async () => {
 			// define basic variables
 			let svg = d3.select(chartRef.current),
@@ -177,9 +176,9 @@ const ZawodyChart = ({dataArray}) => {
 						.attr('cx', ({longitude, latitude}) => projection([ longitude, latitude ])[0])
 						.attr('cy', ({longitude, latitude}) => projection([ longitude, latitude ])[1])
 						.attr('id', ({city}) => city.replace(/\W/g, ''))
-						.on('mouseover', (d) => handleHoverDataPoint(d, cityNameRef))
-						.on('mouseleave', (d) => handleHoverDataPoint(d, cityNameRef))
-						.on('click', (d) => handleClickOnDataPoint(d, infoRef, cityNameRef))
+						.on('mouseover', (d) => handleHoverDataPoint(d, chartTooltipRef))
+						.on('mouseleave', (d) => handleHoverDataPoint(d, chartTooltipRef))
+						.on('click', (d) => handleClickOnDataPoint(d, chartTooltipRef))
 						.transition()
 						.duration(500)
 						.attr('r', 4)
@@ -227,8 +226,7 @@ const ZawodyChart = ({dataArray}) => {
 	return (
 		<ZawodyChartDiv>
 			<svg ref={chartRef} />
-			<ZawodyCityNameTooltip cityNameRef={cityNameRef} />
-			<ZawodyInfoTooltip infoRef={infoRef} />
+			<ZawodyChartTooltip chartTooltipRef={chartTooltipRef} />
 		</ZawodyChartDiv>
 	)
 }

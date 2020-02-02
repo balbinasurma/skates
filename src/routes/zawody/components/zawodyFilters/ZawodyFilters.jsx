@@ -7,7 +7,7 @@ const ZawodyFiltersDiv = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-evenly;
-	margin-bottom: 60px;
+	flex-wrap: wrap;
 	padding: 10px;
 `
 

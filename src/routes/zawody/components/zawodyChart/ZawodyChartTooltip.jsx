@@ -2,17 +2,17 @@ import React, {useEffect} from 'react'
 
 import styled from 'styled-components'
 
-const ZawodyInfoTooltipAside = styled.aside`
-	min-width: 200px;
-	min-height: 100px;
+const ZawodyChartTooltipAside = styled.aside`
+	min-width: 80px;
+	min-height: 40px;
 	box-shadow: 0 1px 1px 0 rgba(60, 64, 67, .08), 0 1px 3px 1px rgba(60, 64, 67, .16);
 	background: white;
 	position: absolute;
-	top: 300px;
-	left: 200px;
 	padding: 10px;
 	border-radius: 4px;
 	display: none;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 
 	& > h1 {
@@ -33,6 +33,16 @@ const ZawodyInfoTooltipAside = styled.aside`
 			opacity: .6;
 			font-weight: 400;
 			line-height: 1.25rem;
+		}
+	}
+
+	& > main {
+		margin: 0.5rem 0 0 0;
+		width: 100%;
+
+		& > p {
+			font-size: 0.8rem;
+			margin: 0 0 0.3rem 0;
 		}
 	}
 
@@ -68,23 +78,26 @@ const ZawodyInfoTooltipAside = styled.aside`
 	}
 `
 
-const ZawodyInfoTooltip = ({infoRef}) => {
+const ZawodyChartTooltip = ({chartTooltipRef}) => {
 	useEffect(() => {
-		const handleClickOutsideTooltip = ({target}) => {
-			if (
-				!infoRef.current.contains(target) &&
-				infoRef.current.style.display === 'flex' &&
-				target.nodeType !== 'circle'
-			) {
-				console.log('outside')
-				infoRef.current.style.display === 'none'
+		const handleClick = ({target}) => {
+			if (target.nodeName !== 'circle' && target.nodeName !== 'a') {
+				chartTooltipRef.current.style.display = 'none'
 			}
 		}
 
-		window.addEventListener('click', handleClickOutsideTooltip)
+		window.addEventListener('click', handleClick)
+
+		return () => window.removeEventListener('click', handleClick)
 	}, [])
 
-	return <ZawodyInfoTooltipAside id="zawody-info-tooltip" ref={infoRef} />
+	return (
+		<ZawodyChartTooltipAside
+			className="zawody-chart-tooltip"
+			ref={chartTooltipRef}
+			onMouseLeave={({target}) => (target.style.display = 'none')}
+		/>
+	)
 }
 
-export default ZawodyInfoTooltip
+export default ZawodyChartTooltip

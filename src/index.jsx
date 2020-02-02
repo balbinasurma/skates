@@ -18,7 +18,7 @@ import {
 import {faFacebookSquare, faLinkedin, fab} from '@fortawesome/free-brands-svg-icons'
 
 import App from './components/App'
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -43,8 +43,8 @@ library.add(
 )
 
 ReactDOM.render(
-	<BrowserRouter>
+	<HashRouter>
 		<App />
-	</BrowserRouter>,
+	</HashRouter>,
 	document.getElementById('root')
 )

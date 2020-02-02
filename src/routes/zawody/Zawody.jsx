@@ -5,7 +5,11 @@ import ZawodyFilters from './components/zawodyFilters/ZawodyFilters'
 import firebase from 'functions/firebase'
 import styled from 'styled-components'
 
-const ZawodyDiv = styled.div``
+const ZawodyDiv = styled.div`
+	& > h1 {
+		text-align: center;
+	}
+`
 
 const Zawody = ({dataArray}) => {
 	const [ filtersApplied, setFiltersApplied ] = useState(),
@@ -38,6 +42,7 @@ const Zawody = ({dataArray}) => {
 				filtersApplied={filtersApplied}
 				dataArray={dataArray}
 			/>
+			<h1>Mapa Zawodów Polska 2020</h1>
 			<ZawodyChart dataArray={filteredData ? filteredData : dataArray} />
 		</ZawodyDiv>
 	)
