@@ -4,35 +4,35 @@ on:
       - code
 
 jobs:
-  # TEST:
-  #   runs-on: [ubuntu-latest]
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - run: |
-  #         npm install
-  #         npm run test
+  TEST:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: |
+          npm install
+          npm run test
 
-  # BUILD:
-  #   # needs: [TEST]
-  #   runs-on: [ubuntu-latest]
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - run: |
-  #         npm install
-  #         npm run build
-  #     - uses: actions/upload-artifact@v1
-  #       with:
-  #         name: buildOutcome
-  #         path: build
+  BUILD:
+    needs: [TEST]
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: |
+          npm install
+          npm run build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: buildOutcome
+          path: build
 
   GIT:
-    # needs: [BUILD]
+    needs: [BUILD]
     runs-on: [ubuntu-latest]
     steps:
       - run: |
@@ -42,21 +42,21 @@ jobs:
           # git config user.name ${{secrets.user}}
           git status
 
-      # - uses: actions/download-artifact@v1.0.0
-      #   with:
-      #     name: buildOutcome
-      #     path: ./
-      # - run: |
-      #     git add .
-      #     git commit -m "autoCommit"
-      #     git push --force origin HEAD:master
+      - uses: actions/download-artifact@v1.0.0
+        with:
+          name: buildOutcome
+          path: ./
+      - run: |
+          git add .
+          git commit -m "autoCommit"
+          git push --force origin HEAD:master
   
-  # INVOKE_BUILD:
-  #   needs: [GIT]
-  #   runs-on: [ubuntu-latest]
-  #   steps:
-  #     - run: >-
-  #         curl -L -X POST
-  #         -H "Content-Type: application/json"
-  #         -H "Authorization: token ${{ secrets.personalAccessToken }}"
-  #         "https://api.github.com/repos/balbinasurma/balbinasurma.github.io/pages/builds"
+  INVOKE_BUILD:
+    needs: [GIT]
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: >-
+          curl -L -X POST
+          -H "Content-Type: application/json"
+          -H "Authorization: token ${{ secrets.personalAccessToken }}"
+          "https://api.github.com/repos/balbinasurma/balbinasurma.github.io/pages/builds"
