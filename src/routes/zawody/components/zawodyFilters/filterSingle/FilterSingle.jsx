@@ -8,10 +8,10 @@ const FilterSingleArticle = styled.article`
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	min-width: 120px;
+	min-width: 150px;
 `
 
-const FilterSingle = ({filterTitle, valuesArray, filterKey, setFiltersApplied, filtersApplied}) => {
+const FilterSingle = ({filterIcon, filterTitle, valuesArray, filterKey, setFiltersApplied, filtersApplied}) => {
 	const [ isFilterOptionsOpen, setIsFilterOptionsOpen ] = useState(false),
 		thisFilterSingleRef = useRef()
 
@@ -30,9 +30,13 @@ const FilterSingle = ({filterTitle, valuesArray, filterKey, setFiltersApplied, f
 	return (
 		<FilterSingleArticle ref={thisFilterSingleRef}>
 			<FilterFront
+				filterIcon={filterIcon}
 				filterTitle={filterTitle}
 				setIsFilterOptionsOpen={setIsFilterOptionsOpen}
 				isFilterOptionsOpen={isFilterOptionsOpen}
+				filtersApplied={filtersApplied}
+				filterKey={filterKey}
+				setFiltersApplied={setFiltersApplied}
 			/>
 			<FilterOptions
 				setFiltersApplied={setFiltersApplied}

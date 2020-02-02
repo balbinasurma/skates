@@ -59,8 +59,6 @@ const PucharPolskiItem = ({title, comment, date, picture}) => (
 		<h3>{title}</h3>
 		<h2>{date}</h2>
 		<p>{comment}</p>
-
-		{/* <div /> */}
 		<img
 			src={picture}
 			alt={title}

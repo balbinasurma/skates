@@ -71,7 +71,6 @@ const ZawodyInfoTooltipAside = styled.aside`
 const ZawodyInfoTooltip = ({infoRef}) => {
 	useEffect(() => {
 		const handleClickOutsideTooltip = ({target}) => {
-			console.log(target.nodeType)
 			if (
 				!infoRef.current.contains(target) &&
 				infoRef.current.style.display === 'flex' &&

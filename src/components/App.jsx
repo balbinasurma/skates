@@ -3,14 +3,14 @@ import '@babel/polyfill'
 import React, {Fragment, useEffect, useState} from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import FerieLower from './main/ferie/FerieLower'
-import FerieUpper from './main/ferie/FerieUpper'
+import FerieLower from 'routes/main/ferie/FerieLower'
+import FerieUpper from 'routes/main/ferie/FerieUpper'
 import Header from 'components/header/Header'
-import MainGeneric from './generic/mainGeneric/MainGeneric'
-import PucharPolskiDivider from './main/pucharPolski/PucharPolskiDivider'
-import PucharPolskiItem from './main/pucharPolski/PucharPolskiItem'
-import SectionForMainGeneric from './generic/sectionForMain/SectionForMainGeneric'
-import Zawody from './zawody/Zawody'
+import MainGeneric from 'generic/mainGeneric/MainGeneric'
+import PucharPolskiDivider from 'routes/osiagniecia/pucharPolski/PucharPolskiDivider'
+import PucharPolskiItem from 'routes/osiagniecia/pucharPolski/PucharPolskiItem'
+import SectionForMainGeneric from 'generic/sectionForMain/SectionForMainGeneric'
+import Zawody from 'routes/zawody/Zawody'
 import getDataFromDB from 'functions/getDataFromDB'
 import injectTagInHtml from 'functions/injectTagInHtml'
 
@@ -24,6 +24,46 @@ const App = () => {
 	useEffect(() => {
 		//injection meta data to index.html
 		injectTagInHtml('meta', process.env.DATABASE_HTML_META_DATA_PATH)
+		//
+		// DATA
+		//
+
+		// let dataToGetFromDB = [
+		// 	{
+		// 		pathOnDB: process.env.DATABASE_FERIE,
+		// 		components: (
+		// 			<Fragment>
+		// 				<FerieUpper data={ferieData.sectionContent.up.subsectionContent} />
+		// 				<FerieLower data={ferieData.sectionContent.down} />
+		// 			</Fragment>
+		// 		),
+		// 		state: setFerieData
+		// 	},
+		// 	{
+		// 		pathOnDB: process.env.DATABASE_ZAWODY,
+		// 		components: (
+		// 			<Fragment>
+		// 				{pucharPolskiData.sectionContent.map(({subsectionTitle, comment, date, imageLink}, index) => (
+		// 					<Fragment key={index}>
+		// 						<PucharPolskiItem
+		// 							title={subsectionTitle}
+		// 							comment={comment}
+		// 							date={date}
+		// 							picture={imageLink}
+		// 						/>
+		// 						{index === pucharPolskiData.sectionContent.length - 2 && <PucharPolskiDivider />}
+		// 					</Fragment>
+		// 				))}
+		// 			</Fragment>
+		// 		),
+		// 		state: setPucharPolskiData
+		// 	},
+		// 	{
+		// 		pathOnDB: process.env.DATABASE_PUCHAR_POLSKI,
+		// 		components: <Zawody dataArray={zawodyData.data} />,
+		// 		state: setZawodyData
+		// 	}
+		// ]
 		;(async () => {
 			// getting ferieData
 			let ferieData = await getDataFromDB(process.env.DATABASE_FERIE)
@@ -110,7 +150,7 @@ const App = () => {
 						<MainGeneric
 							heroImagePositionTop={zawodyData.heroImagePositionTop}
 							isHeroBright={zawodyData.isHeroBright}
-							heroBackgroundImage={zawodyData.heroBackgroundImage}
+							// heroBackgroundImage={zawodyData.heroBackgroundImage}
 							isHeroFullSize={zawodyData.isHeroFullSize}
 							mainContent={<SectionForMainGeneric mainSectionContent={zawodyData.components} />}
 						/>

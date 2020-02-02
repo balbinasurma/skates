@@ -3,7 +3,7 @@ import React, {Fragment, useState} from 'react'
 import HeaderMenu from './headerMenu/HeaderMenu'
 import HeaderSocial from './headerSocial/HeaderSocial'
 import MobileMenuIcon from './MobileMenuIcon'
-import isDevelopment from '../../functions/isDevelopment'
+import isDevelopment from 'functions/isDevelopment'
 import styled from 'styled-components'
 
 const HeaderHeader = styled.header`

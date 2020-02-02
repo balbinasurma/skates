@@ -27,7 +27,9 @@ const config = {
 		alias: {
 			functions: path.join(__dirname, 'src', '/functions'),
 			components: path.join(__dirname, 'src', '/components'),
-			types: path.join(__dirname, 'src', '/types')
+			types: path.join(__dirname, 'src', '/types'),
+			generic: path.join(__dirname, 'src', '/components/generic'),
+			routes: path.join(__dirname, 'src', '/routes')
 		},
 		extensions: [ '.jsx', '.js' ]
 	},

@@ -16,6 +16,7 @@ body {
 	height: auto;
 	flex-direction: column;
 	position: relative;
+	user-select: none;
 }
 
 ::-webkit-scrollbar {

@@ -3,12 +3,17 @@ import './index.css'
 import {
 	faAt,
 	faBars,
+	faCalendar,
 	faCalendarAlt,
 	faClock,
 	faMapMarkedAlt,
+	faMapSigns,
+	faRoad,
+	faShieldAlt,
 	faSkating,
 	faSortDown,
-	faTimes
+	faTimes,
+	faTimesCircle
 } from '@fortawesome/free-solid-svg-icons'
 import {faFacebookSquare, faLinkedin, fab} from '@fortawesome/free-brands-svg-icons'
 
@@ -29,7 +34,12 @@ library.add(
 	faCalendarAlt,
 	faClock,
 	faMapMarkedAlt,
-	faSortDown
+	faSortDown,
+	faTimesCircle,
+	faMapSigns,
+	faRoad,
+	faCalendar,
+	faShieldAlt
 )
 
 ReactDOM.render(

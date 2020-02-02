@@ -98,27 +98,21 @@ const FerieUpperDiv = styled.div`
 	}
 `
 
-const FerieUpper = ({data}) => {
-	let infoText = data.text,
-		infoData = data.footer,
-		icon = data.icon
-
-	return (
-		<FerieUpperDiv>
-			<main>
-				<FontAwesomeIcon icon={icon} color="white" size="10x" />
-				<div>{infoText}</div>
-			</main>
-			<footer>
-				{infoData.map(({icon, value}, index) => (
-					<article key={index}>
-						<FontAwesomeIcon icon={icon} color="white" size="4x" />
-						<h2>{value}</h2>
-					</article>
-				))}
-			</footer>
-		</FerieUpperDiv>
-	)
-}
+const FerieUpper = ({data: {text, footer, icon}}) => (
+	<FerieUpperDiv>
+		<main>
+			<FontAwesomeIcon icon={icon} color="white" size="10x" />
+			<div>{text}</div>
+		</main>
+		<footer>
+			{footer.map(({icon, value}, index) => (
+				<article key={index}>
+					<FontAwesomeIcon icon={icon} color="white" size="4x" />
+					<h2>{value}</h2>
+				</article>
+			))}
+		</footer>
+	</FerieUpperDiv>
+)
 
 export default FerieUpper

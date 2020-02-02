@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 import HeaderSocialItem from './HeaderSocialItem'
-import getDataFromDB from '../../../functions/getDataFromDB'
+import getDataFromDB from 'functions/getDataFromDB'
 import styled from 'styled-components'
 
 const HeaderSocialSection = styled.section`

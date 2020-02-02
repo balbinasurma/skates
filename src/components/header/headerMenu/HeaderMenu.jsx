@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 import HeaderMenuItem from './HeaderMenuItem'
-import getDataFromDB from '../../../functions/getDataFromDB'
+import getDataFromDB from 'functions/getDataFromDB'
 import {mobileMenuOpenType} from 'types/globalTypes'
 import styled from 'styled-components'
 

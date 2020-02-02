@@ -1,5 +1,6 @@
 import * as d3 from 'd3'
 import * as moment from 'moment'
+
 import handleHoverDataPoint from './handleHoverDataPoint'
 
 const handleClickOnDataPoint = (d, infoRef, cityNameRef) => {
@@ -12,7 +13,9 @@ const handleClickOnDataPoint = (d, infoRef, cityNameRef) => {
 		tooltipDisplay = tooltip.style('display')
 
 	if (tooltipDisplay === 'none') {
-		let periodString = moment(date, 'DD/MM/YYYY').fromNow(),
+		console.log(date.slice(0, 10))
+
+		let periodString = moment(date.slice(0, 10), 'YYYY/MM/DD').fromNow(),
 			numberFromDate = periodString.replace(/\D/g, ''),
 			periodStringPrepared = periodString
 				.replace('in', 'za')
