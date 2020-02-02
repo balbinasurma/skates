@@ -10,7 +10,7 @@ const HeaderHeader = styled.header`
 	height: auto;
 	padding: 0 1vw;
 	display: flex;
-	flex-direction: ${isDevelopment() ? 'row' : 'row-reverse'};
+	flex-direction: 'row';
 	background: none;
 	justify-content: space-between;
 	position: absolute;
