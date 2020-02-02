@@ -4,19 +4,19 @@ on:
       - code
 
 jobs:
-  TEST:
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - run: |
-          npm install
-          npm run test
+  # TEST:
+  #   runs-on: [ubuntu-latest]
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12.x
+  #     - run: |
+  #         npm install
+  #         npm run test
 
   BUILD:
-    needs: [TEST]
+    # needs: [TEST]
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
